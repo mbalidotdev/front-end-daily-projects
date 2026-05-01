@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Embed Page</title>
+  </head>
+  <body>
+    <h1>My Media Collection</h1>
+    <p>Here are some of my favorite videos and audio clips.</p>
+
+    <hr />
+
+    <h2>YouTube Video (Embedded)</h2>
+    <p>This is a video of the world's most cutest puppies!</p>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/6v4OgilckIc?si=Xs4ThJVU1TP_7CDj"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <hr />
+
+    <h2>My Local Video</h2>
+    <p>This video plays directly in the browser using the video tag.</p>
+
+    <video width="560" height="315" controls>
+      <source
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <hr />
+
+    <h2>Audio Player</h2>
+    <p>Listen to this relaxing audio clip.</p>
+
+    <audio controls>
+      <source
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <hr />
+
+    <h2>Media Information</h2>
+    <ul>
+      <li><strong>YouTube:</strong> Embedded using iframe tag</li>
+      <li><strong>Video:</strong> Uses video tag with controls</li>
+      <li><strong>Audio:</strong> Uses audio tag with controls</li>
+    </ul>
+
+    <footer>
+      <p>&copy; 2026 My Media Page</p>
+    </footer>
+  </body>
+</html>

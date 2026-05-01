@@ -25,3 +25,7 @@ _nav, a, href, internal page links_
 ### [06. Data Table](https://mbalidotdev.github.io/front-end-daily-projects/06-data-table)
 
 _table, tr, td, th, thead, tbody_
+
+### [07. Video Embed Page](https://mbalidotdev.github.io/front-end-daily-projects/07-video-embed-page)
+
+_iframe, video, audio, source_
