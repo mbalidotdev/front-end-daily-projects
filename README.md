@@ -21,3 +21,7 @@ _img, figure, figcaption, alt_
 ### [05. Navigation Menu](https://mbalidotdev.github.io/front-end-daily-projects/05-navigation-menu)
 
 _nav, a, href, internal page links_
+
+### [06. Data Table](https://mbalidotdev.github.io/front-end-daily-projects/06-data-table)
+
+_table, tr, td, th, thead, tbody_
