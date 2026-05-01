@@ -17,3 +17,7 @@ _form, input, label, textarea, button_
 ### [04. Image Gallery](https://mbalidotdev.github.io/front-end-daily-projects/04-image-gallery)
 
 _img, figure, figcaption, alt_
+
+### [05. Navigation Menu](https://mbalidotdev.github.io/front-end-daily-projects/05-navigation-menu)
+
+_nav, a, href, internal page links_
