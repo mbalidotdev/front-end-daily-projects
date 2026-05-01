@@ -29,3 +29,7 @@ _table, tr, td, th, thead, tbody_
 ### [07. Video Embed Page](https://mbalidotdev.github.io/front-end-daily-projects/07-video-embed-page)
 
 _iframe, video, audio, source_
+
+### [08. Semantic Blog Post](https://mbalidotdev.github.io/front-end-daily-projects/08-semantic-blog-post)
+
+_header, main, article, section, footer_
