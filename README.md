@@ -13,3 +13,7 @@ _html lists, unordered, ordered, nested lists_
 ### [03. Contact Form](https://mbalidotdev.github.io/front-end-daily-projects/03-contact-form)
 
 _form, input, label, textarea, button_
+
+### [04. Image Gallery](https://mbalidotdev.github.io/front-end-daily-projects/0image-gallery)
+
+_img, figure, figcaption, alt_
