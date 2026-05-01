@@ -14,6 +14,6 @@ _html lists, unordered, ordered, nested lists_
 
 _form, input, label, textarea, button_
 
-### [04. Image Gallery](https://mbalidotdev.github.io/front-end-daily-projects/01-image-gallery)
+### [04. Image Gallery](https://mbalidotdev.github.io/front-end-daily-projects/04-image-gallery)
 
 _img, figure, figcaption, alt_
