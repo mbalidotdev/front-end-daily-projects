@@ -41,3 +41,7 @@ _linking pages_
 ### [10. FAQ Page](https://mbalidotdev.github.io/front-end-daily-projects/10-faq-page)
 
 _detials, summary_
+
+### [11. Registration Form](https://mbalidotdev.github.io/front-end-daily-projects/11-registration-form)
+
+_email, tel, date, password_

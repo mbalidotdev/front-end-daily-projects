@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Create Account</title>
+  </head>
+  <body>
+    <header>
+      <h1>Create an Account</h1>
+      <p>Join our community by filling out the form below.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Personal Information</h2>
+
+        <form>
+          <!-- Full Name -->
+          <div>
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" />
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+32 123 45 67 89"
+            />
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h2>Additional Information</h2>
+
+        <form>
+          <!-- Gender (Radio Buttons) -->
+          <div>
+            <p>Gender</p>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other" />
+            <label for="other">Other</label>
+
+            <input
+              type="radio"
+              id="prefer-not"
+              name="gender"
+              value="prefer-not"
+            />
+            <label for="prefer-not">Prefer not to say</label>
+          </div>
+
+          <!-- Country (Dropdown) -->
+          <div>
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">Select your country</option>
+              <option value="belgium">Belgium</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="uk">United Kingdom</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Terms Agreement (Checkbox) -->
+          <div>
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms"
+              >I agree to the <a href="#">Terms and Conditions</a></label
+            >
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 My Website. All rights reserved.</p>
+      <p>Already have an account? <a href="#">Sign in here</a></p>
+    </footer>
+  </body>
+</html>
