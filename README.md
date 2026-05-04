@@ -37,3 +37,7 @@ _header, main, article, section, footer_
 ### [09. Two Page Website](https://mbalidotdev.github.io/front-end-daily-projects/09-two-page-website)
 
 _linking pages_
+
+### [10. FAQ Page](https://mbalidotdev.github.io/front-end-daily-projects/10-faq-page)
+
+_detials, summary_
