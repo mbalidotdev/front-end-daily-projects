@@ -33,3 +33,7 @@ _iframe, video, audio, source_
 ### [08. Semantic Blog Post](https://mbalidotdev.github.io/front-end-daily-projects/08-semantic-blog-post)
 
 _header, main, article, section, footer_
+
+### [09. Two Page Website](https://mbalidotdev.github.io/front-end-daily-projects/09-two-page-website)
+
+_linking pages_
