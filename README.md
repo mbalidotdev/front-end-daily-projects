@@ -45,3 +45,7 @@ _detials, summary_
 ### [11. Registration Form](https://mbalidotdev.github.io/front-end-daily-projects/11-registration-form)
 
 _email, tel, date, password_
+
+### [12. Dropdown Menu](https://mbalidotdev.github.io/front-end-daily-projects/12-dropdown-menu)
+
+_select, option, optgroup_

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Menu - Select Elements</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dropdown Menu Demo</h1>
+      <p>
+        Using <code>&lt;select&gt;</code>, <code>&lt;option&gt;</code>, and
+        <code>&lt;optgroup&gt;</code>
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Basic Select Dropdown</h2>
+
+        <label for="simple">Choose a color:</label>
+        <select id="simple" name="color">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
+      </section>
+
+      <section>
+        <h2>Select with optgroup (Grouped Options)</h2>
+
+        <label for="cars">Choose a car brand:</label>
+        <select id="cars" name="cars">
+          <optgroup label="German">
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="volkswagen">Volkswagen</option>
+          </optgroup>
+          <optgroup label="Japanese">
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+            <option value="nissan">Nissan</option>
+            <option value="mazda">Mazda</option>
+          </optgroup>
+          <optgroup label="American">
+            <option value="ford">Ford</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="tesla">Tesla</option>
+          </optgroup>
+        </select>
+      </section>
+
+      <section>
+        <h2>Select with Default Selected Option</h2>
+
+        <label for="default">Choose your country:</label>
+        <select id="default" name="country">
+          <option value="">Select a country</option>
+          <option value="belgium" selected>Belgium</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option>
+          <option value="netherlands">Netherlands</option>
+        </select>
+        <p>
+          <small>The "selected" attribute makes Belgium show by default.</small>
+        </p>
+      </section>
+
+      <section>
+        <h2>Multiple Select (Ctrl+Click to select multiple)</h2>
+
+        <label for="multi">Choose your favorite programming languages:</label>
+        <select id="multi" name="languages" multiple size="5">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="javascript">JavaScript</option>
+          <option value="react">React</option>
+          <option value="python">Python</option>
+        </select>
+        <p>
+          <small
+            >Hold Ctrl (Windows) or Cmd (Mac) to select multiple options.</small
+          >
+        </p>
+      </section>
+
+      <section>
+        <h2>Disabled Option</h2>
+
+        <label for="disabled">Select your membership:</label>
+        <select id="disabled" name="membership">
+          <option value="basic">Basic (Free)</option>
+          <option value="pro" disabled>Pro (Coming Soon)</option>
+          <option value="enterprise">Enterprise (Contact Sales)</option>
+        </select>
+        <p>
+          <small>The "Pro" option is disabled and cannot be selected.</small>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 My Website. Dropdown menu demo with select, option, and
+        optgroup.
+      </p>
+    </footer>
+  </body>
+</html>
