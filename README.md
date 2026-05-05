@@ -57,3 +57,9 @@ _type="checkbox", type="radio", name_
 ### [14. Complete Landing Page](https://mbalidotdev.github.io/front-end-daily-projects/14-complete-landing-page)
 
 _all html elements together_
+
+## CSS
+
+### [15. Colorful Buttons](https://mbalidotdev.github.io/front-end-daily-projects/15-colorful-buttons)
+
+_background-color, color, border, cursor, hover_
