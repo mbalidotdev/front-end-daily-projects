@@ -63,3 +63,7 @@ _all html elements together_
 ### [15. Colorful Buttons](https://mbalidotdev.github.io/front-end-daily-projects/15-colorful-buttons)
 
 _background-color, color, border, cursor, hover_
+
+### [16. Text Styler](https://mbalidotdev.github.io/front-end-daily-projects/16-text-styler)
+
+_font-family, font-size, font-weight, line-height, letter-spacing_
