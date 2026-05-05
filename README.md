@@ -53,3 +53,7 @@ _select, option, optgroup_
 ### [13. Ckeckbox and Radio Group](https://mbalidotdev.github.io/front-end-daily-projects/13-checkbox-and-radio-buttons)
 
 _type="checkbox", type="radio", name_
+
+### [14. Complete Landing Page](https://mbalidotdev.github.io/front-end-daily-projects/14-complete-landing-page)
+
+_all html elements together_

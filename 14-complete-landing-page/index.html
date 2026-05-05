@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBrand | Complete Landing Page</title>
+  </head>
+  <body>
+    <!-- HEADER with Navigation -->
+    <header>
+      <h1>MyBrand</h1>
+      <p>Building better websites, one day at a time</p>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME / HERO SECTION -->
+      <section id="home">
+        <h2>Welcome to MyBrand</h2>
+        <p>
+          We create beautiful, responsive websites that work on all devices.
+        </p>
+        <p>This landing page combines everything we learned in Days 1-13:</p>
+        <ul>
+          <li>Semantic HTML (header, main, section, footer)</li>
+          <li>Navigation menu with internal links</li>
+          <li>Forms with radio buttons and checkboxes</li>
+          <li>FAQ with details/summary</li>
+          <li>And much more!</li>
+        </ul>
+      </section>
+
+      <!-- FEATURES SECTION (Cards) -->
+      <section id="features">
+        <h2>Our Features</h2>
+
+        <div>
+          <h3>📱 Responsive Design</h3>
+          <p>Works perfectly on desktop, tablet, and mobile devices.</p>
+        </div>
+
+        <div>
+          <h3>⚡ Fast Performance</h3>
+          <p>Optimized code that loads quickly.</p>
+        </div>
+
+        <div>
+          <h3>🔒 Secure</h3>
+          <p>Built with security best practices.</p>
+        </div>
+
+        <div>
+          <h3>♿ Accessible</h3>
+          <p>Semantic HTML for screen readers and accessibility.</p>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          I started learning front-end development on May 1, 2026. Since then, I
+          have built 14 projects in 14 days using semantic HTML.
+        </p>
+        <p>This landing page demonstrates everything I have learned so far:</p>
+        <ul>
+          <li>Day 1: Business Card</li>
+          <li>Day 2: Recipe Page</li>
+          <li>Day 3: Contact Form</li>
+          <li>Day 4: Image Gallery</li>
+          <li>Day 5: Navigation Menu</li>
+          <li>Day 6: Data Table</li>
+          <li>Day 7: Video Embed</li>
+          <li>Day 8: Semantic Blog</li>
+          <li>Day 9: Two-Page Website</li>
+          <li>Day 10: FAQ Page</li>
+          <li>Day 11: Registration Form</li>
+          <li>Day 12: Dropdown (Select)</li>
+          <li>Day 13: Checkbox & Radio</li>
+          <li>Day 14: Complete Landing Page</li>
+        </ul>
+      </section>
+
+      <!-- CONTACT SECTION (Form with radio and checkbox) -->
+      <section id="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="partnership">Partnership</option>
+            </select>
+          </div>
+
+          <div>
+            <p>How did you hear about us?</p>
+            <input type="radio" id="social" name="heard" value="social" />
+            <label for="social">Social Media</label>
+
+            <input type="radio" id="friend" name="heard" value="friend" />
+            <label for="friend">Friend</label>
+
+            <input type="radio" id="search" name="heard" value="search" />
+            <label for="search">Search Engine</label>
+          </div>
+
+          <div>
+            <p>What would you like to receive?</p>
+            <input
+              type="checkbox"
+              id="newsletter"
+              name="updates"
+              value="newsletter"
+            />
+            <label for="newsletter">Newsletter</label>
+
+            <input type="checkbox" id="offers" name="updates" value="offers" />
+            <label for="offers">Special Offers</label>
+
+            <input
+              type="checkbox"
+              id="updates"
+              name="updates"
+              value="updates"
+            />
+            <label for="updates">Product Updates</label>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div>
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms"
+              >I agree to the <a href="#">Terms and Conditions</a></label
+            >
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <!-- FAQ SECTION (Details/Summary) -->
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What technologies do you use?</summary>
+          <p>
+            I use HTML5, CSS3, Tailwind CSS, JavaScript, React, and TypeScript.
+          </p>
+        </details>
+
+        <details>
+          <summary>How long does it take to build a website?</summary>
+          <p>
+            It depends on the complexity. A simple landing page can take 1-2
+            days. A complex web app can take weeks or months.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do you offer support after launch?</summary>
+          <p>Yes! I provide 30 days of free support after launch.</p>
+        </details>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2026 MyBrand. All rights reserved.</p>
+      <p>
+        Built with semantic HTML | <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a>
+      </p>
+      <p><a href="#home">Back to Top</a></p>
+    </footer>
+  </body>
+</html>
