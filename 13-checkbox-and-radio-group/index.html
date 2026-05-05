@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox & Radio Group Demo</title>
+</head>
+<body>
+
+    <header>
+        <h1>Checkbox & Radio Group Demo</h1>
+        <p>Understanding <code>type="checkbox"</code>, <code>type="radio"</code>, and <code>name</code> grouping</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Radio Buttons (Choose ONE)</h2>
+            <p>All radio buttons with the <strong>same name</strong> belong to the same group.</p>
+
+            <form>
+                <p>What is your preferred contact method?</p>
+
+                <div>
+                    <input type="radio" id="email" name="contact" value="email">
+                    <label for="email">Email</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="phone" name="contact" value="phone">
+                    <label for="phone">Phone</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="whatsapp" name="contact" value="whatsapp">
+                    <label for="whatsapp">WhatsApp</label>
+                </div>
+
+                <p><small>You can only select ONE option because all have <code>name="contact"</code></small></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Radio Buttons - Different Names (Multiple Groups)</h2>
+            <p>Different names = different groups. You can select one from EACH group.</p>
+
+            <form>
+                <p>Size (choose one):</p>
+                <div>
+                    <input type="radio" id="small" name="size" value="small">
+                    <label for="small">Small</label>
+
+                    <input type="radio" id="medium" name="size" value="medium">
+                    <label for="medium">Medium</label>
+
+                    <input type="radio" id="large" name="size" value="large">
+                    <label for="large">Large</label>
+                </div>
+
+                <p>Color (choose one):</p>
+                <div>
+                    <input type="radio" id="red" name="color" value="red">
+                    <label for="red">Red</label>
+
+                    <input type="radio" id="blue" name="color" value="blue">
+                    <label for="blue">Blue</label>
+
+                    <input type="radio" id="green" name="color" value="green">
+                    <label for="green">Green</label>
+                </div>
+
+                <p><small>You can select one size AND one color (two separate groups)</small></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Radio Button with Default Selected</h2>
+            <p>Use the <code>checked</code> attribute to pre-select an option.</p>
+
+            <form>
+                <p>Shipping speed:</p>
+                <div>
+                    <input type="radio" id="standard" name="shipping" value="standard" checked>
+                    <label for="standard">Standard (3-5 days)</label>
+                </div>
+                <div>
+                    <input type="radio" id="express" name="shipping" value="express">
+                    <label for="express">Express (1-2 days)</label>
+                </div>
+                <div>
+                    <input type="radio" id="overnight" name="shipping" value="overnight">
+                    <label for="overnight">Overnight</label>
+                </div>
+                <p><small>"Standard" is selected by default when the page loads.</small></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Checkboxes (Choose MULTIPLE)</h2>
+            <p>Checkboxes allow selecting zero, one, or many options.</p>
+
+            <form>
+                <p>Select all the toppings you want:</p>
+
+                <div>
+                    <input type="checkbox" id="cheese" name="toppings" value="cheese">
+                    <label for="cheese">Extra Cheese</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+                    <label for="pepperoni">Pepperoni</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                    <label for="mushrooms">Mushrooms</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="olives" name="toppings" value="olives">
+                    <label for="olives">Olives</label>
+                </div>
+
+                <p><small>Checkboxes with the SAME name send multiple values to the backend.</small></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Checkbox with Default Checked</h2>
+            <p>Use the <code>checked</code> attribute to pre-check a checkbox.</p>
+
+            <form>
+                <div>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                    <label for="newsletter">Subscribe to newsletter (checked by default)</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="terms" name="terms" value="agree" required>
+                    <label for="terms">I agree to the terms and conditions (required)</label>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Key Differences: Radio vs Checkbox</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Radio Buttons</th>
+                        <th>Checkboxes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Selection</th>
+                        <td>Only ONE</th>
+                        <td>ZERO, ONE, or MANY</th>
+                    </tr>
+                    <tr>
+                        <td>Deselect?</th>
+                        <td>Can't deselect (need another option)</th>
+                        <td>Can uncheck any time</th>
+                    </tr>
+                    <tr>
+                        <td>Same name?</th>
+                        <td>YES - required for grouping</th>
+                        <td>Optional - same name = multiple values</th>
+                    </tr>
+                    <tr>
+                        <td>Use case</th>
+                        <td>Gender, payment method, size</th>
+                        <td>Toppings, interests, agreement</th>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Website. Radio and Checkbox demo.</p>
+    </footer>
+
+</body>
+</html>

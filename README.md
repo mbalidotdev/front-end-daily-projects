@@ -49,3 +49,7 @@ _email, tel, date, password_
 ### [12. Dropdown Menu](https://mbalidotdev.github.io/front-end-daily-projects/12-dropdown-menu)
 
 _select, option, optgroup_
+
+### [13. Ckeckbox and Radio Group](https://mbalidotdev.github.io/front-end-daily-projects/13-checkbox-and-radio-buttons)
+
+_type="checkbox", type="radio", name_
