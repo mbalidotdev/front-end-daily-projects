@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card - CSS Design Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Profile Card Designs</h1>
+    </header>
+
+    <main>
+      <div class="cards-container">
+        <!-- CARD 1: Standard Profile Card -->
+        <div class="profile-card">
+          <img
+            src="https://placehold.co/120x120/4a90e2/white?text=JD"
+            alt="Profile photo"
+            class="profile-img"
+          />
+          <h2 class="profile-name">Jane Doe</h2>
+          <div class="profile-title">FRONT-END DEVELOPER</div>
+          <div class="divider"></div>
+          <p class="profile-bio">
+            Building beautiful, responsive websites with HTML, CSS, and
+            JavaScript. Passionate about clean code and great user experiences.
+          </p>
+          <div class="contact-info">
+            <p>📍 Brussels, Belgium</p>
+            <p>✉️ jane.doe@example.com</p>
+            <p>📱 +32 456 78 90</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">🐦 Twitter</a>
+            <a href="#" class="social-link">💼 LinkedIn</a>
+            <a href="#" class="social-link">🐙 GitHub</a>
+          </div>
+          <button class="contact-btn">Contact Me</button>
+        </div>
+
+        <!-- CARD 2: Dark Theme Card -->
+        <div class="profile-card dark">
+          <img
+            src="https://placehold.co/120x120/e94560/white?text=MS"
+            alt="Profile photo"
+            class="profile-img"
+          />
+          <h2 class="profile-name">Mike Smith</h2>
+          <div class="profile-title">UI/UX DESIGNER</div>
+          <div class="divider"></div>
+          <p class="profile-bio">
+            Creating intuitive and accessible designs that users love. I turn
+            complex problems into simple, elegant solutions.
+          </p>
+          <div class="contact-info">
+            <p>📍 Amsterdam, NL</p>
+            <p>✉️ mike@example.com</p>
+            <p>📱 +31 123 45 67</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">🐦 Twitter</a>
+            <a href="#" class="social-link">💼 LinkedIn</a>
+            <a href="#" class="social-link">📷 Instagram</a>
+          </div>
+          <button class="contact-btn">Contact Me</button>
+        </div>
+
+        <!-- CARD 3: Minimal Style Card -->
+        <div class="profile-card minimal">
+          <img
+            src="https://placehold.co/120x120/666/white?text=SR"
+            alt="Profile photo"
+            class="profile-img"
+          />
+          <h2 class="profile-name">Sarah Chen</h2>
+          <div class="profile-title">FULL-STACK DEVELOPER</div>
+          <div class="divider"></div>
+          <p class="profile-bio">
+            Full-stack developer with a passion for learning and building
+            meaningful applications that make a difference.
+          </p>
+          <div class="contact-info">
+            <p>📍 Berlin, DE</p>
+            <p>✉️ sarah.chen@example.com</p>
+            <p>📱 +49 987 65 43</p>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link">🐦 Twitter</a>
+            <a href="#" class="social-link">💼 LinkedIn</a>
+            <a href="#" class="social-link">🐙 GitHub</a>
+          </div>
+          <button class="contact-btn">Contact Me</button>
+        </div>
+      </div>
+
+      <!-- SIMPLE PROFILE CARD (Starter template - your turn!) -->
+      <section
+        style="
+          margin-top: 50px;
+          padding: 20px;
+          background-color: #e9ecef;
+          border-radius: 12px;
+        "
+      >
+        <h2 style="text-align: center">
+          📝 Your Turn: Build Your Own Profile Card
+        </h2>
+        <p style="text-align: center; max-width: 600px; margin: 10px auto">
+          Use the code below as a template. Replace the placeholder content with
+          your real information!
+        </p>
+
+        <div style="display: flex; justify-content: center; margin-top: 20px">
+          <div style="width: 320px">
+            <div class="profile-card" style="margin: 0 auto">
+              <img
+                src="https://placehold.co/120x120/4a90e2/white?text=YOU"
+                alt="Profile photo"
+                class="profile-img"
+              />
+              <h2 class="profile-name">Your Name</h2>
+              <div class="profile-title">YOUR TITLE</div>
+              <div class="divider"></div>
+              <p class="profile-bio">
+                Write your bio here. Tell people what you do and what you're
+                passionate about.
+              </p>
+              <div class="contact-info">
+                <p>📍 Your City, Country</p>
+                <p>✉️ your.email@example.com</p>
+                <p>📱 +XX XXX XXX XXX</p>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link">🐦 Twitter</a>
+                <a href="#" class="social-link">💼 LinkedIn</a>
+                <a href="#" class="social-link">🐙 GitHub</a>
+              </div>
+              <button class="contact-btn">Contact Me</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="code-example"
+          style="
+            background-color: #263238;
+            color: #82b1ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: &quot;Courier New&quot;, monospace;
+            font-size: 13px;
+            overflow-x: auto;
+          "
+        >
+          <strong style="color: white"
+            >// HTML Structure for Profile Card</strong
+          ><br />
+          &lt;div class="profile-card"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="photo.jpg"
+          class="profile-img"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2
+          class="profile-name"&gt;Name&lt;/h2&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+          class="profile-title"&gt;Title&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="divider"&gt;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="profile-bio"&gt;Bio
+          text&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+          class="contact-info"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="contact-btn"&gt;Contact
+          Me&lt;/button&gt;<br />
+          &lt;/div&gt;
+        </div>
+      </section>
+    </main>
+
+    <footer
+      style="text-align: center; margin-top: 50px; padding: 20px; color: #666"
+    >
+      <p>
+        &copy; 2026 Profile Card Demo - CSS Box Model, Typography, and Hover
+        Effects
+      </p>
+    </footer>
+  </body>
+</html>

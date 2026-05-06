@@ -71,3 +71,7 @@ _font-family, font-size, font-weight, line-height, letter-spacing_
 ### [17. Box Model Demo](https://mbalidotdev.github.io/front-end-daily-projects/17-box-model-demo)
 
 _margin, padding, border, width, height, box-sizing_
+
+### [18. Profile Card](https://mbalidotdev.github.io/front-end-daily-projects/18-profile-card)
+
+_box-shadow, border-radius, centering_
