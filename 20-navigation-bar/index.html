@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center; margin: 30px 0 10px">
+        🧭 Navigation Bar Examples
+      </h1>
+      <p style="text-align: center; color: #666; margin-bottom: 40px">
+        Using Flexbox for horizontal navigation layouts
+      </p>
+    </header>
+
+    <main style="max-width: 1200px; margin: 0 auto; padding: 0 20px">
+      <!-- NAVBAR 1: Basic Flex Row -->
+      <div class="demo-section">
+        <div class="demo-title">1. Basic Flex Row</div>
+        <div class="demo-description">
+          Simple navigation menu using <code>display: flex</code> with
+          <code>gap</code> for spacing.
+        </div>
+
+        <div class="navbar-1">
+          <ul class="nav-1-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          /* Basic Flex Row Navigation */<br />
+          .nav-menu {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- NAVBAR 2: Logo + Navigation (space-between) -->
+      <div class="demo-section">
+        <div class="demo-title">2. Logo + Navigation (space-between)</div>
+        <div class="demo-description">
+          Logo on left, navigation on right using
+          <code>justify-content: space-between</code>.
+        </div>
+
+        <div class="navbar-2">
+          <div class="logo">MyBrand</div>
+          <ul class="nav-2-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          /* Logo left, nav right */<br />
+          .navbar {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br />
+          }
+        </div>
+      </div>
+
+      <!-- NAVBAR 3: Navigation with Button -->
+      <div class="demo-section">
+        <div class="demo-title">3. Navigation with Call-to-Action Button</div>
+        <div class="demo-description">
+          Logo left, navigation center, button right. Common pattern for
+          marketing sites.
+        </div>
+
+        <div class="navbar-3">
+          <div class="logo-3">Startup</div>
+          <ul class="nav-3-menu">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <button class="btn-login">Get Started</button>
+        </div>
+
+        <div class="code">
+          /* Three sections: logo, nav, button */<br />
+          .navbar {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br />
+          }
+        </div>
+      </div>
+
+      <!-- NAVBAR 4: Centered Navigation -->
+      <div class="demo-section">
+        <div class="demo-title">4. Centered Navigation</div>
+        <div class="demo-description">
+          All navigation links centered using
+          <code>justify-content: center</code>.
+        </div>
+
+        <div class="navbar-4">
+          <ul class="nav-4-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          /* Centered navigation */<br />
+          .nav-menu {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 35px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- NAVBAR 5: Dropdown Ready -->
+      <div class="demo-section">
+        <div class="demo-title">5. Dropdown Ready Navigation</div>
+        <div class="demo-description">
+          Navigation with dropdown indicator (▼). CSS dropdown will be added on
+          Day 44.
+        </div>
+
+        <div class="navbar-5">
+          <div class="logo-5">MySite</div>
+          <ul class="nav-5-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li class="has-dropdown">
+              <a href="#" class="dropdown-arrow">Resources</a>
+            </li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          /* Dropdown indicator using pseudo-element */<br />
+          .dropdown-arrow::after {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: " ▼";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 10px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- NAVBAR 6: Mobile-Friendly (Responsive) -->
+      <div class="demo-section">
+        <div class="demo-title">6. Mobile-Friendly Navigation (Responsive)</div>
+        <div class="demo-description">
+          On desktop: row layout. On mobile: hamburger menu (structure shown,
+          JavaScript needed for toggle).
+        </div>
+
+        <div class="navbar-6">
+          <div class="logo-6">MyBrand</div>
+          <div class="menu-icon">☰</div>
+          <ul class="nav-6-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="code">
+          /* Mobile responsive */<br />
+          @media (max-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.menu-icon { display: block; }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.nav-menu { display: none; }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;/* JavaScript toggles display on click */<br />
+          }
+        </div>
+      </div>
+
+      <!-- FLEXBOX PROPERTIES REFERENCE -->
+      <div class="demo-section">
+        <div class="demo-title">
+          📚 Flexbox Properties Used in Navigation Bars
+        </div>
+
+        <div class="code">
+          /* Parent Container Properties */<br />
+          display: flex; /* Enables flexbox */<br />
+          justify-content: center; /* Horizontal alignment */<br />
+          justify-content: space-between; /* Push items to edges */<br />
+          align-items: center; /* Vertical alignment */<br />
+          gap: 20px; /* Space between items */<br />
+          flex-wrap: wrap; /* Wrap on small screens */<br /><br />
+
+          /* Common Mistakes to Avoid */<br />
+          /* ❌ Forgetting to remove list bullets */<br />
+          list-style: none; /* ✅ Remove bullets from ul */<br />
+          <br />
+          /* ❌ Underlines on links */<br />
+          text-decoration: none; /* ✅ Remove underlines */<br />
+          <br />
+          /* ❌ Default padding on ul */<br />
+          padding: 0; /* ✅ Remove default padding */<br />
+          margin: 0; /* ✅ Remove default margin */
+        </div>
+      </div>
+
+      <!-- QUIZ SECTION -->
+      <div class="demo-section">
+        <div class="demo-title">🧠 Quick Quiz</div>
+        <div class="demo-description">
+          Test your Flexbox navigation knowledge.
+        </div>
+
+        <div class="code">
+          /* Question 1: How to put logo on left and nav on right? */<br />
+          /* Answer: display: flex; justify-content: space-between; */<br /><br />
+
+          /* Question 2: How to center all navigation links? */<br />
+          /* Answer: display: flex; justify-content: center; */<br /><br />
+
+          /* Question 3: How to add space between nav items? */<br />
+          /* Answer: gap: 20px; */<br /><br />
+
+          /* Question 4: How to vertically center items? */<br />
+          /* Answer: align-items: center; */
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🧭 Navigation Bar Examples - Using Flexbox for Row Layouts</p>
+      <p>
+        💡 The same flexbox properties work for cards, galleries, and any row
+        layout!
+      </p>
+    </footer>
+  </body>
+</html>

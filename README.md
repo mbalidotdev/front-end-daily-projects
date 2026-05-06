@@ -79,3 +79,7 @@ _box-shadow, border-radius, centering_
 ### [19. Centering Playground](https://mbalidotdev.github.io/front-end-daily-projects/19-centering-playground)
 
 _centering_
+
+### [20. Navigation Bar](https://mbalidotdev.github.io/front-end-daily-projects/20-navigation-bar)
+
+_display: flex, justify-content, align-items_
