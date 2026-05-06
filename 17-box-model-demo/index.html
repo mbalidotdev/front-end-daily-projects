@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📦 CSS Box Model Demo</h1>
+      <p>Understanding margin, border, padding, and content</p>
+
+      <div class="code-example">
+        /* Every HTML element is a box */<br />
+        .element {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;margin: 30px; /* space OUTSIDE the border */<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid black; /* edge around padding
+        */<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;padding: 20px; /* space INSIDE the border */<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;width: 200px; /* content width */<br />
+        }
+      </div>
+    </header>
+
+    <main>
+      <!-- VISUAL REPRESENTATION -->
+      <section>
+        <h2>🎨 Visual Representation of Box Model</h2>
+        <div class="box-model-visual">
+          <div
+            style="
+              background-color: #c5cae9;
+              padding: 30px;
+              border: 2px dashed #3f51b5;
+            "
+          >
+            <div
+              style="
+                background-color: #9fa8da;
+                padding: 20px;
+                text-align: center;
+              "
+            >
+              <strong>CONTENT</strong><br />
+              Text, images, or other elements
+            </div>
+            <div style="text-align: center; margin-top: 10px; font-size: 12px">
+              ↑ PADDING (space inside border) ↑
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 5px; font-size: 12px">
+            ↑ BORDER (edge around padding) ↑
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENT DEMO -->
+      <section>
+        <h2>📄 1. CONTENT - The actual text or image</h2>
+        <div class="content-box">
+          <strong>Content box only</strong><br />
+          No padding, no border, no margin.<br />
+          This is just the content.
+        </div>
+        <p class="code-example">width: 300px; /* Only content width */</p>
+      </section>
+
+      <!-- PADDING DEMO -->
+      <section>
+        <h2>🟡 2. PADDING - Space INSIDE the border</h2>
+        <p>
+          Padding adds space between content and border. Background color
+          extends into padding.
+        </p>
+
+        <div class="padding-none">
+          No padding - text touches the border edge
+        </div>
+        <div class="padding-small">Padding: 10px - subtle space inside</div>
+        <div class="padding-medium">
+          Padding: 20px - comfortable reading space
+        </div>
+        <div class="padding-large">Padding: 40px - lots of breathing room</div>
+
+        <div class="padding-individual">
+          <strong>Padding on individual sides</strong><br />
+          top: 10px | right: 30px | bottom: 20px | left: 5px
+        </div>
+
+        <div class="padding-shorthand">
+          <strong>Padding shorthand</strong><br />
+          padding: 20px 40px; = top/bottom 20px, left/right 40px
+        </div>
+
+        <p class="code-example">
+          padding: 20px; /* all sides */<br />
+          padding: 10px 20px; /* top/bottom | left/right */<br />
+          padding-top: 10px; /* individual side */
+        </p>
+      </section>
+
+      <!-- BORDER DEMO -->
+      <section>
+        <h2>🟢 3. BORDER - The edge around padding</h2>
+        <p>Border wraps around padding and content.</p>
+
+        <div class="border-none">No border</div>
+        <div class="border-solid">Solid border</div>
+        <div class="border-dashed">Dashed border</div>
+        <div class="border-dotted">Dotted border</div>
+        <div class="border-thick">Thick border (8px)</div>
+        <div class="border-rounded">Rounded corners (border-radius: 15px)</div>
+
+        <p class="code-example">
+          border: 2px solid blue;<br />
+          border-radius: 10px; /* rounds corners */<br />
+          border-top: 1px dashed red; /* border on one side */
+        </p>
+      </section>
+
+      <!-- MARGIN DEMO -->
+      <section>
+        <h2>🔵 4. MARGIN - Space OUTSIDE the border</h2>
+        <p>
+          Margin adds space between elements. Background color does NOT extend
+          into margin.
+        </p>
+
+        <div style="background-color: #e1bee7; padding: 5px">
+          <div class="margin-none">Margin: 0 - box touches container edge</div>
+        </div>
+
+        <div style="background-color: #e1bee7; padding: 5px; margin-top: 10px">
+          <div class="margin-small">
+            Margin: 10px - small gap from other elements
+          </div>
+        </div>
+
+        <div style="background-color: #e1bee7; padding: 5px; margin-top: 10px">
+          <div class="margin-medium">Margin: 30px - noticeable gap</div>
+        </div>
+
+        <div style="background-color: #e1bee7; padding: 5px; margin-top: 10px">
+          <div class="margin-large">Margin: 60px - large gap</div>
+        </div>
+
+        <div class="margin-individual">
+          <strong>Margin on individual sides</strong><br />
+          top: 20px | right: 10px | bottom: 30px | left: 50px
+        </div>
+
+        <p class="code-example">
+          margin: 20px; /* all sides */<br />
+          margin: 10px 20px; /* top/bottom | left/right */<br />
+          margin: 0 auto; /* centers block elements horizontally */
+        </p>
+      </section>
+
+      <!-- VISUAL COMPARISON -->
+      <section>
+        <h2>👁️ Visual Comparison: See the Difference</h2>
+
+        <div class="comparison-box no-padding-box">
+          <strong>No Padding</strong><br />
+          Text touches border edge
+        </div>
+
+        <div class="comparison-box with-padding-box">
+          <strong>With Padding: 20px</strong><br />
+          Space between text and border
+        </div>
+
+        <div class="comparison-box with-margin-box">
+          <strong>With Margin: 20px</strong><br />
+          Space between this box and others
+        </div>
+      </section>
+
+      <!-- COMPLETE BOX MODEL -->
+      <section>
+        <h2>📦 Complete Box Model Example</h2>
+        <div class="box-model-demo">
+          <strong>Complete Box Model</strong><br />
+          margin: 40px (space outside)<br />
+          border: 5px solid orange (edge)<br />
+          padding: 30px (space inside)<br />
+          width: 300px (content width)
+        </div>
+        <p class="code-example">
+          .box {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 300px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 30px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border: 5px solid orange;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin: 40px;<br />
+          }
+        </p>
+      </section>
+
+      <!-- BOX-SIZING: BORDER-BOX -->
+      <section>
+        <h2>📏 Important: box-sizing Property</h2>
+        <p>
+          <strong>Without box-sizing: border-box</strong> - width + padding +
+          border = total width
+        </p>
+        <div class="no-box-sizing">
+          width: 300px + padding: 20px + border: 5px = 350px total width
+        </div>
+
+        <p>
+          <strong>With box-sizing: border-box</strong> - padding and border
+          included inside width
+        </p>
+        <div class="with-box-sizing">
+          width: 300px (includes padding and border inside)
+        </div>
+
+        <p class="code-example">
+          /* Modern reset - use on all elements */<br />
+          * {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br />
+          }
+        </p>
+      </section>
+
+      <!-- QUICK REFERENCE CARD -->
+      <section>
+        <h2>📋 Quick Reference Card</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse">
+          <thead>
+            <tr style="background-color: #263238; color: white">
+              <th style="padding: 10px">Layer</th>
+              <th style="padding: 10px">What it does</th>
+              <th style="padding: 10px">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px"><strong>Content</strong></td>
+              <td style="padding: 10px">The actual text/image</td>
+              <td style="padding: 10px"><code>width: 200px;</code></td>
+            </tr>
+            <tr style="background-color: #ffecb3">
+              <td style="padding: 10px"><strong>Padding</strong></td>
+              <td style="padding: 10px">
+                Space INSIDE border (background applies)
+              </td>
+              <td style="padding: 10px"><code>padding: 20px;</code></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px"><strong>Border</strong></td>
+              <td style="padding: 10px">Edge around padding</td>
+              <td style="padding: 10px">
+                <code>border: 2px solid black;</code>
+              </td>
+            </tr>
+            <tr style="background-color: #b3e5fc">
+              <td style="padding: 10px"><strong>Margin</strong></td>
+              <td style="padding: 10px">Space OUTSIDE border (transparent)</td>
+              <td style="padding: 10px"><code>margin: 30px;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Box Model Demo - Understanding Margin, Border, Padding &amp;
+        Content
+      </p>
+      <p>
+        💡 Remember: Use your browser's DevTools (F12) to inspect any element
+        and see its box model!
+      </p>
+    </footer>
+  </body>
+</html>
