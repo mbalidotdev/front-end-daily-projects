@@ -75,3 +75,7 @@ _margin, padding, border, width, height, box-sizing_
 ### [18. Profile Card](https://mbalidotdev.github.io/front-end-daily-projects/18-profile-card)
 
 _box-shadow, border-radius, centering_
+
+### [19. Centering Playground](https://mbalidotdev.github.io/front-end-daily-projects/19-centering-playground)
+
+_centering_

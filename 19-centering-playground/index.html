@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centering Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Centering Playground</h1>
+      <div class="main-title">
+        <p>Master horizontal & vertical centering with different CSS methods</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- =================================== -->
+      <!-- METHOD 1: TEXT-ALIGN CENTER -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">📝 Method 1: text-align: center</div>
+        <div class="demo-description">
+          Centers <strong>inline</strong> and
+          <strong>inline-block</strong> elements horizontally.<br />
+          Best for: text, buttons, images, inline elements.
+        </div>
+
+        <div class="text-align-container">
+          <span class="inline-box">This text is centered!</span>
+        </div>
+
+        <div class="code">
+          /* Centers inline and inline-block elements */<br />
+          .text-align-container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- METHOD 2: MARGIN AUTO -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">📦 Method 2: margin: 0 auto</div>
+        <div class="demo-description">
+          Centers <strong>block-level</strong> elements horizontally.<br />
+          Best for: divs, sections, containers. Requires a fixed width.
+        </div>
+
+        <div class="margin-auto-container">
+          <div class="margin-auto-box">This box is centered!</div>
+        </div>
+
+        <div class="code">
+          /* Centers block elements with fixed width */<br />
+          .margin-auto-box {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin-left: auto;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin-right: auto;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- METHOD 3: FLEXBOX (HORIZONTAL + VERTICAL) -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">🎯 Method 3: Flexbox (Perfect Centering)</div>
+        <div class="demo-description">
+          Centers <strong>horizontally AND vertically</strong> - the modern,
+          best way.<br />
+          Best for: any element, responsive layouts.
+        </div>
+
+        <div class="flex-center-container">
+          <div class="center-box">
+            Perfectly Centered!<br />
+            ↓<br />
+            Horizontal + Vertical
+          </div>
+        </div>
+
+        <div class="code">
+          /* Perfect centering with Flexbox */<br />
+          .flex-center-container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center; /* Horizontal */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center; /* Vertical */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;height: 200px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- METHOD 4: FLEXBOX (HORIZONTAL ONLY) -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">⬅️ Method 4: Flexbox (Horizontal Only)</div>
+        <div class="demo-description">
+          Centers <strong>horizontally only</strong> - items stay at top.<br />
+          Best for: navigation menus, button groups, card rows.
+        </div>
+
+        <div class="flex-horizontal">
+          <div class="center-box">Horizontally Centered</div>
+        </div>
+
+        <div class="code">
+          /* Horizontal centering only */<br />
+          .flex-horizontal {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- METHOD 5: GRID CENTERING -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">🔲 Method 5: Grid (place-items: center)</div>
+        <div class="demo-description">
+          Centers <strong>horizontally AND vertically</strong> - even simpler
+          than Flexbox.<br />
+          Best for: centering a single element.
+        </div>
+
+        <div class="grid-center-container">
+          <div class="center-box">
+            Grid Centering!<br />
+            ↓<br />
+            Horizontal + Vertical
+          </div>
+        </div>
+
+        <div class="code">
+          /* Perfect centering with Grid (simpler syntax) */<br />
+          .grid-center-container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;place-items: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;height: 200px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- BONUS: MULTIPLE ITEMS -->
+      <!-- =================================== -->
+      <div class="demo-section">
+        <div class="demo-title">✨ Bonus: Centering Multiple Items</div>
+        <div class="demo-description">
+          Flexbox easily centers multiple items in a row.
+        </div>
+
+        <div class="flex-multiple">
+          <div class="small-box">Item 1</div>
+          <div class="small-box">Item 2</div>
+          <div class="small-box">Item 3</div>
+          <div class="small-box">Item 4</div>
+        </div>
+
+        <div class="code">
+          /* Multiple centered items */<br />
+          .flex-multiple {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- QUIZ SECTION -->
+      <!-- =================================== -->
+      <div class="demo-section" style="border-left-color: #e94560">
+        <div class="demo-title">🧠 Quick Quiz</div>
+        <div class="demo-description">
+          Test your understanding. Which method would you use for each scenario?
+        </div>
+
+        <div class="code">
+          /* Question 1: Center a button inside a div */<br />
+          /* Answer: display: flex; justify-content: center; align-items:
+          center; */<br /><br />
+
+          /* Question 2: Center text inside a paragraph */<br />
+          /* Answer: text-align: center; */<br /><br />
+
+          /* Question 3: Center a div with a fixed width */<br />
+          /* Answer: margin: 0 auto; */<br /><br />
+
+          /* Question 4: Center everything both ways (modern method) */<br />
+          /* Answer: display: flex; justify-content: center; align-items:
+          center; */<br />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🎯 Centering Playground - Master Horizontal & Vertical Centering</p>
+      <p>💡 Remember: F12 → Inspect → See the box model in action!</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #1a1a2e;
+  color: #eee;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  color: #4a90e2;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Each demo section is a card */
+.demo-section {
+  background-color: #16213e;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-left: 4px solid #4a90e2;
+}
+
+.demo-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+}
+
+.demo-description {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* The container where centering happens */
+.center-container {
+  background-color: #0f3460;
+  border-radius: 12px;
+  margin: 20px 0;
+  position: relative;
+}
+
+/* The box being centered */
+.center-box {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+hr {
+  border-color: #2a3a5a;
+  margin: 30px 0;
+}
+
+/* ===================================
+           METHOD 1: TEXT-ALIGN CENTER
+           =================================== */
+.text-align-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.inline-box {
+  display: inline-block;
+  background-color: #e94560;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+}
+
+/* ===================================
+           METHOD 2: MARGIN AUTO
+           =================================== */
+.margin-auto-container {
+  padding: 40px;
+}
+
+.margin-auto-box {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e94560;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ===================================
+           METHOD 3: FLEXBOX CENTERING
+           =================================== */
+.flex-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* ===================================
+           METHOD 4: FLEXBOX HORIZONTAL ONLY
+           =================================== */
+.flex-horizontal {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* ===================================
+           METHOD 5: GRID CENTERING
+           =================================== */
+.grid-center-container {
+  display: grid;
+  place-items: center;
+  height: 200px;
+}
+
+/* ===================================
+           BONUS: MULTIPLE ITEMS IN FLEX
+           =================================== */
+.flex-multiple {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.small-box {
+  background-color: #e94560;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* ===================================
+           BONUS: ABSOLUTE POSITION CENTERING
+           =================================== */
+.absolute-container {
+  position: relative;
+  height: 200px;
+}
+
+.absolute-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
