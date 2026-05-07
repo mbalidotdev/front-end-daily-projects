@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Elements</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>✨ CSS Pseudo-Elements Reference</h1>
+        <div class="subtitle">
+          ::before, ::after, ::first-letter, ::selection, ::placeholder, and
+          more
+        </div>
+      </header>
+
+      <!-- DEMO 1: ::before -->
+      <div class="section">
+        <div class="section-title">1. ::before</div>
+        <div class="section-description">
+          Inserts content BEFORE an element's content.
+        </div>
+        <div class="before-demo">
+          <p>This paragraph has a star before it</p>
+        </div>
+        <div class="code">
+          /* ::before - inserts content before */<br />
+          p::before {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: "⭐ ";<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: ::after -->
+      <div class="section">
+        <div class="section-title">2. ::after</div>
+        <div class="section-description">
+          Inserts content AFTER an element's content.
+        </div>
+        <div class="after-demo">
+          <p>This paragraph has a star after it</p>
+        </div>
+        <div class="code">
+          /* ::after - inserts content after */<br />
+          p::after {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: " ⭐";<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: ::before + ::after together -->
+      <div class="section">
+        <div class="section-title">3. ::before + ::after Together</div>
+        <div class="both-demo">
+          <p>This paragraph has diamonds on both sides</p>
+        </div>
+        <div class="code">
+          /* Both ::before and ::after */<br />
+          p::before { content: "🔹 "; }<br />
+          p::after { content: " 🔹"; }
+        </div>
+      </div>
+
+      <!-- DEMO 4: Icons with ::before -->
+      <div class="section">
+        <div class="section-title">4. Icons with ::before (No extra HTML)</div>
+        <div class="section-description">
+          Add icons to list items without changing HTML.
+        </div>
+        <ul class="icon-demo">
+          <li>Completed task</li>
+          <li>Another completed task</li>
+          <li>Third task done</li>
+        </ul>
+        <div class="code">
+          /* Add checkmark icons to all list items */<br />
+          li::before {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: "✅";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin-right: 10px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 5: Badge with ::before -->
+      <div class="section">
+        <div class="section-title">5. Badge Effect with ::before</div>
+        <div class="section-description">
+          Create a "NEW" badge on any element.
+        </div>
+        <div class="badge-demo">Special Offer!</div>
+        <div class="code">
+          /* Badge with ::before */<br />
+          .badge-demo {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+          }<br />
+          .badge-demo::before {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: "NEW";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: -10px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;right: -10px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background: green;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 4px 8px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 6: ::first-letter -->
+      <div class="section">
+        <div class="section-title">6. ::first-letter</div>
+        <div class="section-description">
+          Styles the first letter of a text block (like drop caps).
+        </div>
+        <div class="first-letter-demo">
+          <p>
+            This paragraph has a large first letter. It looks like a drop cap
+            from old books.
+          </p>
+        </div>
+        <div class="code">
+          /* ::first-letter - drop cap effect */<br />
+          p::first-letter {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 48px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: #e94560;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 7: ::first-line -->
+      <div class="section">
+        <div class="section-title">7. ::first-line</div>
+        <div class="section-description">
+          Styles the first line of a text block.
+        </div>
+        <div class="first-line-demo">
+          <p>
+            This is the first line of this paragraph. The first line will be
+            bold and blue. The rest of the text will be normal. Resize your
+            browser to see the first line change.
+          </p>
+        </div>
+        <div class="code">
+          /* ::first-line - styles first line only */<br />
+          p::first-line {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: #4a90e2;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 8: ::selection -->
+      <div class="section">
+        <div class="section-title">8. ::selection</div>
+        <div class="section-description">
+          Styles text when highlighted by the user.
+        </div>
+        <div class="selection-demo">
+          <p>
+            Select (highlight) this text. The background will turn pink and text
+            white!
+          </p>
+        </div>
+        <div class="code">
+          /* ::selection - when user highlights text */<br />
+          p::selection {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #e94560;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 9: ::placeholder -->
+      <div class="section">
+        <div class="section-title">9. ::placeholder</div>
+        <div class="section-description">
+          Styles placeholder text in inputs.
+        </div>
+        <div class="placeholder-demo">
+          <input type="text" placeholder="Enter your name..." />
+        </div>
+        <div class="code">
+          /* ::placeholder - styles hint text in inputs */<br />
+          input::placeholder {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: #888;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-style: italic;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 10: ::marker -->
+      <div class="section">
+        <div class="section-title">10. ::marker</div>
+        <div class="section-description">
+          Styles bullet points or numbers in lists.
+        </div>
+        <ul class="marker-demo">
+          <li>First item with custom bullet color</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ul>
+        <div class="code">
+          /* ::marker - style list bullets/numbers */<br />
+          li::marker {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: #e94560;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 18px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 11: ::backdrop -->
+      <div class="section">
+        <div class="section-title">11. ::backdrop</div>
+        <div class="section-description">
+          Styles the background behind a dialog or modal.
+        </div>
+        <div class="dialog-demo">
+          <button onclick="document.getElementById('demoDialog').showModal()">
+            Open Dialog
+          </button>
+          <dialog id="demoDialog">
+            <h3>Modal Dialog</h3>
+            <p>This dialog has a custom backdrop color.</p>
+            <button onclick="document.getElementById('demoDialog').close()">
+              Close
+            </button>
+          </dialog>
+        </div>
+        <div class="code">
+          /* ::backdrop - behind modal/dialog */<br />
+          dialog::backdrop {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: rgba(0, 0, 0, 0.8);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 12: Quote with before/after -->
+      <div class="section">
+        <div class="section-title">
+          12. Practical: Quote Box with ::before and ::after
+        </div>
+        <div class="quote-demo">
+          The only way to do great work is to love what you do.
+        </div>
+        <div class="code">
+          /* Quote box with quotation marks */<br />
+          .quote-demo {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+          }<br />
+          .quote-demo::before {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: "“";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 60px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: -10px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;left: 10px;<br />
+          }<br />
+          .quote-demo::after {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: "”";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 60px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;bottom: -30px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;right: 10px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE TABLE -->
+      <div class="section">
+        <div class="section-title">📚 Pseudo-Elements Quick Reference</div>
+
+        <div class="code">
+          /* =================================== PSEUDO-ELEMENTS (:: two colons)
+          =================================== */ ::before /* Insert content
+          BEFORE element */<br />
+          ::after /* Insert content AFTER element */<br />
+          ::first-letter /* First letter of text block */<br />
+          ::first-line /* First line of text block */<br />
+          ::selection /* Highlighted text */<br />
+          ::placeholder /* Input placeholder text */<br />
+          ::marker /* List bullet points/numbers */<br />
+          ::backdrop /* Behind modal/dialog */<br />
+          ::file-selector-button /* Style file upload button */<br /><br />
+
+          /* =================================== IMPORTANT RULES
+          =================================== */ /* 1. content property is
+          REQUIRED for ::before and ::after */<br />
+          .element::before { content: ""; } /* Must have content */<br /><br />
+
+          /* 2. Two colons :: is modern syntax (CSS3) */<br />
+          /* One colon : is older syntax (CSS2) - still works */<br /><br />
+
+          /* 3. ::before and ::after work on most elements, but not all */<br />
+          /* Does NOT work on: img, input, textarea, select, br, hr */<br /><br />
+
+          /* =================================== COMMON USE CASES
+          =================================== */ /* Icons before list items
+          */<br />
+          li::before { content: "✓ "; }<br /><br />
+
+          /* Badges on elements */<br />
+          .element::before { content: "NEW"; position: absolute; }<br /><br />
+
+          /* Drop caps (old book style) */<br />
+          p::first-letter { font-size: 48px; font-weight: bold; }<br /><br />
+
+          /* Custom placeholder style */<br />
+          input::placeholder { color: gray; font-style: italic; }
+        </div>
+      </div>
+
+      <!-- Pseudo-Class vs Pseudo-Element Comparison -->
+      <div class="section">
+        <div class="section-title">🔄 Pseudo-Class vs Pseudo-Element</div>
+
+        <div class="code">
+          /* =================================== PSEUDO-CLASSES (one colon :)
+          Target a STATE of an element =================================== */
+          :hover /* Mouse over */<br />
+          :focus /* Focused */<br />
+          :first-child /* Position in parent */<br />
+          :nth-child() /* Position in parent */<br /><br />
+
+          /* =================================== PSEUDO-ELEMENTS (two colons ::)
+          Target a PART of an element =================================== */
+          ::before /* Inserted content before */<br />
+          ::after /* Inserted content after */<br />
+          ::first-letter /* First letter */<br />
+          ::selection /* Highlighted text */<br /><br />
+
+          /* =================================== QUICK EXAMPLE
+          =================================== */ /* Pseudo-class - targets STATE
+          */<br />
+          button:hover { background: red; }<br /><br />
+
+          /* Pseudo-element - targets PART */<br />
+          p::first-letter { font-size: 48px; }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What pseudo-element inserts content BEFORE an element?
+          */ /* Answer: ::before */ /* Question 2: What property is REQUIRED for
+          ::before and ::after? */ /* Answer: content */ /* Question 3: What
+          pseudo-element styles highlighted text? */ /* Answer: ::selection */
+          /* Question 4: What is the difference between :first-child and
+          ::first-letter? */ /* Answer: :first-child is a pseudo-class
+          (state/position). ::first-letter is a pseudo-element (part of
+          element). */ /* Question 5: Can ::before work on an <img /> tag? */ /*
+          Answer: No. Does not work on self-closing tags like img, input, br, hr
+          */
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          ✨ CSS Pseudo-Elements Reference - ::before, ::after, ::first-letter,
+          ::selection, and more
+        </p>
+        <p>
+          💡 Save this as a reference for content insertion, styling, and visual
+          effects
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Demo dialog functionality
+      const dialog = document.getElementById("demoDialog");
+    </script>
+  </body>
+</html>
