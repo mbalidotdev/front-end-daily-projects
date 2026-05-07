@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===================================
+           FORM CONTAINER
+           =================================== */
+.form-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.form-description {
+  color: #666;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===================================
+           FORM GROUP (each field)
+           =================================== */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.required {
+  color: #e94560;
+  margin-left: 4px;
+}
+
+/* ===================================
+           INPUT STYLES (default state)
+           =================================== */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+/* ===================================
+           FOCUS STATE (when you click inside)
+           =================================== */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ===================================
+           HOVER STATE
+           =================================== */
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #aaa;
+}
+
+/* ===================================
+           VALID STATE (when input is valid)
+           =================================== */
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: #2ecc71;
+}
+
+/* ===================================
+           INVALID STATE (when input is invalid)
+           =================================== */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #e74c3c;
+}
+
+/* Required field that is empty shows red border on submit attempt */
+input:required:invalid,
+select:required:invalid {
+  border-color: #e0e0e0;
+}
+
+/* ===================================
+           CHECKBOX & RADIO STYLES
+           =================================== */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input {
+  width: auto;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-option input {
+  width: auto;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* ===================================
+           BUTTON STYLES
+           =================================== */
+.btn-submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ===================================
+           ERROR MESSAGE STYLES
+           =================================== */
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+input:invalid:focus + .error-message,
+input:invalid:not(:placeholder-shown) + .error-message {
+  display: block;
+}
+
+/* ===================================
+           RESPONSIVE
+           =================================== */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 25px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ===================================
+           SECOND FORM EXAMPLE (inline layout)
+           =================================== */
+.second-example {
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.inline-form .form-group {
+  flex: 1;
+  margin-bottom: 0;
+  min-width: 150px;
+}
+
+.inline-form button {
+  flex-shrink: 0;
+  width: auto;
+  padding: 12px 25px;
+}
+
+hr {
+  margin: 40px 0;
+  border-color: #eee;
+}
+
+.reference {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.code {
+  background-color: #1e1e2e;
+  color: #82b1ff;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- MAIN FORM EXAMPLE -->
+      <div class="form-container">
+        <h1>📝 Contact Us</h1>
+        <div class="form-description">
+          We'd love to hear from you. Fill out the form and we'll respond within
+          24 hours.
+        </div>
+
+        <form>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+            <div class="error-message">Please enter your name</div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email"
+              >Email Address <span class="required">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <div class="error-message">Please enter a valid email address</div>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+32 123 45 67 89"
+            />
+          </div>
+
+          <!-- Subject (Dropdown) -->
+          <div class="form-group">
+            <label for="subject">Subject <span class="required">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="billing">Billing Question</option>
+              <option value="partnership">Partnership</option>
+            </select>
+          </div>
+
+          <!-- How did you hear about us? (Radio) -->
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="social" name="heard" value="social" />
+                <label for="social">Social Media</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="friend" name="heard" value="friend" />
+                <label for="friend">Friend</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="search" name="heard" value="search" />
+                <label for="search">Search Engine</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us what you think..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Newsletter Checkbox -->
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              <label for="newsletter">Subscribe to our newsletter</label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- SECOND EXAMPLE: INLINE FORM -->
+      <div class="second-example">
+        <h2>✨ Newsletter Signup (Inline Form)</h2>
+        <div class="form-description">Enter your email to get updates.</div>
+
+        <form class="inline-form">
+          <div class="form-group">
+            <label for="inline-email">Email Address</label>
+            <input
+              type="email"
+              id="inline-email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit" style="width: auto">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <!-- REFERENCE: FOCUS STATES EXPLANATION -->
+      <div class="reference">
+        <h3>🎯 What Are Focus States?</h3>
+        <div class="code">
+          /* Focus state = when you click/tab into an input */<br />
+          input:focus {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;outline: none; /* Removes default blue outline
+          */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-color: #667eea; /* Changes border color
+          */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+          /* Adds glow */<br />
+          }<br /><br />
+
+          /* Other useful pseudo-classes */<br />
+          input:hover { } /* When mouse is over */<br />
+          input:valid { } /* When input has valid value */<br />
+          input:invalid { } /* When input has invalid value */<br />
+          input:disabled { } /* When input is disabled */<br />
+          input:read-only { } /* When input cannot be edited */
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="reference">
+        <h3>📚 Form Styling Reference</h3>
+        <div class="code">
+          /* Input padding - makes inputs comfortable to use */<br />
+          input, textarea, select {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 12px 16px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid #e0e0e0;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 10px;<br />
+          }<br /><br />
+
+          /* Focus state - visual feedback when user clicks */<br />
+          input:focus {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-color: #667eea;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 0 3px
+          rgba(102,126,234,0.2);<br />
+          }<br /><br />
+
+          /* Transition - smooth animation for all changes */<br />
+          input {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.3s ease;<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="reference">
+        <h3>🧠 Quick Quiz</h3>
+        <div class="code">
+          /* Question 1: What pseudo-class styles an input when clicked? */<br />
+          /* Answer: :focus */<br /><br />
+
+          /* Question 2: How to remove the default blue outline on focus? */<br />
+          /* Answer: outline: none; */<br /><br />
+
+          /* Question 3: What adds a glow effect around an input? */<br />
+          /* Answer: box-shadow: 0 0 0 3px rgba(0,0,0,0.2); */<br /><br />
+
+          /* Question 4: What makes the border change smoothly? */<br />
+          /* Answer: transition: all 0.3s ease; */
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
