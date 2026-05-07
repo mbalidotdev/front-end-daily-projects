@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+.demo-box {
+  background-color: #2a3a5a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+hr {
+  border-color: #2a3a5a;
+  margin: 30px 0;
+}
+
+/* ===================================
+           DEMO 1: :hover (already covered, but review)
+           =================================== */
+.hover-box {
+  background-color: #e94560;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-box:hover {
+  background-color: #c73b54;
+  transform: scale(1.02);
+}
+
+/* ===================================
+           DEMO 2: :focus (already covered)
+           =================================== */
+.focus-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #2a3a5a;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.focus-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* ===================================
+           DEMO 3: :first-child and :last-child
+           =================================== */
+.list-demo {
+  list-style: none;
+}
+
+.list-demo li {
+  background-color: #2a3a5a;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.list-demo li:first-child {
+  background-color: #4a90e2;
+  font-weight: bold;
+}
+
+.list-demo li:last-child {
+  background-color: #e94560;
+  font-weight: bold;
+}
+
+/* ===================================
+           DEMO 4: :nth-child()
+           =================================== */
+.nth-demo {
+  list-style: none;
+}
+
+.nth-demo li {
+  background-color: #2a3a5a;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Every even item (2nd, 4th, 6th...) */
+.nth-demo li:nth-child(even) {
+  background-color: #4a90e2;
+}
+
+/* Every odd item (1st, 3rd, 5th...) */
+.nth-demo-2 li:nth-child(odd) {
+  background-color: #e94560;
+}
+
+/* Every 3rd item */
+.nth-demo-3 li:nth-child(3n) {
+  background-color: #2ecc71;
+}
+
+/* Specific item (3rd child) */
+.nth-demo-4 li:nth-child(3) {
+  background-color: #f39c12;
+  font-weight: bold;
+}
+
+/* ===================================
+           DEMO 5: :first-of-type and :last-of-type
+           =================================== */
+.article-demo {
+  background-color: #2a3a5a;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.article-demo h3:first-of-type {
+  color: #4a90e2;
+}
+
+.article-demo p:last-of-type {
+  color: #2ecc71;
+}
+
+/* ===================================
+           DEMO 6: :not() (exclude items)
+           =================================== */
+.not-demo li {
+  background-color: #2a3a5a;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Style all li EXCEPT the one with class "special" */
+.not-demo li:not(.special) {
+  opacity: 0.6;
+}
+
+.special {
+  background-color: #e94560;
+  font-weight: bold;
+}
+
+/* ===================================
+           DEMO 7: :is() (group selectors)
+           =================================== */
+.is-demo h1,
+.is-demo h2,
+.is-demo h3 {
+  color: #4a90e2;
+}
+
+/* Same as above but shorter */
+.is-demo :is(h1, h2, h3) {
+  color: #e94560;
+}
+
+/* ===================================
+           DEMO 8: :where() (same as :is but lower specificity)
+           =================================== */
+.where-demo :where(h1, h2, h3) {
+  color: #2ecc71;
+}
+
+/* ===================================
+           DEMO 9: :checked (for checkboxes/radios)
+           =================================== */
+.checked-demo input {
+  margin-right: 10px;
+}
+
+.checked-demo label {
+  margin-right: 20px;
+}
+
+.checked-demo input:checked + label {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* ===================================
+           DEMO 10: :disabled and :enabled
+           =================================== */
+.disabled-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.enabled-input:enabled {
+  background-color: #2a3a5a;
+  border-color: #4a90e2;
+}
+
+/* ===================================
+           DEMO 11: :required and :optional
+           =================================== */
+.required-input:required {
+  border-left: 4px solid #e94560;
+}
+
+.optional-input:optional {
+  border-left: 4px solid #2ecc71;
+}
+
+/* ===================================
+           DEMO 12: :valid and :invalid
+           =================================== */
+.valid-input:valid {
+  border-color: #2ecc71;
+}
+
+.valid-input:invalid {
+  border-color: #e94560;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}

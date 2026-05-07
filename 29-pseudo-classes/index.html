@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Classes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎯 CSS Pseudo-Classes Reference</h1>
+        <div class="subtitle">
+          :hover, :focus, :nth-child, :not, :is, :where, :checked, and more
+        </div>
+      </header>
+
+      <!-- DEMO 1: :hover -->
+      <div class="section">
+        <div class="section-title">1. :hover</div>
+        <div class="section-description">
+          Triggers when mouse hovers over an element.
+        </div>
+        <div class="hover-box">
+          Hover over me → Background changes, scale grows
+        </div>
+        <div class="code">
+          /* :hover - mouse over element */<br />
+          .element:hover {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #c73b54;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: scale(1.02);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: :focus -->
+      <div class="section">
+        <div class="section-title">2. :focus</div>
+        <div class="section-description">
+          Triggers when an element receives focus (clicked or tabbed into).
+        </div>
+        <input
+          type="text"
+          class="focus-input"
+          placeholder="Click or tab into me → focus state"
+        />
+        <div class="code">
+          /* :focus - element is focused */<br />
+          input:focus {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-color: #4a90e2;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 0 3px rgba(74,144,226,0.3);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: :first-child and :last-child -->
+      <div class="section">
+        <div class="section-title">3. :first-child and :last-child</div>
+        <div class="section-description">
+          Selects the first or last child of a parent.
+        </div>
+        <ul class="list-demo">
+          <li>First child → blue background</li>
+          <li>Middle child</li>
+          <li>Middle child</li>
+          <li>Last child → red background</li>
+        </ul>
+        <div class="code">
+          /* :first-child - first child element */<br />
+          li:first-child { background-color: #4a90e2; }<br /><br />
+          /* :last-child - last child element */<br />
+          li:last-child { background-color: #e94560; }
+        </div>
+      </div>
+
+      <!-- DEMO 4: :nth-child() -->
+      <div class="section">
+        <div class="section-title">4. :nth-child()</div>
+        <div class="section-description">
+          Selects elements based on their position.
+        </div>
+
+        <h4>Every even item (2nd, 4th, 6th...)</h4>
+        <ul class="nth-demo">
+          <li>Item 1</li>
+          <li>Item 2 → blue</li>
+          <li>Item 3</li>
+          <li>Item 4 → blue</li>
+          <li>Item 5</li>
+          <li>Item 6 → blue</li>
+        </ul>
+
+        <h4 style="margin-top: 20px">Every 3rd item (3n)</h4>
+        <ul class="nth-demo-3">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3 → green</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6 → green</li>
+        </ul>
+
+        <div class="code">
+          /* :nth-child() patterns */<br />
+          li:nth-child(even) { } /* Even items */<br />
+          li:nth-child(odd) { } /* Odd items */<br />
+          li:nth-child(3n) { } /* Every 3rd item (3,6,9...) */<br />
+          li:nth-child(2n+1) { } /* Same as odd */<br />
+          li:nth-child(3) { } /* Only the 3rd item */
+        </div>
+      </div>
+
+      <!-- DEMO 5: :first-of-type and :last-of-type -->
+      <div class="section">
+        <div class="section-title">5. :first-of-type and :last-of-type</div>
+        <div class="section-description">
+          Selects the first or last element of a specific type within a parent.
+        </div>
+
+        <div class="article-demo">
+          <h3>First h3 (blue)</h3>
+          <p>Paragraph 1</p>
+          <p>Paragraph 2</p>
+          <p>Last p (green)</p>
+        </div>
+
+        <div class="code">
+          /* :first-of-type - first h3 in parent */<br />
+          h3:first-of-type { color: #4a90e2; }<br /><br />
+          /* :last-of-type - last p in parent */<br />
+          p:last-of-type { color: #2ecc71; }
+        </div>
+      </div>
+
+      <!-- DEMO 6: :not() -->
+      <div class="section">
+        <div class="section-title">6. :not() (Exclusion)</div>
+        <div class="section-description">
+          Selects all elements EXCEPT those matching the selector.
+        </div>
+
+        <ul class="not-demo">
+          <li>Normal item (opacity 0.6)</li>
+          <li>Normal item (opacity 0.6)</li>
+          <li class="special">SPECIAL item (full opacity, red background)</li>
+          <li>Normal item (opacity 0.6)</li>
+        </ul>
+
+        <div class="code">
+          /* :not() - exclude elements */<br />
+          li:not(.special) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.6;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 7: :is() -->
+      <div class="section">
+        <div class="section-title">7. :is() (Group Selectors)</div>
+        <div class="section-description">
+          Groups selectors for cleaner code. Shorter than writing each
+          separately.
+        </div>
+
+        <div class="is-demo">
+          <h1>This is h1</h1>
+          <h2>This is h2</h2>
+          <h3>This is h3</h3>
+          <p>This paragraph is NOT affected</p>
+        </div>
+
+        <div class="code">
+          /* Without :is() */<br />
+          .is-demo h1, .is-demo h2, .is-demo h3 { color: #e94560; }<br /><br />
+          /* With :is() - cleaner */<br />
+          .is-demo :is(h1, h2, h3) { color: #e94560; }
+        </div>
+      </div>
+
+      <!-- DEMO 8: :checked -->
+      <div class="section">
+        <div class="section-title">8. :checked</div>
+        <div class="section-description">
+          Selects checked checkboxes or radio buttons.
+        </div>
+
+        <div class="checked-demo">
+          <input type="radio" name="option" id="opt1" />
+          <label for="opt1">Option 1</label>
+          <input type="radio" name="option" id="opt2" />
+          <label for="opt2">Option 2</label>
+          <input type="radio" name="option" id="opt3" />
+          <label for="opt3">Option 3</label>
+          <p style="margin-top: 10px">
+            ✓ Click an option → the label turns green
+          </p>
+        </div>
+
+        <div class="code">
+          /* :checked - selected checkbox/radio */<br />
+          input:checked + label {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: #2ecc71;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 9: :disabled and :enabled -->
+      <div class="section">
+        <div class="section-title">9. :disabled and :enabled</div>
+        <div class="section-description">
+          Selects disabled or enabled form elements.
+        </div>
+
+        <input
+          type="text"
+          class="disabled-input"
+          placeholder="Disabled input"
+          disabled
+          style="width: 100%; padding: 10px; margin-bottom: 10px"
+        />
+        <input
+          type="text"
+          class="enabled-input"
+          placeholder="Enabled input"
+          style="width: 100%; padding: 10px"
+        />
+
+        <div class="code">
+          /* :disabled - disabled form elements */<br />
+          input:disabled { opacity: 0.5; cursor: not-allowed; }<br /><br />
+          /* :enabled - enabled form elements */<br />
+          input:enabled { background-color: #2a3a5a; }
+        </div>
+      </div>
+
+      <!-- DEMO 10: :required and :optional -->
+      <div class="section">
+        <div class="section-title">10. :required and :optional</div>
+        <div class="section-description">
+          Selects required or optional form fields.
+        </div>
+
+        <input
+          type="text"
+          class="required-input"
+          placeholder="Required field (red border left)"
+          required
+          style="width: 100%; padding: 10px; margin-bottom: 10px"
+        />
+        <input
+          type="text"
+          class="optional-input"
+          placeholder="Optional field (green border left)"
+          style="width: 100%; padding: 10px"
+        />
+
+        <div class="code">
+          /* :required - required form fields */<br />
+          input:required { border-left: 4px solid #e94560; }<br /><br />
+          /* :optional - optional form fields */<br />
+          input:optional { border-left: 4px solid #2ecc71; }
+        </div>
+      </div>
+
+      <!-- DEMO 11: :valid and :invalid -->
+      <div class="section">
+        <div class="section-title">11. :valid and :invalid</div>
+        <div class="section-description">
+          Selects form elements with valid or invalid values.
+        </div>
+
+        <input
+          type="email"
+          class="valid-input"
+          placeholder="Enter valid email (green border)"
+          style="width: 100%; padding: 10px"
+        />
+        <p style="margin-top: 5px; font-size: 12px">
+          💡 Type an email with @ → border turns green. Invalid → red border.
+        </p>
+
+        <div class="code">
+          /* :valid - valid input value */<br />
+          input:valid { border-color: #2ecc71; }<br /><br />
+          /* :invalid - invalid input value */<br />
+          input:invalid { border-color: #e94560; }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE TABLE -->
+      <div class="section">
+        <div class="section-title">📚 Pseudo-Classes Quick Reference</div>
+
+        <div class="code">
+          /* =================================== COMMON PSEUDO-CLASSES
+          =================================== */ :hover /* Mouse over element
+          */<br />
+          :focus /* Element focused (click/tab) */<br />
+          :active /* Element being clicked */<br />
+          :visited /* Visited link */<br />
+          :link /* Unvisited link */<br /><br />
+
+          /* =================================== CHILD-BASED PSEUDO-CLASSES
+          =================================== */ :first-child /* First child of
+          parent */<br />
+          :last-child /* Last child of parent */<br />
+          :nth-child(n) /* Nth child (1,2,3... or even/odd) */<br />
+          :nth-last-child(n) /* Nth child from end */<br />
+          :only-child /* Only child of parent */<br /><br />
+
+          /* =================================== TYPE-BASED PSEUDO-CLASSES
+          =================================== */ :first-of-type /* First element
+          of its type */<br />
+          :last-of-type /* Last element of its type */<br />
+          :nth-of-type(n) /* Nth element of its type */<br /><br />
+
+          /* =================================== FORM PSEUDO-CLASSES
+          =================================== */ :checked /* Checked
+          checkbox/radio */<br />
+          :disabled /* Disabled form element */<br />
+          :enabled /* Enabled form element */<br />
+          :required /* Required form element */<br />
+          :optional /* Optional form element */<br />
+          :valid /* Valid form input */<br />
+          :invalid /* Invalid form input */<br />
+          :in-range /* Input within range */<br />
+          :out-of-range /* Input outside range */<br /><br />
+
+          /* =================================== FUNCTIONAL PSEUDO-CLASSES
+          =================================== */ :not(selector) /* Exclude
+          matching selector */<br />
+          :is(selector) /* Group selectors (shorter) */<br />
+          :where(selector) /* Same as :is but lower specificity */<br />
+          :has(selector) /* Parent containing selector (newer) */<br />
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What pseudo-class selects the 3rd child? */ /* Answer:
+          :nth-child(3) */ /* Question 2: What pseudo-class selects all li
+          EXCEPT those with class "hidden"? */ /* Answer: li:not(.hidden) */ /*
+          Question 3: What pseudo-class styles a checked checkbox? */ /* Answer:
+          :checked */ /* Question 4: What is the difference between :first-child
+          and :first-of-type? */ /* Answer: :first-child checks position in
+          parent. :first-of-type checks first element of that type. */ /*
+          Question 5: What pseudo-class styles an input with invalid email? */
+          /* Answer: :invalid */
+        </div>
+      </div>
+
+      <footer>
+        <p>🎯 CSS Pseudo-Classes Reference - Save for your projects</p>
+        <p>💡 :hover, :focus, :nth-child, :not, :is, :checked, and more</p>
+      </footer>
+    </div>
+  </body>
+</html>
