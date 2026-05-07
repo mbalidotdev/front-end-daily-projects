@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📇 Card Grid - Flexbox Wrap Layout</h1>
+      <div class="subtitle">
+        Responsive grids that wrap automatically on different screen sizes
+      </div>
+    </header>
+
+    <main>
+      <!-- GRID 1: BASIC FLEX WRAP -->
+      <div class="demo-section">
+        <div class="demo-title">1. Basic Flex Wrap</div>
+        <div class="demo-description">
+          Simple cards that wrap when there's not enough space.
+        </div>
+
+        <div class="grid-1">
+          <div class="card-1">
+            <h3>Card 1</h3>
+            <p>This card will wrap when screen gets smaller.</p>
+          </div>
+          <div class="card-1">
+            <h3>Card 2</h3>
+            <p>Flexbox handles the layout automatically.</p>
+          </div>
+          <div class="card-1">
+            <h3>Card 3</h3>
+            <p>No media queries needed for basic wrapping.</p>
+          </div>
+          <div class="card-1">
+            <h3>Card 4</h3>
+            <p>Just flex-wrap: wrap and gap.</p>
+          </div>
+          <div class="card-1">
+            <h3>Card 5</h3>
+            <p>Resize your browser to see it work!</p>
+          </div>
+        </div>
+
+        <div class="code">
+          .grid-1 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 2: RESPONSIVE CARDS (auto width) -->
+      <div class="demo-section">
+        <div class="demo-title">2. Responsive Cards (flex: 1 1 280px)</div>
+        <div class="demo-description">
+          Cards grow and shrink automatically using
+          <code>flex: 1 1 280px</code>. Try resizing your browser.
+        </div>
+
+        <div class="grid-2">
+          <div class="card-2">
+            <h3>📱 Fully Responsive</h3>
+            <p>This card grows and shrinks with the screen.</p>
+          </div>
+          <div class="card-2">
+            <h3>💪 Flexible Width</h3>
+            <p>
+              Using flex: 1 1 280px means: can grow, can shrink, base width
+              280px.
+            </p>
+          </div>
+          <div class="card-2">
+            <h3>📐 No Media Queries</h3>
+            <p>The grid adjusts automatically!</p>
+          </div>
+          <div class="card-2">
+            <h3>🎯 Perfect for Dashboards</h3>
+            <p>Works on any screen size.</p>
+          </div>
+        </div>
+
+        <div class="code">
+          .grid-2 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 25px;<br />
+          }<br /><br />
+          .card-2 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 280px; /* grow, shrink, base width
+          */<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 3: PRODUCT CARDS -->
+      <div class="demo-section">
+        <div class="demo-title">3. Product Cards (E-commerce Style)</div>
+        <div class="demo-description">
+          Product grid with images, prices, and hover effects.
+        </div>
+
+        <div class="grid-3">
+          <div class="product-card">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <h3>Smartphone Pro</h3>
+              <p>Latest model with amazing camera and battery life.</p>
+              <span class="price">$699</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">💻</div>
+            <div class="product-info">
+              <h3>Laptop Air</h3>
+              <p>Lightweight, powerful, perfect for developers.</p>
+              <span class="price">$999</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">🎧</div>
+            <div class="product-info">
+              <h3>Wireless Earbuds</h3>
+              <p>Noise cancellation, 24hr battery life.</p>
+              <span class="price">$149</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">⌚</div>
+            <div class="product-info">
+              <h3>Smart Watch</h3>
+              <p>Track your fitness and notifications.</p>
+              <span class="price">$249</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .product-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 280px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-width: 250px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background: white;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 12px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 4: BLOG POST CARDS -->
+      <div class="demo-section">
+        <div class="demo-title">4. Blog Post Cards</div>
+        <div class="demo-description">
+          Blog layout with categories, titles, and read more links.
+        </div>
+
+        <div class="grid-4">
+          <div class="blog-card">
+            <div class="blog-img"></div>
+            <div class="blog-content">
+              <div class="blog-category">Tutorial</div>
+              <h3>How to Center a Div</h3>
+              <p>
+                The ultimate guide to horizontal and vertical centering in CSS.
+              </p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-img"></div>
+            <div class="blog-content">
+              <div class="blog-category">Flexbox</div>
+              <h3>Flexbox: The Complete Guide</h3>
+              <p>Master flexbox with practical examples and real projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-img"></div>
+            <div class="blog-content">
+              <div class="blog-category">CSS Grid</div>
+              <h3>Grid vs Flexbox</h3>
+              <p>When to use which layout system for your projects.</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .grid-4 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px;<br />
+          }<br />
+          .blog-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 300px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 5: TEAM MEMBERS -->
+      <div class="demo-section">
+        <div class="demo-title">5. Team Members Grid</div>
+        <div class="demo-description">
+          Profile cards for team members with avatars and social links.
+        </div>
+
+        <div class="grid-5">
+          <div class="team-card">
+            <div class="avatar">👩</div>
+            <h3>Sarah Johnson</h3>
+            <div class="team-title">CEO & Founder</div>
+            <p>10+ years in tech leadership</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">👨</div>
+            <h3>Mike Chen</h3>
+            <div class="team-title">Lead Developer</div>
+            <p>Full-stack expert</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">👩</div>
+            <h3>Emma Davis</h3>
+            <div class="team-title">UI/UX Designer</div>
+            <p>Creating beautiful experiences</p>
+          </div>
+          <div class="team-card">
+            <div class="avatar">👨</div>
+            <h3>Alex Rodriguez</h3>
+            <div class="team-title">Product Manager</div>
+            <p>Turning ideas into products</p>
+          </div>
+        </div>
+
+        <div class="code">
+          .grid-5 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 6: FEATURE GRID -->
+      <div class="demo-section">
+        <div class="demo-title">6. Features Grid</div>
+        <div class="demo-description">
+          Marketing site features with icons and descriptions.
+        </div>
+
+        <div class="grid-6">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Performance</h3>
+            <p>Optimized code that loads in milliseconds.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure</h3>
+            <p>Enterprise-grade security built in.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Responsive</h3>
+            <p>Works perfectly on all devices.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Customizable</h3>
+            <p>Easy to adapt to your brand.</p>
+          </div>
+        </div>
+
+        <div class="code">
+          .grid-6 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px;<br />
+          }<br />
+          .feature-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 250px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- GRID 7: PICTURE GALLERY -->
+      <div class="demo-section">
+        <div class="demo-title">7. Picture Gallery</div>
+        <div class="demo-description">
+          Responsive image gallery that adjusts columns automatically.
+        </div>
+
+        <div class="grid-7">
+          <div class="gallery-item">🖼️ 1</div>
+          <div class="gallery-item">🖼️ 2</div>
+          <div class="gallery-item">🖼️ 3</div>
+          <div class="gallery-item">🖼️ 4</div>
+          <div class="gallery-item">🖼️ 5</div>
+          <div class="gallery-item">🖼️ 6</div>
+          <div class="gallery-item">🖼️ 7</div>
+          <div class="gallery-item">🖼️ 8</div>
+        </div>
+
+        <div class="code">
+          .grid-7 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 15px;<br />
+          }<br />
+          .gallery-item {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 calc(25% - 15px);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-width: 150px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- FLEXBOX WRAP REFERENCE -->
+      <div class="demo-section">
+        <div class="demo-title">📚 Flexbox Wrap Properties Reference</div>
+
+        <div class="code">
+          /* Parent Container Properties for Grid Layouts */<br />
+          display: flex; /* Enables flexbox */<br />
+          flex-wrap: wrap; /* Allows items to wrap to next line */<br />
+          gap: 20px; /* Space between items */<br />
+          justify-content: center; /* Center the row (optional) */<br /><br />
+
+          /* Child Item Properties */<br />
+          flex: 1 1 280px; /* grow, shrink, base width */<br />
+          flex: 1; /* Take equal space */<br />
+          min-width: 250px; /* Prevent cards from getting too small */<br /><br />
+
+          /* Common Patterns */<br />
+          /* 3 columns on desktop, 2 on tablet, 1 on mobile */<br />
+          .card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 300px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-width: 250px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUIZ SECTION -->
+      <div class="demo-section">
+        <div class="demo-title">🧠 Quick Quiz</div>
+        <div class="demo-description">Test your flexbox grid knowledge.</div>
+
+        <div class="code">
+          /* Question 1: What allows cards to wrap to the next line? */<br />
+          /* Answer: flex-wrap: wrap */<br /><br />
+
+          /* Question 2: How do you make cards take equal space? */<br />
+          /* Answer: flex: 1 1 0; or flex: 1; */<br /><br />
+
+          /* Question 3: How to prevent cards from getting too small? */<br />
+          /* Answer: min-width: 250px; */<br /><br />
+
+          /* Question 4: What property adds space between cards? */<br />
+          /* Answer: gap: 20px; */
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>📇 Card Grid - Flexbox Wrap Layout</p>
+      <p>
+        💡 Resize your browser window to see how cards automatically rearrange!
+      </p>
+    </footer>
+  </body>
+</html>

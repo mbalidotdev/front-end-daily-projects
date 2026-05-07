@@ -83,3 +83,7 @@ _centering_
 ### [20. Navigation Bar](https://mbalidotdev.github.io/front-end-daily-projects/20-navigation-bar)
 
 _display: flex, justify-content, align-items_
+
+### [21. Card Grid](https://mbalidotdev.github.io/front-end-daily-projects/21-card-grid)
+
+_flex-wrap, gap, responsive cards_
