@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Effects Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>✨ Hover Effects Gallery</h1>
+        <div class="subtitle">
+          CSS transform and transition effects for cards, buttons, and images
+        </div>
+      </header>
+
+      <!-- TRANSFORM EFFECTS SECTION -->
+      <div class="section">
+        <div class="section-title">🔄 Transform Effects</div>
+        <div class="gallery">
+          <div class="effect-scale">Scale (1.1x)</div>
+          <div class="effect-rotate">Rotate (10deg)</div>
+          <div class="effect-lift">Lift Up (-15px)</div>
+          <div class="effect-skew">Skew (-5deg)</div>
+          <div class="effect-glow">Glow Effect</div>
+          <div class="effect-card-pop">Card Pop</div>
+          <div class="effect-bg">BG Change</div>
+          <div class="effect-radius">Radius Change</div>
+        </div>
+      </div>
+
+      <!-- REAL CARD EXAMPLE -->
+      <div class="section">
+        <div class="section-title">📇 Card Hover Effects (Real Example)</div>
+        <div class="gallery">
+          <div class="card-demo">
+            <div class="card-img">📱</div>
+            <div class="card-content">
+              <h3>Mobile App</h3>
+              <p>Hover over this card to see it lift up with shadow effect.</p>
+            </div>
+          </div>
+          <div class="card-demo">
+            <div class="card-img">💻</div>
+            <div class="card-content">
+              <h3>Web Design</h3>
+              <p>Cards like these are used in portfolios and product grids.</p>
+            </div>
+          </div>
+          <div class="card-demo">
+            <div class="card-img">🎨</div>
+            <div class="card-content">
+              <h3>Graphic Design</h3>
+              <p>Hover effects make UI feel interactive and responsive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE ZOOM EFFECT -->
+      <div class="section">
+        <div class="section-title">🔍 Image Zoom on Hover</div>
+        <div class="gallery">
+          <div class="img-zoom-container">
+            <div class="zoom-img">🖼️</div>
+          </div>
+          <div class="img-zoom-container">
+            <div class="zoom-img">🌄</div>
+          </div>
+          <div class="img-zoom-container">
+            <div class="zoom-img">🏔️</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTON HOVER EFFECTS -->
+      <div class="section">
+        <div class="section-title">🔘 Button Hover Effects</div>
+        <div class="gallery">
+          <a href="#" class="btn-demo">Hover Me →</a>
+          <a href="#" class="btn-demo" style="background: #e94560"
+            >Another Button</a
+          >
+          <a href="#" class="btn-demo" style="background: #2ecc71"
+            >Get Started</a
+          >
+        </div>
+      </div>
+
+      <!-- LINK HOVER EFFECTS -->
+      <div class="section">
+        <div class="section-title">🔗 Link Hover Effects</div>
+        <div class="gallery" style="flex-direction: column; gap: 15px">
+          <a href="#" class="link-demo">→ This link slides right on hover</a>
+          <a href="#" class="link-demo" style="color: #e94560"
+            >→ Links with color change</a
+          >
+          <a
+            href="#"
+            class="link-demo"
+            style="
+              text-decoration: underline;
+              text-decoration-color: transparent;
+              transition: text-decoration-color 0.3s;
+            "
+            >→ Underline appears on hover</a
+          >
+        </div>
+      </div>
+
+      <!-- REFERENCE SECTION -->
+      <div class="reference">
+        <div class="section-title" style="margin-top: 0">
+          📚 CSS Transitions & Transform Reference
+        </div>
+
+        <div class="code">
+          /* =================================== BASIC TRANSITION SYNTAX
+          =================================== */ .element { transition: property
+          duration timing-function delay; } /* Examples */ .element {
+          transition: all 0.3s ease; /* Most common */ transition: transform
+          0.5s ease-out; /* Only transform */ transition: background 0.2s
+          linear; /* Only background */ transition: all 0.3s cubic-bezier(0.4,
+          0, 0.2, 1); /* Custom curve */ } /*
+          =================================== TRANSFORM PROPERTIES
+          =================================== */ .scale:hover { transform:
+          scale(1.1); } /* Grow/shrink */ .rotate:hover { transform:
+          rotate(10deg); } /* Rotate */ .lift:hover { transform:
+          translateY(-10px); } /* Move up/down */ .skew:hover { transform:
+          skew(-5deg); } /* Skew/slant */ /* ===================================
+          COMBINING TRANSFORMS =================================== */
+          .combined:hover { transform: translateY(-10px) scale(1.05)
+          rotate(2deg); } /* =================================== TRANSITION
+          TIMING FUNCTIONS =================================== */ /* ease = slow
+          start, fast middle, slow end (default) */ /* linear = same speed
+          throughout */ /* ease-in = slow start */ /* ease-out = slow end */ /*
+          cubic-bezier() = custom curve */
+        </div>
+      </div>
+
+      <!-- COMMON PATTERNS -->
+      <div class="reference">
+        <div class="section-title" style="margin-top: 0">
+          🎯 Common Hover Patterns
+        </div>
+        <div class="code">
+          /* Pattern 1: Card that lifts on hover */ .card { transition:
+          transform 0.3s ease, box-shadow 0.3s ease; } .card:hover { transform:
+          translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); } /*
+          Pattern 2: Button that changes color */ .button { transition:
+          background 0.3s ease, transform 0.2s ease; } .button:hover {
+          background: #dark-color; transform: translateY(-2px); } /* Pattern 3:
+          Image that zooms inside container */ .image-container { overflow:
+          hidden; } .image-container img { transition: transform 0.4s ease; }
+          .image-container:hover img { transform: scale(1.1); } /* Pattern 4:
+          Link with underline animation */ .link { text-decoration: none;
+          position: relative; } .link::after { content: ''; position: absolute;
+          bottom: -2px; left: 0; width: 0; height: 2px; background: blue;
+          transition: width 0.3s ease; } .link:hover::after { width: 100%; }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="reference">
+        <div class="section-title" style="margin-top: 0">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What property creates smooth animations on hover? */ /*
+          Answer: transition */ /* Question 2: Which transform makes an element
+          grow? */ /* Answer: scale(1.1) */ /* Question 3: Which transform makes
+          an element move up? */ /* Answer: translateY(-10px) */ /* Question 4:
+          What values are needed for transition? */ /* Answer: property,
+          duration, timing-function (e.g., all 0.3s ease) */
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          ✨ Hover Effects Gallery - Use these patterns in your own projects
+        </p>
+        <p>
+          💡 Save this file as a reference for hover effects on cards, buttons,
+          and images
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

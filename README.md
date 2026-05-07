@@ -95,3 +95,7 @@ _hover effects, comparison layout_
 ### [23. Styled Form](https://mbalidotdev.github.io/front-end-daily-projects/23-styled-form)
 
 _border, focus states, spacing, :focus pseudo-class_
+
+### [24. Hover Effects Gallery](https://mbalidotdev.github.io/front-end-daily-projects/24-hover-effects-gallery)
+
+_transform: scale(), transition, opacity_
