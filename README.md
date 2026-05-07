@@ -111,3 +111,7 @@ _stacking order: overlapping elements, z-index_
 ### [27. Sticky Header](https://mbalidotdev.github.io/front-end-daily-projects/27-sticky-header)
 
 _position: sticky, top: 0, scroll behavior_
+
+### [28. CSS Variables Demo](https://mbalidotdev.github.io/front-end-daily-projects/28-css-variables-demo)
+
+_root, var(--primary-color), themes_

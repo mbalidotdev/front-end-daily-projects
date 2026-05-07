@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================
+           DEFINING CSS VARIABLES
+           =================================== */
+:root {
+  /* Colors */
+  --color-primary: #4a90e2;
+  --color-secondary: #e94560;
+  --color-success: #2ecc71;
+  --color-warning: #f39c12;
+  --color-dark: #1a1a2e;
+  --color-light: #f5f5f5;
+  --color-text: #333;
+  --color-text-light: #666;
+
+  /* Spacing */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+  --radius-circle: 50%;
+
+  /* Font Sizes */
+  --font-small: 12px;
+  --font-base: 16px;
+  --font-large: 20px;
+  --font-xl: 24px;
+  --font-xxl: 32px;
+
+  /* Shadows */
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-medium);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Demo section */
+.section {
+  background-color: white;
+  border-radius: var(--radius-large);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-medium);
+}
+
+.section-title {
+  font-size: var(--font-large);
+  font-weight: bold;
+  margin-bottom: var(--spacing-large);
+  color: var(--color-dark);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--spacing-medium);
+}
+
+.code {
+  background-color: #1e1e2e;
+  color: #82b1ff;
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-medium);
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  margin-top: var(--spacing-large);
+}
+
+/* ===================================
+           DEMO 1: USING VARIABLES FOR COLORS
+           =================================== */
+.color-demo {
+  display: flex;
+  gap: var(--spacing-medium);
+  flex-wrap: wrap;
+  margin: var(--spacing-large) 0;
+}
+
+.color-card {
+  padding: var(--spacing-large);
+  border-radius: var(--radius-medium);
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+  color: white;
+}
+
+.color-primary {
+  background-color: var(--color-primary);
+}
+.color-secondary {
+  background-color: var(--color-secondary);
+}
+.color-success {
+  background-color: var(--color-success);
+}
+.color-warning {
+  background-color: var(--color-warning);
+}
+.color-dark {
+  background-color: var(--color-dark);
+}
+
+/* ===================================
+           DEMO 2: BUTTONS WITH VARIABLES
+           =================================== */
+.btn {
+  padding: var(--spacing-small) var(--spacing-large);
+  border: none;
+  border-radius: var(--radius-medium);
+  font-size: var(--font-base);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #c73b54;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-medium);
+  flex-wrap: wrap;
+  margin: var(--spacing-large) 0;
+}
+
+/* ===================================
+           DEMO 3: CARDS WITH VARIABLES
+           =================================== */
+.card-grid {
+  display: flex;
+  gap: var(--spacing-large);
+  flex-wrap: wrap;
+  margin: var(--spacing-large) 0;
+}
+
+.card {
+  background-color: white;
+  border-radius: var(--radius-large);
+  padding: var(--spacing-large);
+  box-shadow: var(--shadow-small);
+  transition: all var(--transition-normal);
+  flex: 1;
+  min-width: 250px;
+  border: 1px solid #eee;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-large);
+}
+
+.card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-small);
+}
+
+.card p {
+  color: var(--color-text-light);
+  font-size: var(--font-small);
+}
+
+/* ===================================
+           DEMO 4: THEME SWITCHING
+           =================================== */
+.theme-demo {
+  margin: var(--spacing-large) 0;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: var(--spacing-small);
+  margin-bottom: var(--spacing-large);
+}
+
+.theme-btn {
+  padding: var(--spacing-small) var(--spacing-medium);
+  border: none;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  background-color: var(--color-light);
+  border: 1px solid #ddd;
+}
+
+.theme-card {
+  background-color: white;
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-large);
+  box-shadow: var(--shadow-small);
+  transition: all var(--transition-normal);
+}
+
+/* Dark theme variables (overrides root) */
+.dark-theme {
+  --color-primary: #e94560;
+  --color-secondary: #4a90e2;
+  --color-light: #1a1a2e;
+  --color-dark: #f5f5f5;
+  --color-text: #eee;
+  --color-text-light: #aaa;
+  background-color: var(--color-light);
+  color: var(--color-text);
+}
+
+.dark-theme .theme-card {
+  background-color: #16213e;
+  color: var(--color-text);
+}
+
+/* ===================================
+           DEMO 5: SPACING DEMO
+           =================================== */
+.spacing-demo {
+  background-color: var(--color-light);
+  border-radius: var(--radius-medium);
+  margin: var(--spacing-large) 0;
+}
+
+.spacing-box {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  border-radius: var(--radius-small);
+}
+
+.spacing-small {
+  padding: var(--spacing-small);
+  margin: var(--spacing-small);
+}
+.spacing-medium {
+  padding: var(--spacing-medium);
+  margin: var(--spacing-medium);
+}
+.spacing-large {
+  padding: var(--spacing-large);
+  margin: var(--spacing-large);
+}
+
+/* ===================================
+           DEMO 6: BORDER RADIUS DEMO
+           =================================== */
+.radius-demo {
+  display: flex;
+  gap: var(--spacing-large);
+  flex-wrap: wrap;
+  margin: var(--spacing-large) 0;
+}
+
+.radius-box {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.radius-small {
+  border-radius: var(--radius-small);
+}
+.radius-medium {
+  border-radius: var(--radius-medium);
+}
+.radius-large {
+  border-radius: var(--radius-large);
+}
+.radius-circle {
+  border-radius: var(--radius-circle);
+}
+
+/* ===================================
+           DEMO 7: SHADOW DEMO
+           =================================== */
+.shadow-demo {
+  display: flex;
+  gap: var(--spacing-large);
+  flex-wrap: wrap;
+  margin: var(--spacing-large) 0;
+}
+
+.shadow-box {
+  width: 150px;
+  padding: var(--spacing-large);
+  background-color: white;
+  text-align: center;
+  border-radius: var(--radius-medium);
+}
+
+.shadow-small {
+  box-shadow: var(--shadow-small);
+}
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+.shadow-large {
+  box-shadow: var(--shadow-large);
+}
+
+/* ===================================
+           DEMO 8: RESPONSIVE WITH VARIABLES
+           =================================== */
+.responsive-demo {
+  background-color: var(--color-light);
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-large);
+  text-align: center;
+}
+
+/* Change variables on smaller screens */
+@media (max-width: 768px) {
+  .responsive-demo {
+    --spacing-large: 16px;
+    --font-large: 18px;
+    --radius-medium: 8px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xl);
+}

@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables - Custom Properties Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎨 CSS Variables (Custom Properties) Demo</h1>
+        <div class="subtitle">
+          Define once, use everywhere — change one value, update entire website
+        </div>
+      </header>
+
+      <!-- DEMO 1: COLORS -->
+      <div class="section">
+        <div class="section-title">1. 🎨 Color Variables</div>
+        <div class="color-demo">
+          <div class="color-card color-primary">
+            --color-primary<br />#4a90e2
+          </div>
+          <div class="color-card color-secondary">
+            --color-secondary<br />#e94560
+          </div>
+          <div class="color-card color-success">
+            --color-success<br />#2ecc71
+          </div>
+          <div class="color-card color-warning">
+            --color-warning<br />#f39c12
+          </div>
+          <div class="color-card color-dark">--color-dark<br />#1a1a2e</div>
+        </div>
+        <div class="code">
+          /* Define variables at :root (global scope) */<br />
+          :root {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-primary: #4a90e2;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-secondary: #e94560;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-success: #2ecc71;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-warning: #f39c12;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-dark: #1a1a2e;<br />
+          }<br /><br />
+          /* Use variables with var() */<br />
+          .button {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--color-primary);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: BUTTONS -->
+      <div class="section">
+        <div class="section-title">2. 🔘 Buttons with Variables</div>
+        <div class="button-group">
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-secondary">Secondary Button</button>
+          <button class="btn btn-outline">Outline Button</button>
+        </div>
+        <div class="code">
+          .btn {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: var(--spacing-small)
+          var(--spacing-large);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: var(--radius-medium);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition: all var(--transition-normal);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: CARDS -->
+      <div class="section">
+        <div class="section-title">3. 📇 Cards with Variables</div>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Card Title</h3>
+            <p>
+              This card uses CSS variables for colors, spacing, border-radius,
+              and shadows.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Another Card</h3>
+            <p>Change one variable and all cards update automatically.</p>
+          </div>
+          <div class="card">
+            <h3>Third Card</h3>
+            <p>Perfect for consistent design systems.</p>
+          </div>
+        </div>
+        <div class="code">
+          .card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: white;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: var(--radius-large);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: var(--spacing-large);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: var(--shadow-small);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition: all var(--transition-normal);<br />
+          }<br />
+          .card:hover {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-5px);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: var(--shadow-large);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 4: THEME SWITCHING -->
+      <div class="section" id="theme-demo">
+        <div class="section-title">4. 🌓 Theme Switching (Dark Mode)</div>
+        <div class="theme-demo">
+          <div class="theme-buttons">
+            <button
+              class="theme-btn"
+              onclick="document.body.classList.remove('dark-theme')"
+            >
+              ☀️ Light Theme
+            </button>
+            <button
+              class="theme-btn"
+              onclick="document.body.classList.add('dark-theme')"
+            >
+              🌙 Dark Theme
+            </button>
+          </div>
+          <div class="theme-card">
+            <h3>Theme Demo Card</h3>
+            <p>
+              Click the dark theme button above. All variables change
+              automatically!
+            </p>
+            <p style="margin-top: var(--spacing-small)">
+              --color-primary changes from blue to pink.<br />--color-light
+              changes from light to dark.
+            </p>
+          </div>
+        </div>
+        <div class="code">
+          /* Dark theme overrides */<br />
+          .dark-theme {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-primary: #e94560;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-secondary: #4a90e2;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-light: #1a1a2e;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-dark: #f5f5f5;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--color-text: #eee;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 5: SPACING -->
+      <div class="section">
+        <div class="section-title">5. 📏 Spacing Variables</div>
+        <div class="spacing-demo">
+          <div class="spacing-box spacing-small">
+            padding: var(--spacing-small)<br />margin: var(--spacing-small)
+          </div>
+          <div class="spacing-box spacing-medium">
+            padding: var(--spacing-medium)<br />margin: var(--spacing-medium)
+          </div>
+          <div class="spacing-box spacing-large">
+            padding: var(--spacing-large)<br />margin: var(--spacing-large)
+          </div>
+        </div>
+        <div class="code">
+          :root {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--spacing-small: 8px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--spacing-medium: 16px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--spacing-large: 24px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--spacing-xl: 32px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 6: BORDER RADIUS -->
+      <div class="section">
+        <div class="section-title">6. 🔘 Border Radius Variables</div>
+        <div class="radius-demo">
+          <div class="radius-box radius-small">small</div>
+          <div class="radius-box radius-medium">medium</div>
+          <div class="radius-box radius-large">large</div>
+          <div class="radius-box radius-circle">circle</div>
+        </div>
+        <div class="code">
+          :root {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--radius-small: 4px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--radius-medium: 8px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--radius-large: 16px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--radius-circle: 50%;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 7: SHADOW -->
+      <div class="section">
+        <div class="section-title">7. 🌑 Shadow Variables</div>
+        <div class="shadow-demo">
+          <div class="shadow-box shadow-small">Small Shadow</div>
+          <div class="shadow-box shadow-medium">Medium Shadow</div>
+          <div class="shadow-box shadow-large">Large Shadow</div>
+        </div>
+        <div class="code">
+          :root {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--shadow-small: 0 2px 4px rgba(0,0,0,0.1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--shadow-medium: 0 4px 8px rgba(0,0,0,0.1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--shadow-large: 0 8px 16px rgba(0,0,0,0.1);<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 8: RESPONSIVE -->
+      <div class="section">
+        <div class="section-title">8. 📱 Responsive Variables</div>
+        <div class="responsive-demo">
+          <h3>This box changes spacing and font size on mobile</h3>
+          <p>Resize your browser to under 768px to see the change!</p>
+        </div>
+        <div class="code">
+          /* Change variables on smaller screens */<br />
+          @media (max-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;:root {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--spacing-large:
+          16px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--font-large: 18px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+      </div>
+
+      <!-- REFERENCE SECTION -->
+      <div class="section">
+        <div class="section-title">📚 CSS Variables Quick Reference</div>
+        <div class="code">
+          /* =================================== DEFINING VARIABLES
+          =================================== */ :root { /* Global scope (entire
+          page) */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--variable-name: value;<br />
+          }<br /><br />
+          element { /* Local scope (element only) */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;--local-variable: value;<br />
+          }<br /><br />
+
+          /* =================================== USING VARIABLES
+          =================================== */ element {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;property: var(--variable-name);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;property: var(--variable-name,
+          fallback-value);<br />
+          }<br /><br />
+
+          /* =================================== COMMON VARIABLE NAMES
+          =================================== */ --color-primary: #007bff;<br />
+          --color-secondary: #6c757d;<br />
+          --color-success: #28a745;<br />
+          --color-danger: #dc3545;<br />
+          --color-warning: #ffc107;<br />
+          --color-info: #17a2b8;<br />
+          --color-light: #f8f9fa;<br />
+          --color-dark: #343a40;<br />
+          --spacing-unit: 8px;<br />
+          --border-radius: 4px;<br />
+          --transition-speed: 0.3s;<br />
+          --font-family-base: 'Inter', sans-serif;<br />
+
+          /* =================================== BENEFITS OF CSS VARIABLES
+          =================================== */ 1. Maintainability - Change one
+          value, update everywhere<br />
+          2. Theming - Easily switch between light/dark mode<br />
+          3. Consistency - Use same values across entire site<br />
+          4. Dynamic - Can be changed with JavaScript<br />
+          5. Responsive - Change values at different breakpoints<br />
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: How do you define a CSS variable? */ /* Answer:
+          --variable-name: value; */ /* Question 2: How do you use a CSS
+          variable? */ /* Answer: property: var(--variable-name); */ /* Question
+          3: Where do you define global variables? */ /* Answer: :root { } */ /*
+          Question 4: What happens when a variable is not defined? */ /* Answer:
+          The property is ignored (unless you provide a fallback) */ /* Question
+          5: Can CSS variables be changed with JavaScript? */ /* Answer: Yes!
+          document.body.style.setProperty('--color-primary', 'red'); */
+        </div>
+      </div>
+
+      <footer>
+        <p>🎨 CSS Variables (Custom Properties) Demo</p>
+        <p>
+          💡 Save this page as a reference for building consistent, maintainable
+          designs
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Theme switching is already handled by the inline onclick handlers above
+      // This script is just for demonstration of JavaScript variable manipulation
+      console.log("CSS variables demo loaded!");
+      console.log(
+        'Try: document.body.style.setProperty("--color-primary", "purple")',
+      );
+    </script>
+  </body>
+</html>
