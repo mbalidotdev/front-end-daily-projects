@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+/* ===================================
+           PRICING GRID (FLEXBOX)
+           =================================== */
+.pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* ===================================
+           PRICING CARD
+           =================================== */
+.pricing-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Popular Plan Badge */
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e94560;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Plan Name */
+.plan-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+  font-size: 48px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin: 20px 0;
+}
+
+.price span {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+
+/* Description */
+.plan-description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Features List */
+.features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.features li {
+  padding: 10px 0;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.features li::before {
+  content: "✓";
+  color: #4a90e2;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  color: white;
+  border: 2px solid #4a90e2;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+  border-color: #357abd;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
+}
+
+.btn-outline:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Popular Card Styling */
+.popular {
+  background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+  border: 2px solid #e94560;
+  transform: scale(1.02);
+}
+
+.popular:hover {
+  transform: scale(1.02) translateY(-10px);
+}
+
+/* ===================================
+           SECOND PRICING TABLE (Different Style)
+           =================================== */
+.section-title {
+  color: white;
+  margin: 60px 0 30px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.pricing-grid-alt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card-alt {
+  background-color: white;
+  border-radius: 16px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card-alt:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-alt .price {
+  font-size: 36px;
+  color: #4a90e2;
+}
+
+.card-alt .btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.card-alt .btn:hover {
+  background-color: #357abd;
+}
+
+hr {
+  margin: 50px 0;
+  border-color: #2a3a5a;
+}
+
+/* ===================================
+           FLEXBOX REFERENCE
+           =================================== */
+.reference {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+.reference h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.code {
+  background-color: #1e1e2e;
+  color: #82b1ff;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  margin-top: 60px;
+  padding-top: 30px;
+}

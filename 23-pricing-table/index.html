@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Table</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>💰 Choose Your Plan</h1>
+        <div class="subtitle">Simple, transparent pricing. No hidden fees.</div>
+      </header>
+
+      <!-- MAIN PRICING TABLE (3 cards side by side) -->
+      <div class="pricing-grid">
+        <!-- CARD 1: BASIC -->
+        <div class="pricing-card">
+          <div class="plan-name">Basic</div>
+          <div class="price">$19<span>/month</span></div>
+          <div class="plan-description">
+            Perfect for beginners and small projects
+          </div>
+          <ul class="features">
+            <li>1 Website</li>
+            <li>10 GB Storage</li>
+            <li>Basic Support</li>
+            <li>Free SSL Certificate</li>
+            <li>Monthly Reports</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <!-- CARD 2: PRO (POPULAR) -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">🔥 Most Popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="price">$49<span>/month</span></div>
+          <div class="plan-description">Best for growing businesses</div>
+          <ul class="features">
+            <li>10 Websites</li>
+            <li>100 GB Storage</li>
+            <li>Priority Support</li>
+            <li>Free SSL + CDN</li>
+            <li>Weekly Reports</li>
+            <li>Advanced Analytics</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <!-- CARD 3: ENTERPRISE -->
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="price">$99<span>/month</span></div>
+          <div class="plan-description">For large organizations and teams</div>
+          <ul class="features">
+            <li>Unlimited Websites</li>
+            <li>1 TB Storage</li>
+            <li>24/7 Phone Support</li>
+            <li>Free SSL + CDN + Backup</li>
+            <li>Daily Reports</li>
+            <li>Custom Development</li>
+            <li>Dedicated Account Manager</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Contact Sales</a>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- SECOND PRICING TABLE (Alternative Style) -->
+      <h2 class="section-title">✨ Alternative Style</h2>
+
+      <div class="pricing-grid-alt">
+        <div class="card-alt">
+          <div class="plan-name">Starter</div>
+          <div class="price">$0</div>
+          <div class="plan-description">Free forever</div>
+          <ul class="features">
+            <li>1 project</li>
+            <li>Community support</li>
+          </ul>
+          <a href="#" class="btn">Start Free</a>
+        </div>
+
+        <div class="card-alt">
+          <div class="plan-name">Professional</div>
+          <div class="price">$29</div>
+          <div class="plan-description">Best value</div>
+          <ul class="features">
+            <li>50 projects</li>
+            <li>Email support</li>
+            <li>Advanced features</li>
+          </ul>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="card-alt">
+          <div class="plan-name">Team</div>
+          <div class="price">$99</div>
+          <div class="plan-description">Up to 5 members</div>
+          <ul class="features">
+            <li>Unlimited projects</li>
+            <li>Priority support</li>
+            <li>Team management</li>
+          </ul>
+          <a href="#" class="btn">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- FLEXBOX REFERENCE -->
+      <div class="reference">
+        <h3>📚 How This Pricing Table Works (Flexbox)</h3>
+        <div class="code">
+          /* The magic is in these 3 lines */<br />
+          .pricing-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex; /* Enables flexbox */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap; /* Cards wrap on small
+          screens */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center; /* Centers the row
+          */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px; /* Space between cards */<br />
+          }<br /><br />
+          .pricing-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 320px; /* Fixed width per card */<br />
+          }<br /><br />
+          /* On mobile, cards stack vertically */<br />
+          @media (max-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.pricing-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max-width: 350px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUIZ SECTION -->
+      <div class="reference" style="background-color: #1a1a2e">
+        <h3>🧠 Quick Quiz</h3>
+        <div class="code">
+          /* Question 1: How do you make 3 cards sit side by side? */<br />
+          /* Answer: display: flex; gap: 30px; on parent */<br /><br />
+
+          /* Question 2: What makes cards wrap on mobile? */<br />
+          /* Answer: flex-wrap: wrap; */<br /><br />
+
+          /* Question 3: How to highlight the popular plan? */<br />
+          /* Answer: Add a different border, scale, or badge */<br /><br />
+
+          /* Question 4: What property adds space between cards? */<br />
+          /* Answer: gap: 30px; */
+        </div>
+      </div>
+
+      <footer>
+        <p>💰 Pricing Table - Three Cards Side by Side with Flexbox</p>
+        <p>💡 Resize your browser to see cards stack on mobile</p>
+      </footer>
+    </div>
+  </body>
+</html>
