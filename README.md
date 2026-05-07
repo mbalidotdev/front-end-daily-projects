@@ -107,3 +107,7 @@ _static, relative, absolute, fixed, sticky_
 ### [26. Z-Index Playground](https://mbalidotdev.github.io/front-end-daily-projects/26-z-index-playground)
 
 _stacking order: overlapping elements, z-index_
+
+### [27. Sticky Header](https://mbalidotdev.github.io/front-end-daily-projects/27-sticky-header)
+
+_position: sticky, top: 0, scroll behavior_
