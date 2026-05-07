@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- FIXED NAVIGATION (always visible, even when scrolling) -->
+    <nav class="fixed-nav">
+      <a href="#static">Static</a>
+      <a href="#relative">Relative</a>
+      <a href="#absolute">Absolute</a>
+      <a href="#fixed">Fixed</a>
+      <a href="#sticky">Sticky</a>
+      <a href="#comparison">Comparison</a>
+    </nav>
+
+    <div class="container">
+      <header>
+        <h1>📐 CSS Position Demo</h1>
+        <div
+          class="section-description"
+          style="text-align: center; margin-bottom: 40px"
+        >
+          Understanding
+          <strong>static, relative, absolute, fixed, sticky</strong>
+        </div>
+      </header>
+
+      <!-- =================================== -->
+      <!-- 1. STATIC (default) -->
+      <!-- =================================== -->
+      <div class="section" id="static">
+        <div class="section-title">
+          1. <span class="highlight">position: static</span>
+        </div>
+        <div class="section-description">
+          <strong>Default for all elements.</strong> Elements flow normally in
+          the page. Top, right, bottom, left, and z-index have
+          <strong>NO effect</strong>.
+        </div>
+
+        <div class="demo-container">
+          <div class="demo-box static-box">Static Box 1</div>
+          <div class="demo-box static-box" style="margin-top: 10px">
+            Static Box 2
+          </div>
+          <div class="demo-box static-box" style="margin-top: 10px">
+            Static Box 3
+          </div>
+        </div>
+
+        <div class="code">
+          /* Static positioning - default behavior */ .element { position:
+          static; /* This is default, you rarely write this */ top: 20px; /* ❌
+          Does NOTHING */ left: 30px; /* ❌ Does NOTHING */ } /* Elements just
+          stack vertically in normal flow */
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 2. RELATIVE -->
+      <!-- =================================== -->
+      <div class="section" id="relative">
+        <div class="section-title">
+          2. <span class="highlight">position: relative</span>
+        </div>
+        <div class="section-description">
+          <strong>Relative to its normal position.</strong> The element stays in
+          the document flow, but you can move it using top, right, bottom, left.
+          <strong>Other elements are NOT affected</strong>
+          (they act like it never moved).
+        </div>
+
+        <div class="demo-container relative-container">
+          <div class="demo-box">Normal Box (not moved)</div>
+          <div class="demo-box relative-box">
+            Relative Box<br />top:20px, left:30px
+          </div>
+          <div class="demo-box" style="margin-top: 10px">
+            Another Normal Box<br />(acts like relative box didn't move)
+          </div>
+        </div>
+
+        <div class="code">
+          /* Relative positioning - moves relative to original position */
+          .relative-box { position: relative; top: 20px; /* Moves DOWN from
+          original position */ left: 30px; /* Moves RIGHT from original position
+          */ /* Other elements ignore this movement - they stay where original
+          box was */ }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 3. ABSOLUTE -->
+      <!-- =================================== -->
+      <div class="section" id="absolute">
+        <div class="section-title">
+          3. <span class="highlight">position: absolute</span>
+        </div>
+        <div class="section-description">
+          <strong>Removed from document flow.</strong> Other elements act like
+          it doesn't exist. Positioned relative to the
+          <strong>nearest positioned ancestor</strong> (parent with
+          relative/absolute/fixed/sticky). If no positioned ancestor, positions
+          relative to <strong>&lt;body&gt;</strong>.
+        </div>
+
+        <div class="demo-container absolute-container">
+          <div class="demo-box" style="opacity: 0.5">
+            Normal Box<br />(in flow)
+          </div>
+          <div class="demo-box absolute-box">
+            Absolute Box<br />top:20px, right:20px
+          </div>
+          <div class="demo-box absolute-box-2">
+            Absolute Box 2<br />bottom:20px, left:20px
+          </div>
+          <div class="demo-box" style="margin-top: 10px; opacity: 0.5">
+            Another Normal Box<br />Notice the absolute boxes don't take up
+            space
+          </div>
+        </div>
+
+        <div class="code">
+          /* Absolute positioning - relative to nearest positioned parent */
+          .parent { position: relative; /* This makes parent the reference point
+          */ } .absolute-child { position: absolute; top: 20px; /* 20px from top
+          of parent */ right: 20px; /* 20px from right of parent */ /* Removed
+          from document flow - other elements ignore it */ }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 4. FIXED -->
+      <!-- =================================== -->
+      <div class="section" id="fixed">
+        <div class="section-title">
+          4. <span class="highlight">position: fixed</span>
+        </div>
+        <div class="section-description">
+          <strong>Fixed to the viewport.</strong> Stays in the same place even
+          when scrolling. Removed from document flow. Great for navigation bars,
+          back-to-top buttons, chat widgets. <br /><br />
+          <strong>Example:</strong> The red navigation bar at the top of this
+          page uses <code>position: fixed</code>. Scroll down — it stays
+          visible!
+        </div>
+
+        <div class="code">
+          /* Fixed positioning - relative to viewport */ .fixed-nav { position:
+          fixed; top: 0; left: 0; width: 100%; /* Always visible, even when
+          scrolling */ }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 5. STICKY -->
+      <!-- =================================== -->
+      <div class="section" id="sticky">
+        <div class="section-title">
+          5. <span class="highlight">position: sticky</span>
+        </div>
+        <div class="section-description">
+          <strong>Hybrid of relative and fixed.</strong> Behaves like relative
+          until you scroll past it, then it "sticks" to the top. Great for table
+          headers, section titles, and category headers. <br /><br />
+          <strong>Try scrolling inside the box below:</strong>
+        </div>
+
+        <div class="sticky-demo">
+          <div class="sticky-header">
+            📌 Sticky Header - Try scrolling here!
+          </div>
+          <div class="scroll-content">
+            Section 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="scroll-content">
+            Section 2: Sed do eiusmod tempor incididunt ut labore et dolore.
+          </div>
+          <div class="scroll-content">
+            Section 3: Ut enim ad minim veniam, quis nostrud exercitation.
+          </div>
+          <div class="scroll-content">
+            Section 4: Duis aute irure dolor in reprehenderit.
+          </div>
+          <div class="scroll-content">
+            Section 5: Excepteur sint occaecat cupidatat non proident.
+          </div>
+          <div class="scroll-content">
+            Section 6: The sticky header stays at the top while scrolling!
+          </div>
+        </div>
+
+        <div class="code">
+          /* Sticky positioning - sticks when scrolled past */ .sticky-header {
+          position: sticky; top: 0; /* Sticks to top when scrolled to this point
+          */ /* Works inside a scrolling container */ }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- COMPARISON TABLE -->
+      <!-- =================================== -->
+      <div class="section" id="comparison">
+        <div class="section-title">📊 Comparison: When to Use Each</div>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Reference Point</th>
+              <th>Removed from Flow?</th>
+              <th>Scrolling Behavior</th>
+              <th>Common Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>static</strong></td>
+              <td>Normal flow</td>
+              <td>❌ No</td>
+              <td>Scrolls normally</td>
+              <td>Default (rarely set manually)</td>
+            </tr>
+            <tr>
+              <td><strong>relative</strong></td>
+              <td>Original position</td>
+              <td>❌ No</td>
+              <td>Scrolls normally</td>
+              <td>Fine-tuning position, absolute child reference</td>
+            </tr>
+            <tr>
+              <td><strong>absolute</strong></td>
+              <td>Nearest positioned ancestor</td>
+              <td>✅ Yes</td>
+              <td>Scrolls with page</td>
+              <td>Modals, tooltips, overlays, badges</td>
+            </tr>
+            <tr>
+              <td><strong>fixed</strong></td>
+              <td>Viewport (browser window)</td>
+              <td>✅ Yes</td>
+              <td>Stays fixed on scroll</td>
+              <td>Navigation bars, back-to-top, chat widgets</td>
+            </tr>
+            <tr>
+              <td><strong>sticky</strong></td>
+              <td>Scrolling container</td>
+              <td>❌ No (until threshold)</td>
+              <td>Sticks then scrolls</td>
+              <td>Section headers, table headers, category headers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- QUICK REFERENCE CARD -->
+      <div class="section">
+        <div class="section-title">📚 Quick Reference Card</div>
+        <div class="code">
+          /* Remember these 5 values */<br />
+          <br />
+          /* 1. STATIC - default, nothing special */<br />
+          position: static;<br />
+          <br />
+          /* 2. RELATIVE - move from normal spot */<br />
+          position: relative;<br />
+          top: 20px; left: 30px;<br />
+          <br />
+          /* 3. ABSOLUTE - relative to parent with position */<br />
+          position: absolute;<br />
+          top: 0; right: 0;<br />
+          <br />
+          /* 4. FIXED - relative to browser window */<br />
+          position: fixed;<br />
+          bottom: 20px; right: 20px;<br />
+          <br />
+          /* 5. STICKY - sticks then scrolls */<br />
+          position: sticky;<br />
+          top: 0;<br />
+          <br />
+          /* 💡 PRO TIP: When using absolute, parent needs position: relative
+          */<br />
+          .parent { position: relative; }<br />
+          .child { position: absolute; top: 0; left: 0; }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: Which position value makes an element stick to the top
+          while scrolling? */ /* Answer: position: sticky; */ /* Question 2: For
+          absolute positioning, what must the parent have? */ /* Answer:
+          position: relative (or absolute/fixed/sticky) */ /* Question 3: Which
+          position is used for a fixed navigation bar? */ /* Answer: position:
+          fixed; */ /* Question 4: What is the default position of all HTML
+          elements? */ /* Answer: position: static; */ /* Question 5: Which
+          position removes the element from document flow? */ /* Answer:
+          absolute and fixed (and sticky at threshold) */
+        </div>
+      </div>
+
+      <footer>
+        <p>📐 CSS Position Demo - Static, Relative, Absolute, Fixed, Sticky</p>
+        <p>
+          💡 Save this page as reference whenever you forget how positioning
+          works
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

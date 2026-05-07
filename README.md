@@ -99,3 +99,7 @@ _border, focus states, spacing, :focus pseudo-class_
 ### [24. Hover Effects Gallery](https://mbalidotdev.github.io/front-end-daily-projects/24-hover-effects-gallery)
 
 _transform: scale(), transition, opacity_
+
+### [25. Position Demo](https://mbalidotdev.github.io/front-end-daily-projects/25-position-demo)
+
+_static, relative, absolute, fixed, sticky_
