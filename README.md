@@ -103,3 +103,7 @@ _transform: scale(), transition, opacity_
 ### [25. Position Demo](https://mbalidotdev.github.io/front-end-daily-projects/25-position-demo)
 
 _static, relative, absolute, fixed, sticky_
+
+### [26. Z-Index Playground](https://mbalidotdev.github.io/front-end-daily-projects/26-z-index-playground)
+
+_stacking order: overlapping elements, z-index_

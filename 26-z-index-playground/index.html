@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Index Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📚 Z-Index Playground</h1>
+        <div class="subtitle">
+          Understanding stacking order: higher z-index = appears on top
+        </div>
+      </header>
+
+      <!-- =================================== -->
+      <!-- DEMO 1: Z-INDEX BASICS -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">1. 🎯 Z-Index Basics</div>
+        <div class="section-description">
+          Higher <strong>z-index</strong> = appears on top. Green (z-index:3) →
+          Blue (z-index:2) → Red (z-index:1)
+        </div>
+
+        <div class="demo-container demo1-container">
+          <div class="box box1-1">Red<br />z-index: 1</div>
+          <div class="box box1-2">Blue<br />z-index: 2</div>
+          <div class="box box1-3">Green<br />z-index: 3</div>
+        </div>
+
+        <div class="code">
+          .box-red { position: absolute; z-index: 1; } /* Bottom */<br />
+          .box-blue { position: absolute; z-index: 2; } /* Middle */<br />
+          .box-green { position: absolute; z-index: 3; } /* Top */
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 2: WITHOUT Z-INDEX -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">2. 📄 Without Z-Index (Default Order)</div>
+        <div class="section-description">
+          Without <strong>z-index</strong>, elements stack in the order they
+          appear in HTML. Later elements appear on top.
+        </div>
+
+        <div class="demo-container demo2-container">
+          <div class="box box2-1">Red<br />(first in HTML)</div>
+          <div class="box box2-2">Blue<br />(second in HTML)</div>
+          <div class="box box2-3">Green<br />(third in HTML - ON TOP)</div>
+        </div>
+
+        <div class="code">
+          /* No z-index set - later HTML elements appear on top */<br />
+          /* Red (first) → Blue (second) → Green (third) appears on top */
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 3: LOWER Z-INDEX GOES BEHIND -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">3. ⬇️ Lower Z-Index Goes Behind</div>
+        <div class="section-description">
+          Red (z-index:10) is on top, even though it appears first in HTML.
+        </div>
+
+        <div class="demo-container demo3-container">
+          <div class="box box3-1">Red<br />z-index: 10</div>
+          <div class="box box3-2">Blue<br />z-index: 5</div>
+          <div class="box box3-3">Green<br />z-index: 1</div>
+        </div>
+
+        <div class="code">
+          .box-red { z-index: 10; } /* Highest - ON TOP */<br />
+          .box-blue { z-index: 5; } /* Middle */<br />
+          .box-green { z-index: 1; } /* Lowest - BEHIND */
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 4: NEGATIVE Z-INDEX -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">4. ⬇️ Negative Z-Index</div>
+        <div class="section-description">
+          Negative <strong>z-index</strong> puts element
+          <strong>behind</strong> its parent.
+        </div>
+
+        <div class="demo-container demo4-container">
+          <div class="parent-box">
+            Parent (z-index: auto)
+            <div class="negative-child">
+              Child (z-index: -1)<br />Goes behind parent
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .parent { position: relative; background: blue; }<br />
+          .child { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;z-index: -1; /* Goes behind parent */<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 5: STACKING CONTEXT -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">
+          5. 🏗️ Stacking Context (Nested Elements)
+        </div>
+        <div class="section-description">
+          Each parent creates its own stacking context. Z-index only compares
+          within the same parent.
+        </div>
+
+        <div class="demo5-wrapper">
+          <div class="stacking-parent parent-a">
+            <div class="title">Parent A (z-index: auto)</div>
+            <div class="inner-box child-a1">Child A1<br />z-index: 1</div>
+            <div class="inner-box child-a2">Child A2<br />z-index: 2</div>
+          </div>
+
+          <div class="stacking-parent parent-b">
+            <div class="title">Parent B (z-index: auto)</div>
+            <div class="inner-box child-b1">Child B1<br />z-index: 2</div>
+            <div class="inner-box child-b2">Child B2<br />z-index: 1</div>
+          </div>
+        </div>
+
+        <div class="code">
+          /* Each parent has its OWN stacking context */<br />
+          /* Child z-index only compares within its parent */<br />
+          .parent-a { position: relative; }<br />
+          .parent-b { position: relative; }<br />
+          /* Children in Parent A cannot overlap children in Parent B */
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 6: MODAL OVERLAY (PRACTICAL) -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">6. 💡 Practical Use: Modal Overlay</div>
+        <div class="section-description">
+          Modal overlay covers everything with <strong>high z-index</strong>.
+          The modal card has even higher z-index.
+        </div>
+
+        <div class="modal-container">
+          <div class="page-content">
+            <p>📄 Normal page content</p>
+            <p>↓ A modal overlay appears on top ↓</p>
+          </div>
+          <div class="modal-overlay">
+            <div class="modal-card">
+              <strong>Modal Window</strong>
+              <p>This modal has z-index: 101</p>
+              <button>Close</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          /* Modal overlay - covers everything */<br />
+          .modal-overlay {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: fixed;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: 0; left: 0;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 100%; height: 100%;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background: rgba(0,0,0,0.8);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;z-index: 100;<br />
+          }<br /><br />
+          .modal-card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;top: 50%; left: 50%;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: translate(-50%, -50%);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;z-index: 101; /* Higher than overlay */<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 7: DROPDOWN MENU -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">7. 🔽 Dropdown Menu (Z-Index Required)</div>
+        <div class="section-description">
+          Dropdown needs high <strong>z-index</strong> to appear above other
+          content.
+        </div>
+
+        <div class="dropdown-demo">
+          <div class="dropdown-button">Hover for menu ▼</div>
+          <div
+            class="dropdown-content"
+            style="
+              display: block;
+              position: static;
+              margin-top: 10px;
+              position: relative;
+              display: inline-block;
+            "
+          >
+            <a href="#">Dashboard</a>
+            <a href="#">Settings</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 20px;
+            background-color: #2a3a5a;
+            padding: 20px;
+            border-radius: 8px;
+          "
+        >
+          Other content here. Dropdown with high z-index appears above.
+        </div>
+
+        <div class="code">
+          .dropdown-content {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;z-index: 1000; /* High value to appear above
+          everything */<br />
+          }
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- REFERENCE TABLE -->
+      <!-- =================================== -->
+      <div class="section">
+        <div class="section-title">📚 Z-Index Reference Table</div>
+
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Rule</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Higher z-index = on top</strong></td>
+              <td>z-index: 100 appears above z-index: 50</td>
+            </tr>
+            <tr>
+              <td><strong>Need position</strong></td>
+              <td>
+                z-index only works on positioned elements (relative, absolute,
+                fixed, sticky)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Default is auto</strong></td>
+              <td>No z-index = elements stack in HTML order</td>
+            </tr>
+            <tr>
+              <td><strong>Negative z-index</strong></td>
+              <td>Goes behind parent element</td>
+            </tr>
+            <tr>
+              <td><strong>Stacking context</strong></td>
+              <td>Each positioned parent creates its own stacking layer</td>
+            </tr>
+            <tr>
+              <td><strong>Common values</strong></td>
+              <td>Dropdowns: 1000, Modals: 2000, Notifications: 3000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">⚡ Quick Reference Card</div>
+        <div class="code">
+          /* Remember these z-index rules */<br />
+          <br />
+          /* 1. Higher number = on top */<br />
+          z-index: 100; /* Appears above z-index: 50 */<br />
+          <br />
+          /* 2. Must have position set */<br />
+          position: relative; /* or absolute, fixed, sticky */<br />
+          z-index: 10;<br />
+          <br />
+          /* 3. Common z-index values */<br />
+          z-index: 1; /* Slight lift */<br />
+          z-index: 100; /* Dropdowns */<br />
+          z-index: 1000; /* Modals */<br />
+          z-index: 10000; /* Notifications, tooltips */<br />
+          <br />
+          /* 4. Without z-index, HTML order wins */<br />
+          /* Last element in HTML appears on top */<br />
+          <br />
+          /* 5. Negative puts element behind */<br />
+          z-index: -1; /* Goes behind parent */<br />
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: Which appears on top: z-index: 10 or z-index: 100? */
+          /* Answer: z-index: 100 (higher number = on top) */ /* Question 2:
+          Does z-index work on static elements? */ /* Answer: No. Element needs
+          position: relative/absolute/fixed/sticky */ /* Question 3: What
+          happens if two elements have the same z-index? */ /* Answer: The one
+          that appears later in HTML is on top */ /* Question 4: What is a
+          typical z-index for a modal? */ /* Answer: 1000 or higher */ /*
+          Question 5: What does z-index: -1 do? */ /* Answer: Puts element
+          behind its parent */
+        </div>
+      </div>
+
+      <footer>
+        <p>📚 Z-Index Playground - Understanding Stacking Order</p>
+        <p>
+          💡 Save this page as reference for stacking contexts and z-index rules
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

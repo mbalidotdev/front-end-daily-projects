@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  padding: 25px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+/* ===================================
+           DEMO CONTAINER
+           =================================== */
+.demo-container {
+  position: relative;
+  background-color: #0a0a1a;
+  border-radius: 12px;
+  padding: 40px;
+  min-height: 350px;
+  margin: 20px 0;
+}
+
+/* Base box style */
+.box {
+  width: 150px;
+  height: 120px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* ===================================
+           DEMO 1: BASIC Z-INDEX
+           =================================== */
+.demo1-container {
+  position: relative;
+  height: 250px;
+}
+
+.box1-1 {
+  background-color: #e94560;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.box1-2 {
+  background-color: #4a90e2;
+  top: 60px;
+  left: 60px;
+  z-index: 2;
+}
+
+.box1-3 {
+  background-color: #2ecc71;
+  top: 100px;
+  left: 100px;
+  z-index: 3;
+}
+
+/* ===================================
+           DEMO 2: WITHOUT Z-INDEX (default order)
+           =================================== */
+.demo2-container {
+  position: relative;
+  height: 250px;
+}
+
+.box2-1 {
+  background-color: #e94560;
+  top: 20px;
+  left: 20px;
+}
+
+.box2-2 {
+  background-color: #4a90e2;
+  top: 60px;
+  left: 60px;
+}
+
+.box2-3 {
+  background-color: #2ecc71;
+  top: 100px;
+  left: 100px;
+}
+
+/* ===================================
+           DEMO 3: HIGHER Z-INDEX = ON TOP
+           =================================== */
+.demo3-container {
+  position: relative;
+  height: 250px;
+}
+
+.box3-1 {
+  background-color: #e94560;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.box3-2 {
+  background-color: #4a90e2;
+  top: 60px;
+  left: 60px;
+  z-index: 5;
+}
+
+.box3-3 {
+  background-color: #2ecc71;
+  top: 100px;
+  left: 100px;
+  z-index: 1;
+}
+
+/* ===================================
+           DEMO 4: NEGATIVE Z-INDEX (goes behind parent)
+           =================================== */
+.demo4-container {
+  position: relative;
+  height: 300px;
+}
+
+.parent-box {
+  position: relative;
+  background-color: #4a90e2;
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.negative-child {
+  position: absolute;
+  background-color: #e94560;
+  width: 200px;
+  height: 100px;
+  border-radius: 12px;
+  top: 50px;
+  left: 50px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================================
+           DEMO 5: STACKING CONTEXT (nested z-index)
+           =================================== */
+.demo5-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stacking-parent {
+  position: relative;
+  background-color: #2a3a5a;
+  width: 280px;
+  height: 280px;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.stacking-parent .title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.inner-box {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent-a {
+  background-color: rgba(233, 69, 96, 0.3);
+  border: 2px solid #e94560;
+}
+
+.parent-b {
+  background-color: rgba(46, 204, 113, 0.3);
+  border: 2px solid #2ecc71;
+}
+
+.child-a1 {
+  background-color: #e94560;
+  top: 40px;
+  left: 30px;
+  z-index: 1;
+}
+
+.child-a2 {
+  background-color: #ff6b6b;
+  top: 80px;
+  left: 60px;
+  z-index: 2;
+}
+
+.child-b1 {
+  background-color: #2ecc71;
+  top: 40px;
+  left: 30px;
+  z-index: 2;
+}
+
+.child-b2 {
+  background-color: #58d68d;
+  top: 80px;
+  left: 60px;
+  z-index: 1;
+}
+
+/* ===================================
+           DEMO 6: PRACTICAL USE - MODAL OVERLAY
+           =================================== */
+.modal-container {
+  position: relative;
+  height: 300px;
+}
+
+.page-content {
+  background-color: #2a3a5a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-card {
+  background-color: white;
+  color: #1a1a2e;
+  padding: 25px;
+  border-radius: 16px;
+  width: 250px;
+  text-align: center;
+  z-index: 101;
+}
+
+.modal-card button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===================================
+           DEMO 7: DROPDOWN MENU (z-index needed)
+           =================================== */
+.dropdown-demo {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #4a90e2;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: white;
+  color: #1a1a2e;
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Reference table */
+.reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.reference-table th,
+.reference-table td {
+  border: 1px solid #2a3a5a;
+  padding: 12px;
+  text-align: left;
+}
+
+.reference-table th {
+  background-color: #0f3460;
+  color: #4a90e2;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
