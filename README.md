@@ -127,3 +127,7 @@ _::before, ::after, ::first-letter, and more_
 ### [31. Basic Grid Layout](https://mbalidotdev.github.io/front-end-daily-projects/31-basic-grid-layout)
 
 _display: grid, grid-template-columns, gap_
+
+### [32. Grid vs Flexbox](https://mbalidotdev.github.io/front-end-daily-projects/32-grid-vs-flexbox)
+
+_understand when to use each_

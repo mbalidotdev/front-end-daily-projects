@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid vs Flexbox - Same Layout, Two Ways</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔄 Grid vs Flexbox Comparison</h1>
+        <div class="subtitle">
+          Same layout, two ways — learn when to use each
+        </div>
+      </header>
+
+      <!-- INTRO: WHEN TO USE WHAT -->
+      <div class="section">
+        <div class="section-title">📚 When to Use Grid vs Flexbox</div>
+        <div class="comparison-box">
+          <div class="method">
+            <h3>📐 Use CSS Grid When...</h3>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>You need BOTH rows AND columns (2D)</li>
+              <li>Creating overall page layout</li>
+              <li>Dashboard or complex grid structures</li>
+              <li>Overlapping elements</li>
+              <li>You want to place items exactly where you want</li>
+            </ul>
+          </div>
+          <div class="method">
+            <h3>📏 Use Flexbox When...</h3>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>You need ONE direction only (row OR column)</li>
+              <li>Navigation bars</li>
+              <li>Centering items</li>
+              <li>Distributing space between items</li>
+              <li>Content that wraps to next line</li>
+            </ul>
+          </div>
+        </div>
+        <div class="verdict">
+          💡 <strong>Rule of thumb:</strong> Grid for PAGE LAYOUT (2D), Flexbox
+          for COMPONENTS (1D). You can (and should) use both together!
+        </div>
+      </div>
+
+      <!-- DEMO 1: CARD GRID -->
+      <div class="section">
+        <div class="section-title">1. Card Grid (3+ cards in a row)</div>
+
+        <div class="comparison-box">
+          <div class="method">
+            <h3>Flexbox Way</h3>
+            <div class="flex-card-grid">
+              <div class="flex-card">Card 1</div>
+              <div class="flex-card">Card 2</div>
+              <div class="flex-card">Card 3</div>
+              <div class="flex-card">Card 4</div>
+            </div>
+            <div class="code">
+              .flex-card-grid {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }<br />
+              .flex-card {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 200px;<br />
+              }
+            </div>
+          </div>
+
+          <div class="method">
+            <h3>Grid Way</h3>
+            <div class="grid-card-grid">
+              <div class="grid-card">Card 1</div>
+              <div class="grid-card">Card 2</div>
+              <div class="grid-card">Card 3</div>
+              <div class="grid-card">Card 4</div>
+            </div>
+            <div class="code">
+              .grid-card-grid {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+              minmax(200px, 1fr));<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="verdict">
+          ✅ <strong>Both work well!</strong> Flexbox is simpler for basic card
+          rows. Grid is better if you need exact column control.
+        </div>
+      </div>
+
+      <!-- DEMO 2: NAVIGATION BAR -->
+      <div class="section">
+        <div class="section-title">2. Navigation Bar (space-between)</div>
+
+        <div class="comparison-box">
+          <div class="method">
+            <h3>Flexbox Way (Natural)</h3>
+            <div class="flex-nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="code">
+              .flex-nav ul {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br />
+              }
+            </div>
+          </div>
+
+          <div class="method">
+            <h3>Grid Way (Less Natural)</h3>
+            <div class="grid-nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="code">
+              .grid-nav ul {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(4, auto);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="verdict">
+          🏆 <strong>Flexbox wins!</strong> Navigation bars are naturally
+          1-dimensional (a single row). Flexbox is simpler and more intuitive.
+        </div>
+      </div>
+
+      <!-- DEMO 3: HOLY GRAIL LAYOUT -->
+      <div class="section">
+        <div class="section-title">
+          3. Holy Grail Layout (Header, Sidebar, Main, Footer)
+        </div>
+
+        <div class="comparison-box">
+          <div class="method">
+            <h3>Flexbox Way (Complicated)</h3>
+            <div class="flex-holygrail">
+              <div class="flex-header">Header</div>
+              <div class="flex-body">
+                <div class="flex-sidebar">Sidebar</div>
+                <div class="flex-main">Main Content</div>
+              </div>
+              <div class="flex-footer">Footer</div>
+            </div>
+            <div class="code">
+              .flex-holygrail {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br />
+              }<br />
+              .flex-body {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;flex: 1;<br />
+              }
+            </div>
+          </div>
+
+          <div class="method">
+            <h3>Grid Way (Simple!)</h3>
+            <div class="grid-holygrail">
+              <div class="grid-header">Header</div>
+              <div class="grid-sidebar">Sidebar</div>
+              <div class="grid-main">Main Content</div>
+              <div class="grid-footer">Footer</div>
+            </div>
+            <div class="code">
+              .grid-holygrail {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+              header"<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar main
+              main"<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+              footer";<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 200px 1fr 1fr;<br />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="verdict">
+          🏆 <strong>Grid wins!</strong> Page layouts are 2-dimensional (rows
+          AND columns). Grid's grid-template-areas makes it visually clear.
+        </div>
+      </div>
+
+      <!-- DEMO 4: PRODUCT CARD ROW -->
+      <div class="section">
+        <div class="section-title">4. Product Cards (Equal Width Row)</div>
+
+        <div class="comparison-box">
+          <div class="method">
+            <h3>Flexbox Way</h3>
+            <div class="flex-products">
+              <div class="flex-product">Product 1</div>
+              <div class="flex-product">Product 2</div>
+              <div class="flex-product">Product 3</div>
+            </div>
+            <div class="code">
+              .flex-products {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }<br />
+              .flex-product { flex: 1; }
+            </div>
+          </div>
+
+          <div class="method">
+            <h3>Grid Way</h3>
+            <div class="grid-products">
+              <div class="grid-product">Product 1</div>
+              <div class="grid-product">Product 2</div>
+              <div class="grid-product">Product 3</div>
+            </div>
+            <div class="code">
+              .grid-products {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="verdict">
+          ✅ <strong>Both work equally well.</strong> Flexbox is simpler for
+          fixed number of items. Grid is better if you need exact column
+          control.
+        </div>
+      </div>
+
+      <!-- DEMO 5: TWO-COLUMN LAYOUT -->
+      <div class="section">
+        <div class="section-title">5. Two-Column Layout (Side-by-Side)</div>
+
+        <div class="comparison-box">
+          <div class="method">
+            <h3>Flexbox Way</h3>
+            <div class="two-col-demo">
+              <div class="flex-side">Left Column</div>
+              <div class="flex-side">Right Column</div>
+            </div>
+            <div class="code">
+              .two-col-demo {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }<br />
+              .flex-side { flex: 1; }
+            </div>
+          </div>
+
+          <div class="method">
+            <h3>Grid Way</h3>
+            <div class="grid-two-col">
+              <div class="grid-col">Left Column</div>
+              <div class="grid-col">Right Column</div>
+            </div>
+            <div class="code">
+              .grid-two-col {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 1fr;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="verdict">
+          ✅ <strong>Both work well.</strong> Two columns is simple enough for
+          both. Use whatever you prefer.
+        </div>
+      </div>
+
+      <!-- SUMMARY TABLE -->
+      <div class="section">
+        <div class="section-title">📊 Summary: Grid vs Flexbox</div>
+
+        <div class="code">
+          /* =================================== WHEN TO USE GRID (2D Layout)
+          =================================== */ ✓ Overall page layouts (header,
+          sidebar, main, footer) ✓ Dashboards and complex grids ✓ Magazine-style
+          layouts ✓ When you need control over BOTH rows and columns ✓
+          Overlapping elements /* =================================== WHEN TO
+          USE FLEXBOX (1D Layout) =================================== */ ✓
+          Navigation bars ✓ Centering items (easier than Grid) ✓ Distributing
+          space between items ✓ Button groups ✓ Card rows ✓ Content that wraps
+          to next line /* =================================== USE BOTH TOGETHER!
+          =================================== */ /* Grid for page structure,
+          Flexbox for components */ .page { display: grid; grid-template-areas:
+          "header header" "sidebar main" "footer footer"; gap: 20px; } .header {
+          display: flex; justify-content: space-between; } /* Flexbox inside
+          Grid */ .nav { display: flex; gap: 20px; } /* Flexbox inside Grid */
+          .card-container { display: flex; flex-wrap: wrap; } /* Flexbox inside
+          Grid */
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">⚡ Quick Decision Guide</div>
+
+        <div class="code">
+          /* Q: Am I building a PAGE LAYOUT (header, sidebar, main, footer)? */
+          /* A: USE GRID */ /* Q: Am I building a COMPONENT (navbar, button
+          group, card row)? */ /* A: USE FLEXBOX */ /* Q: Do I need BOTH rows
+          AND columns? */ /* A: USE GRID */ /* Q: Do I need ONE direction only
+          (row OR column)? */ /* A: USE FLEXBOX */ /* Q: Do I want items to
+          automatically wrap to next line? */ /* A: USE FLEXBOX (flex-wrap:
+          wrap) OR Grid (auto-fit) */ /* Q: Do I need exact placement of items?
+          */ /* A: USE GRID (grid-template-areas) */ /* Q: Am I centering
+          something? */ /* A: USE FLEXBOX (justify-content + align-items) */
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What should you use for a navigation bar? */ /* Answer:
+          Flexbox (it's 1D — just a row) */ /* Question 2: What should you use
+          for a complete page layout with header, sidebar, main, and footer? */
+          /* Answer: Grid (it's 2D — rows AND columns) */ /* Question 3: Can you
+          use Flexbox inside Grid? */ /* Answer: Yes! Use Grid for page
+          structure, Flexbox for components inside */ /* Question 4: What layout
+          system is better for centering items? */ /* Answer: Both work, but
+          Flexbox is simpler (justify-content + align-items) */ /* Question 5:
+          Which one uses grid-template-areas? */ /* Answer: CSS Grid (visual
+          layout definition) */
+        </div>
+      </div>
+
+      <footer>
+        <p>🔄 Grid vs Flexbox Comparison - Same layout, two ways</p>
+        <p>💡 Grid = 2D (rows + columns) | Flexbox = 1D (row OR column)</p>
+      </footer>
+    </div>
+  </body>
+</html>
