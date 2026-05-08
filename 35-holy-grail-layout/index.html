@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holy Grail Layout - Classic 5-Section Page Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🏆 Holy Grail Layout</h1>
+        <div class="subtitle">
+          The classic 5-section layout: Header, Left Sidebar, Main, Right
+          Sidebar, Footer
+        </div>
+      </header>
+
+      <!-- DEMO 1: BASIC HOLY GRAIL -->
+      <div class="section">
+        <div class="section-title">1. Basic Holy Grail Layout</div>
+        <div class="section-description">
+          Header, left sidebar, main content, right sidebar, footer — all with
+          CSS Grid.
+        </div>
+
+        <div class="holygrail-1">
+          <div class="header-1">📌 HEADER</div>
+          <div class="sidebar-left-1">📁 LEFT SIDEBAR<br />Navigation</div>
+          <div class="main-1">
+            📄 MAIN CONTENT<br />This is the primary content area.
+          </div>
+          <div class="sidebar-right-1">📌 RIGHT SIDEBAR<br />Ads / Related</div>
+          <div class="footer-1">📞 FOOTER</div>
+        </div>
+
+        <div class="code">
+          .holygrail {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar-left main
+          sidebar-right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 200px 1fr 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: HOLY GRAIL WITH REAL CONTENT -->
+      <div class="section">
+        <div class="section-title">2. Holy Grail with Real Content</div>
+        <div class="section-description">
+          A practical example with navigation menu, blog post, and author
+          sidebar.
+        </div>
+
+        <div class="holygrail-2">
+          <div class="header-2">📝 My Awesome Blog</div>
+          <div class="nav-2">
+            <ul>
+              <li><a href="#">🏠 Home</a></li>
+              <li><a href="#">📖 About</a></li>
+              <li><a href="#">✍️ Blog</a></li>
+              <li><a href="#">📧 Contact</a></li>
+            </ul>
+          </div>
+          <div class="main-2">
+            <h2>Understanding the Holy Grail Layout</h2>
+            <p style="margin-top: 15px">
+              The Holy Grail layout is a classic web design pattern that
+              includes a header, footer, two sidebars, and a main content area.
+              It was historically difficult to achieve with CSS floats and
+              positioning, but CSS Grid makes it simple.
+            </p>
+            <p style="margin-top: 15px">
+              With grid-template-areas, you can visually map out your layout in
+              CSS. The name "Holy Grail" comes from the fact that this layout
+              was highly sought after and difficult to achieve.
+            </p>
+          </div>
+          <div class="aside-2">
+            <h3>📌 About the Author</h3>
+            <p>Front-end developer learning CSS Grid and modern web design.</p>
+            <h3>📌 Related Posts</h3>
+            <p>CSS Grid Guide<br />Flexbox Tutorial<br />Responsive Design</p>
+            <h3>📌 Follow Me</h3>
+            <p>Twitter • GitHub • LinkedIn</p>
+          </div>
+          <div class="footer-2">
+            © 2025 My Awesome Blog | Built with CSS Grid
+          </div>
+        </div>
+
+        <div class="code">
+          .holygrail-2 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nav main aside"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 220px 1fr 250px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: RESPONSIVE HOLY GRAIL -->
+      <div class="section">
+        <div class="section-title">3. Responsive Holy Grail (Mobile First)</div>
+        <div class="section-description">
+          On mobile: stacks vertically. On desktop: full Holy Grail layout.
+          Resize your browser!
+        </div>
+
+        <div class="holygrail-3">
+          <div class="header-3">📌 HEADER</div>
+          <div class="sidebar-left-3">
+            📁 LEFT SIDEBAR<br />(Stacks first on mobile)
+          </div>
+          <div class="main-3">
+            📄 MAIN CONTENT<br />This appears after left sidebar on mobile
+          </div>
+          <div class="sidebar-right-3">
+            📌 RIGHT SIDEBAR<br />Stacks after main on mobile
+          </div>
+          <div class="footer-3">📞 FOOTER</div>
+        </div>
+
+        <div class="code">
+          /* Mobile first: 1 column */<br />
+          .holygrail-3 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar-left"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"main"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar-right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+          /* Desktop: Holy Grail */<br />
+          @media (min-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.holygrail-3 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header
+          header header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar-left
+          main sidebar-right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer
+          footer footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          200px 1fr 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+
+        <div class="note">
+          💡 <strong>Mobile First!</strong> The layout starts as single column
+          on mobile, then transforms into Holy Grail on desktop.
+        </div>
+      </div>
+
+      <!-- DEMO 4: BLOG STYLE HOLY GRAIL -->
+      <div class="section">
+        <div class="section-title">4. Blog Style (Main + Sidebar)</div>
+        <div class="section-description">
+          A simpler version: header, main content with sidebar, footer. Perfect
+          for blogs.
+        </div>
+
+        <div class="holygrail-4">
+          <div class="header-4">
+            <h1 style="color: #4a90e2">My Dev Blog</h1>
+            <p>Thoughts on coding, design, and learning</p>
+          </div>
+          <div class="main-4">
+            <h2>Why CSS Grid Changes Everything</h2>
+            <div class="post-meta">📅 May 15, 2026 | 📖 5 min read</div>
+            <p>
+              CSS Grid finally makes complex layouts simple. Unlike floats or
+              flexbox alone, Grid handles both rows and columns
+              simultaneously...
+            </p>
+            <p style="margin-top: 15px">
+              The Holy Grail layout used to require complicated hacks. Now it's
+              just a few lines of CSS. This is why Grid is essential for modern
+              web development.
+            </p>
+          </div>
+          <div class="sidebar-4">
+            <h3>📌 About</h3>
+            <p>Front-end developer documenting my learning journey.</p>
+            <h3>📌 Categories</h3>
+            <ul>
+              <li><a href="#">CSS (12)</a></li>
+              <li><a href="#">JavaScript (8)</a></li>
+              <li><a href="#">React (5)</a></li>
+              <li><a href="#">Design (3)</a></li>
+            </ul>
+            <h3>📌 Recent Posts</h3>
+            <ul>
+              <li><a href="#">CSS Grid Guide</a></li>
+              <li><a href="#">Flexbox Tips</a></li>
+              <li><a href="#">Responsive Design</a></li>
+            </ul>
+          </div>
+          <div class="footer-4">
+            © 2026 My Dev Blog | Built with CSS Grid Holy Grail
+          </div>
+        </div>
+
+        <div class="code">
+          .holygrail-4 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"main sidebar"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 300px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 30px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- WHY IT'S CALLED HOLY GRAIL -->
+      <div class="section">
+        <div class="section-title">🏆 Why "Holy Grail"?</div>
+
+        <div class="note">
+          The Holy Grail layout was famously difficult to achieve with older CSS
+          methods (floats, tables, positioning). Developers searched for this
+          perfect layout like the mythical Holy Grail.
+          <strong>CSS Grid finally makes it simple.</strong>
+        </div>
+
+        <div class="code">
+          /* Old way (painful) */ /* Floats, clearfix hacks, negative margins,
+          min-height, etc. */ /* New way (CSS Grid) */ .holygrail { display:
+          grid; grid-template-areas: "header header header" "sidebar-left main
+          sidebar-right" "footer footer footer"; grid-template-columns: 200px
+          1fr 200px; gap: 20px; }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">📚 Holy Grail Cheat Sheet</div>
+
+        <div class="code">
+          /* =================================== STANDARD HOLY GRAIL (Desktop)
+          =================================== */ .holygrail { display: grid;
+          grid-template-areas: "header header header" "sidebar-left main
+          sidebar-right" "footer footer footer"; grid-template-columns: 250px
+          1fr 250px; gap: 20px; min-height: 100vh; } /*
+          =================================== RESPONSIVE HOLY GRAIL
+          =================================== */ .holygrail { display: grid;
+          grid-template-areas: "header" "sidebar-left" "main" "sidebar-right"
+          "footer"; gap: 20px; } @media (min-width: 768px) { .holygrail {
+          grid-template-areas: "header header header" "sidebar-left main
+          sidebar-right" "footer footer footer"; grid-template-columns: 200px
+          1fr 200px; } } /* =================================== SIMPLE BLOG
+          VERSION =================================== */ .blog { display: grid;
+          grid-template-areas: "header header" "main sidebar" "footer footer";
+          grid-template-columns: 1fr 300px; gap: 30px; }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What are the 5 main sections of a Holy Grail layout? */
+          /* Answer: Header, Left Sidebar, Main, Right Sidebar, Footer */ /*
+          Question 2: Why is it called "Holy Grail"? */ /* Answer: It was very
+          difficult to achieve with older CSS methods */ /* Question 3: How do
+          you make a Holy Grail layout responsive? */ /* Answer: Use media
+          queries to change grid-template-areas */ /* Question 4: What's the
+          difference between Holy Grail and a simple blog layout? */ /* Answer:
+          Holy Grail has TWO sidebars; blog layout has ONE sidebar */
+        </div>
+      </div>
+
+      <footer>
+        <p>🏆 Holy Grail Layout - Day 35</p>
+        <p>
+          💡 Header + Left Sidebar + Main + Right Sidebar + Footer = The Perfect
+          Layout
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

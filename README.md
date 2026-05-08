@@ -139,3 +139,7 @@ _repeat(auto-fit, minmax(200px, 1fr))_
 ### [34. Grid Areas](https://mbalidotdev.github.io/front-end-daily-projects/34-grid-areas)
 
 _grid-template-areas_
+
+### [35. Holy Grail Layout](https://mbalidotdev.github.io/front-end-daily-projects/35-holy-grail-layout)
+
+_complete page layout: header , sidebar, main, right sidebar, footer_
