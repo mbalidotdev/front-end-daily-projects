@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+/* Grid Demo Container */
+.grid-demo {
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.grid-item {
+  background-color: #4a90e2;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.grid-item:nth-child(even) {
+  background-color: #e94560;
+}
+
+hr {
+  border-color: #2a3a5a;
+  margin: 30px 0;
+}
+
+/* ===================================
+           DEMO 1: BASIC GRID
+           =================================== */
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* ===================================
+           DEMO 2: DIFFERENT COLUMN SIZES
+           =================================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr;
+  gap: 15px;
+}
+
+/* ===================================
+           DEMO 3: REPEAT FUNCTION
+           =================================== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* ===================================
+           DEMO 4: GRID WITH ROWS
+           =================================== */
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 150px 100px;
+  gap: 15px;
+}
+
+/* ===================================
+           DEMO 5: GRID GAP (row-gap + column-gap)
+           =================================== */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 10px;
+}
+
+/* ===================================
+           DEMO 6: AUTO FIT / MINMAX (Responsive)
+           =================================== */
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* ===================================
+           DEMO 7: GRID TEMPLATE AREAS
+           =================================== */
+.grid-7 {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  gap: 15px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #2ecc71;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #e94560;
+}
+.main {
+  grid-area: main;
+  background-color: #4a90e2;
+}
+.footer {
+  grid-area: footer;
+  background-color: #f39c12;
+}
+
+.area-item {
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* ===================================
+           DEMO 8: SPANNING COLUMNS
+           =================================== */
+.grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.span-2 {
+  grid-column: span 2;
+  background-color: #e94560;
+}
+
+.span-3 {
+  grid-column: span 3;
+  background-color: #2ecc71;
+}
+
+.span-all {
+  grid-column: 1 / -1;
+  background-color: #f39c12;
+}
+
+/* ===================================
+           DEMO 9: NESTED GRID
+           =================================== */
+.grid-9 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.nested-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background-color: #2a3a5a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nested-item {
+  background-color: #e94560;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}

@@ -115,3 +115,15 @@ _position: sticky, top: 0, scroll behavior_
 ### [28. CSS Variables Demo](https://mbalidotdev.github.io/front-end-daily-projects/28-css-variables-demo)
 
 _root, var(--primary-color), themes_
+
+### [29. Pseudo Classes](https://mbalidotdev.github.io/front-end-daily-projects/29-pseudo-classes)
+
+_:hover, :focus, :nth-child, :not, and more_
+
+### [30. Pseudo Elements](https://mbalidotdev.github.io/front-end-daily-projects/30-pseudo-elements)
+
+_::before, ::after, ::first-letter, and more_
+
+### [31. Basic Grid Layout](https://mbalidotdev.github.io/front-end-daily-projects/31-basic-grid-layout)
+
+_display: grid, grid-template-columns, gap_
