@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.note {
+  background-color: #1a1a2e;
+  border-left: 4px solid #f39c12;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/* ===================================
+           DEMO 1: BASIC CARD GRID
+           =================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #1a1a2e;
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+           IMAGE CONTAINER WITH ASPECT RATIO
+           =================================== */
+.card-img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #2a3a5a;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.05);
+}
+
+/* Placeholder images using gradients */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4a90e2;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* ===================================
+           DEMO 2: DIFFERENT ASPECT RATIOS
+           =================================== */
+.aspect-1-1 .card-img {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-4-3 .card-img {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-21-9 .card-img {
+  aspect-ratio: 21 / 9;
+}
+
+/* ===================================
+           DEMO 3: PRODUCT CARD GALLERY
+           =================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.product-card {
+  background-color: #1a1a2e;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: #4a90e2;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #357abd;
+}
+
+/* ===================================
+           DEMO 4: PORTFOLIO GALLERY
+           =================================== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-img {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 60px 20px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.portfolio-category {
+  font-size: 12px;
+  color: #aaa;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}

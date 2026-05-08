@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Georgia", serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.note {
+  background-color: #1a1a2e;
+  border-left: 4px solid #f39c12;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/* Magazine Grid Base */
+.magazine {
+  display: grid;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.article {
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.article-img {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.article-content {
+  padding: 20px;
+}
+
+.article-category {
+  font-size: 12px;
+  color: #4a90e2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.article-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.article-excerpt {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* ===================================
+           DEMO 1: FEATURED ARTICLE (SPANS 2 COLUMNS)
+           =================================== */
+.magazine-1 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.featured-1 {
+  grid-column: span 2;
+}
+
+.featured-1 .article-img {
+  min-height: 250px;
+}
+
+.featured-1 .article-title {
+  font-size: 24px;
+}
+
+/* ===================================
+           DEMO 2: SPANNING ROWS AND COLUMNS
+           =================================== */
+.magazine-2 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.span-2cols {
+  grid-column: span 2;
+}
+
+.span-2rows {
+  grid-row: span 2;
+}
+
+.span-3cols {
+  grid-column: span 3;
+}
+
+.span-all {
+  grid-column: 1 / -1;
+}
+
+/* ===================================
+           DEMO 3: NEWSPAPER LAYOUT (GRID + FLEX)
+           =================================== */
+.newspaper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.headline {
+  grid-column: span 2;
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.headline h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #4a90e2;
+}
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.story-item {
+  display: flex;
+  gap: 15px;
+  padding: 12px;
+  background-color: #0f3460;
+  border-radius: 8px;
+}
+
+.story-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+/* ===================================
+           DEMO 4: PINTEREST-STYLE MASONRY
+           =================================== */
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.pin {
+  break-inside: avoid;
+  background-color: #1a1a2e;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pin-img {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.pin-tall {
+  grid-row: span 2;
+}
+
+.pin-tall .pin-img {
+  min-height: 400px;
+}
+
+.pin-content {
+  padding: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .magazine-1,
+  .magazine-2,
+  .newspaper {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2cols,
+  .span-3cols,
+  .span-all,
+  .featured-1,
+  .headline {
+    grid-column: span 1;
+  }
+
+  .span-2rows {
+    grid-row: span 1;
+  }
+}

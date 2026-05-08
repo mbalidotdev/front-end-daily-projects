@@ -143,3 +143,23 @@ _grid-template-areas_
 ### [35. Holy Grail Layout](https://mbalidotdev.github.io/front-end-daily-projects/35-holy-grail-layout)
 
 _complete page layout: header , sidebar, main, right sidebar, footer_
+
+### [36. Responsive Grid](https://mbalidotdev.github.io/front-end-daily-projects/36-responsive-grid)
+
+_media queries with grid: change columns at breakpoints_
+
+### [37. Dashbord Layout](https://mbalidotdev.github.io/front-end-daily-projects/37-dashboard-layout)
+
+_grid + flex_
+
+### [38. Card Gallery With Grid](https://mbalidotdev.github.io/front-end-daily-projects/38-card-gallery-with-grid)
+
+_images responsive within grid: aspect ratio, object-fit_
+
+### [39. Magazine Layout](https://mbalidotdev.github.io/front-end-daily-projects/39-magazine-layout)
+
+_mixed grid sizes: spanning multiple columns/rows_
+
+### [40. Complete Responsive Site](https://mbalidotdev.github.io/front-end-daily-projects/40-complete-responsive-site)
+
+_grid + flex + media queries together_

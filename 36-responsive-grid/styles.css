@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.section {
+  background-color: #0f3460;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a90e2;
+  border-left: 4px solid #4a90e2;
+  padding-left: 15px;
+}
+
+.section-description {
+  color: #aaa;
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding-left: 19px;
+}
+
+.code {
+  background-color: #0a0a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.note {
+  background-color: #1a1a2e;
+  border-left: 4px solid #f39c12;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.card {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-number {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ===================================
+           DEMO 1: MEDIA QUERIES WITH GRID
+           =================================== */
+.responsive-grid-1 {
+  display: grid;
+  gap: 20px;
+}
+
+/* Default: 1 column (mobile) */
+.responsive-grid-1 {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .responsive-grid-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .responsive-grid-1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop: 4 columns */
+@media (min-width: 1200px) {
+  .responsive-grid-1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===================================
+           DEMO 2: ASYMMETRIC GRID (changes layout)
+           =================================== */
+.responsive-grid-2 {
+  display: grid;
+  gap: 20px;
+}
+
+/* Mobile: 1 column */
+.responsive-grid-2 {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 columns (featured spans both) */
+@media (min-width: 768px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured {
+    grid-column: span 2;
+  }
+}
+
+/* Desktop: 3 columns (featured spans all) */
+@media (min-width: 1024px) {
+  .responsive-grid-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured {
+    grid-column: span 3;
+  }
+}
+
+/* ===================================
+           DEMO 3: BEST OF BOTH (auto-fit + media query)
+           =================================== */
+.responsive-grid-3 {
+  display: grid;
+  gap: 20px;
+  /* auto-fit for flexibility, but with limits */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* But on large screens, limit to 4 columns max */
+@media (min-width: 1200px) {
+  .responsive-grid-3 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===================================
+           DEMO 4: DASHBOARD LAYOUT (changes entirely)
+           =================================== */
+.dashboard {
+  display: grid;
+  gap: 20px;
+}
+
+/* Mobile: stacked */
+.dashboard {
+  grid-template-areas:
+    "header"
+    "stats"
+    "chart1"
+    "chart2"
+    "table";
+  grid-template-columns: 1fr;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "header header"
+      "stats stats"
+      "chart1 chart2"
+      "table table";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop: full dashboard */
+@media (min-width: 1024px) {
+  .dashboard {
+    grid-template-areas:
+      "header header header"
+      "stats stats stats"
+      "chart1 chart2 table"
+      "chart1 chart2 table";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.dash-header {
+  grid-area: header;
+  background-color: #4a90e2;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.dash-stats {
+  grid-area: stats;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.stat-card {
+  flex: 1;
+  background-color: #2ecc71;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 120px;
+}
+.dash-chart1 {
+  grid-area: chart1;
+  background-color: #e94560;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 200px;
+}
+.dash-chart2 {
+  grid-area: chart2;
+  background-color: #f39c12;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 200px;
+}
+.dash-table {
+  grid-area: table;
+  background-color: #1a1a2e;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #4a90e2;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}

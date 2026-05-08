@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Layout - Grid + Flex Together</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">📊 Dashboard</div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">🏠 Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">📈 Analytics</a>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">👥 Users</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">💰 Sales</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">⚙️ Settings</a></li>
+        </ul>
+      </aside>
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <div class="user-menu">
+          <span>🔔</span>
+          <div class="avatar">M</div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- Stats Cards (Flexbox) -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-title">Total Revenue</div>
+            <div class="stat-value">$54,239</div>
+            <div class="stat-change up">↑ 12.5% from last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Total Users</div>
+            <div class="stat-value">8,549</div>
+            <div class="stat-change up">↑ 8.2% from last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Conversion Rate</div>
+            <div class="stat-value">3.24%</div>
+            <div class="stat-change down">↓ 1.1% from last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Active Sessions</div>
+            <div class="stat-value">2,345</div>
+            <div class="stat-change up">↑ 5.3% from last month</div>
+          </div>
+        </div>
+
+        <!-- Charts Grid (CSS Grid) -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-title">Revenue Overview</div>
+            <div class="chart-placeholder">📊 Chart Placeholder</div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">User Growth</div>
+            <div class="chart-placeholder">📈 Chart Placeholder</div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">Sales by Category</div>
+            <div class="chart-placeholder">🥧 Pie Chart Placeholder</div>
+          </div>
+        </div>
+
+        <!-- Recent Activity (Flexbox) -->
+        <div class="recent-header">
+          <h3>📋 Recent Activity</h3>
+          <a href="#" style="color: #4a90e2">View All →</a>
+        </div>
+
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">👤</div>
+            <div class="activity-details">
+              <div class="activity-title">New user registered</div>
+              <div class="activity-time">2 minutes ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">💰</div>
+            <div class="activity-details">
+              <div class="activity-title">Sale completed: $249.00</div>
+              <div class="activity-time">15 minutes ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">📊</div>
+            <div class="activity-details">
+              <div class="activity-title">Monthly report generated</div>
+              <div class="activity-time">1 hour ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">⚙️</div>
+            <div class="activity-details">
+              <div class="activity-title">System update completed</div>
+              <div class="activity-time">3 hours ago</div>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <p>© 2025 Dashboard | Built with CSS Grid + Flexbox</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

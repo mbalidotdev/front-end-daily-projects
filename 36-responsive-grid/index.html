@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid - Media Queries with CSS Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📱 Responsive Grid</h1>
+        <div class="subtitle">
+          Media queries with CSS Grid — explicit control at breakpoints
+        </div>
+      </header>
+
+      <!-- DEMO 1: SIMPLE COLUMN CHANGE -->
+      <div class="section">
+        <div class="section-title">1. Changing Number of Columns</div>
+        <div class="section-description">
+          <strong
+            >Mobile (1 column) → Tablet (2 columns) → Desktop (3 columns) →
+            Large (4 columns)</strong
+          ><br />
+          Resize your browser to see the grid change at specific breakpoints!
+        </div>
+
+        <div class="responsive-grid-1">
+          <div class="card">
+            <div class="card-number">1</div>
+            Mobile: 1 col<br />Tablet: 2 cols<br />Desktop: 3 cols
+          </div>
+          <div class="card">
+            <div class="card-number">2</div>
+            Card 2
+          </div>
+          <div class="card">
+            <div class="card-number">3</div>
+            Card 3
+          </div>
+          <div class="card">
+            <div class="card-number">4</div>
+            Card 4
+          </div>
+          <div class="card">
+            <div class="card-number">5</div>
+            Card 5
+          </div>
+          <div class="card">
+            <div class="card-number">6</div>
+            Card 6
+          </div>
+        </div>
+
+        <div class="code">
+          /* Default: 1 column (mobile) */<br />
+          .responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+          /* Tablet: 2 columns */<br />
+          @media (min-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid { grid-template-columns:
+          repeat(2, 1fr); }<br />
+          }<br /><br />
+          /* Desktop: 3 columns */<br />
+          @media (min-width: 1024px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid { grid-template-columns:
+          repeat(3, 1fr); }<br />
+          }<br /><br />
+          /* Large: 4 columns */<br />
+          @media (min-width: 1200px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid { grid-template-columns:
+          repeat(4, 1fr); }<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: ASYMMETRIC GRID -->
+      <div class="section">
+        <div class="section-title">
+          2. Asymmetric Grid (Featured Item Spans)
+        </div>
+        <div class="section-description">
+          The first card spans all columns on each breakpoint.
+        </div>
+
+        <div class="responsive-grid-2">
+          <div class="card featured">
+            <div class="card-number">★</div>
+            Featured Card<br />(spans all columns)
+          </div>
+          <div class="card">
+            <div class="card-number">2</div>
+            Card 2
+          </div>
+          <div class="card">
+            <div class="card-number">3</div>
+            Card 3
+          </div>
+          <div class="card">
+            <div class="card-number">4</div>
+            Card 4
+          </div>
+          <div class="card">
+            <div class="card-number">5</div>
+            Card 5
+          </div>
+          <div class="card">
+            <div class="card-number">6</div>
+            Card 6
+          </div>
+          <div class="card">
+            <div class="card-number">7</div>
+            Card 7
+          </div>
+        </div>
+
+        <div class="code">
+          @media (min-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          1fr 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.featured { grid-column: span 2; }<br />
+          }<br /><br />
+          @media (min-width: 1024px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          repeat(3, 1fr);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.featured { grid-column: span 3; }<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: AUTO-FIT + MEDIA QUERY -->
+      <div class="section">
+        <div class="section-title">
+          3. Best of Both (auto-fit + Media Query Limit)
+        </div>
+        <div class="section-description">
+          auto-fit makes it flexible, but media query caps maximum columns.
+        </div>
+
+        <div class="responsive-grid-3">
+          <div class="card">
+            <div class="card-number">1</div>
+            Card 1
+          </div>
+          <div class="card">
+            <div class="card-number">2</div>
+            Card 2
+          </div>
+          <div class="card">
+            <div class="card-number">3</div>
+            Card 3
+          </div>
+          <div class="card">
+            <div class="card-number">4</div>
+            Card 4
+          </div>
+          <div class="card">
+            <div class="card-number">5</div>
+            Card 5
+          </div>
+          <div class="card">
+            <div class="card-number">6</div>
+            Card 6
+          </div>
+          <div class="card">
+            <div class="card-number">7</div>
+            Card 7
+          </div>
+          <div class="card">
+            <div class="card-number">8</div>
+            Card 8
+          </div>
+        </div>
+
+        <div class="code">
+          /* Auto-fit for flexibility */<br />
+          .responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(250px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+          /* But don't go beyond 4 columns */<br />
+          @media (min-width: 1200px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          repeat(4, 1fr);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+
+        <div class="note">
+          💡 This approach gives you the best of both: auto-fit for
+          responsiveness + a limit so cards don't get too small on huge screens.
+        </div>
+      </div>
+
+      <!-- DEMO 4: DASHBOARD LAYOUT -->
+      <div class="section">
+        <div class="section-title">4. Dashboard That Rearranges Entirely</div>
+        <div class="section-description">
+          The layout completely changes at different breakpoints using
+          grid-template-areas.
+        </div>
+
+        <div class="dashboard">
+          <div class="dash-header">📊 DASHBOARD</div>
+          <div class="dash-stats">
+            <div class="stat-card">📈 Users<br />1,234</div>
+            <div class="stat-card">💰 Revenue<br />$12,345</div>
+            <div class="stat-card">📉 Sales<br />+23%</div>
+          </div>
+          <div class="dash-chart1">📊 CHART 1</div>
+          <div class="dash-chart2">📈 CHART 2</div>
+          <div class="dash-table">📋 DATA TABLE</div>
+        </div>
+
+        <div class="code">
+          /* Mobile: 1 column stacked */<br />
+          .dashboard {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"stats"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart1"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart2"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"table";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+          /* Tablet: 2 columns */<br />
+          @media (min-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.dashboard {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"stats
+          stats"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart1
+          chart2"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"table
+          table";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          1fr 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          /* Desktop: advanced layout */<br />
+          @media (min-width: 1024px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.dashboard {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header
+          header header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"stats
+          stats stats"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart1
+          chart2 table"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart1
+          chart2 table";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          1fr 1fr 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">📚 Media Query Breakpoints Reference</div>
+
+        <div class="code">
+          /* =================================== COMMON BREAKPOINTS
+          =================================== */ /* Mobile: 320px - 480px */ /*
+          Tablet: 768px - 1024px */ /* Desktop: 1024px - 1200px */ /* Large
+          Desktop: 1200px+ */ /* =================================== MOBILE
+          FIRST (min-width) =================================== */ /* Default:
+          mobile styles */ .element { } @media (min-width: 768px) { .element { }
+          } /* Tablet+ */ @media (min-width: 1024px) { .element { } } /*
+          Desktop+ */ @media (min-width: 1200px) { .element { } } /* Large+ */
+          /* =================================== DESKTOP FIRST (max-width)
+          =================================== */ /* Default: desktop styles */
+          .element { } @media (max-width: 1024px) { .element { } } /* Tablet */
+          @media (max-width: 768px) { .element { } } /* Mobile */ /*
+          =================================== RESPONSIVE GRID PATTERNS
+          =================================== */ /* Pattern 1: Change column
+          count */ @media (min-width: 768px) { .grid { grid-template-columns:
+          repeat(2, 1fr); } } @media (min-width: 1024px) { .grid {
+          grid-template-columns: repeat(3, 1fr); } } @media (min-width: 1200px)
+          { .grid { grid-template-columns: repeat(4, 1fr); } } /* Pattern 2:
+          Change layout entirely */ @media (min-width: 768px) { .grid {
+          grid-template-areas: "header header" "sidebar main" "footer footer"; }
+          }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: When using mobile-first, what breakpoint do you start
+          with? */ /* Answer: Mobile (no media query), then add min-width
+          queries */ /* Question 2: How do you make a grid go from 1 column to 2
+          columns at 768px? */ /* Answer: @media (min-width: 768px) { .grid {
+          grid-template-columns: repeat(2, 1fr); } } */ /* Question 3: What's
+          the difference between auto-fit + minmax vs media queries? */ /*
+          Answer: auto-fit is automatic, media queries give you explicit control
+          */ /* Question 4: Can you combine auto-fit with media queries? */ /*
+          Answer: Yes! Use auto-fit for flexibility, then cap with media query
+          */ /* Question 5: What changes in the dashboard example at different
+          breakpoints? */ /* Answer: The entire grid-template-areas layout
+          changes */
+        </div>
+      </div>
+
+      <footer>
+        <p>📱 Responsive Grid - Day 36</p>
+        <p>
+          💡 Media queries give you explicit control over grid behavior at
+          specific breakpoints
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Gallery - Images Responsive with Grid</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🖼️ Card Gallery with Grid</h1>
+        <div class="subtitle">
+          Responsive cards with perfect image sizing using aspect-ratio and
+          object-fit
+        </div>
+      </header>
+
+      <!-- DEMO 1: BASIC CARD GRID -->
+      <div class="section">
+        <div class="section-title">1. Basic Card Gallery</div>
+        <div class="section-description">
+          Responsive grid cards with 16:9 images. Images cover the area without
+          stretching.
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #667eea, #764ba2)"
+              >
+                🏔️
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Mountain Retreat</div>
+              <div class="card-description">
+                Beautiful mountain views and fresh air. Perfect for weekend
+                getaways.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #f093fb, #f5576c)"
+              >
+                🏖️
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Beach Paradise</div>
+              <div class="card-description">
+                White sandy beaches and crystal clear water.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
+              >
+                🏯
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">City Explorer</div>
+              <div class="card-description">
+                Urban adventure in the heart of the city.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #43e97b, #38f9d7)"
+              >
+                🌲
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Forest Cabin</div>
+              <div class="card-description">
+                Cozy cabin hidden in the peaceful woods.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .card-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(280px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 25px;<br />
+          }<br /><br />
+          .card-img {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;aspect-ratio: 16 / 9; /* Forces 16:9 ratio
+          */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br />
+          }<br /><br />
+          .card-img img {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;object-fit: cover; /* Image fills area without
+          distortion */<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: DIFFERENT ASPECT RATIOS -->
+      <div class="section">
+        <div class="section-title">2. Different Aspect Ratios</div>
+        <div class="section-description">
+          Square (1:1), Standard (4:3), Wide (21:9), and Cinema (16:9).
+        </div>
+
+        <div class="card-grid">
+          <div class="card aspect-1-1">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #667eea, #764ba2)"
+              >
+                ⬜
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Square 1:1</div>
+              <div class="card-description">
+                Perfect for profile pictures and Instagram posts.
+              </div>
+            </div>
+          </div>
+          <div class="card aspect-4-3">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #f093fb, #f5576c)"
+              >
+                📷
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Standard 4:3</div>
+              <div class="card-description">
+                Traditional photo and video ratio.
+              </div>
+            </div>
+          </div>
+          <div class="card aspect-21-9">
+            <div class="card-img">
+              <div
+                class="img-placeholder"
+                style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
+              >
+                🎬
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Ultrawide 21:9</div>
+              <div class="card-description">
+                Cinematic and dramatic presentations.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          /* Different aspect ratio classes */<br />
+          .aspect-1-1 .card-img { aspect-ratio: 1 / 1; }<br />
+          .aspect-4-3 .card-img { aspect-ratio: 4 / 3; }<br />
+          .aspect-21-9 .card-img { aspect-ratio: 21 / 9; }
+        </div>
+      </div>
+
+      <!-- DEMO 3: PRODUCT CARD GALLERY -->
+      <div class="section">
+        <div class="section-title">3. Product Card Gallery</div>
+        <div class="section-description">
+          E-commerce style product cards with add-to-cart buttons.
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img">📱</div>
+            <div class="product-info">
+              <div class="product-title">Smartphone Pro</div>
+              <div class="product-price">$699</div>
+              <button class="btn-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">💻</div>
+            <div class="product-info">
+              <div class="product-title">Laptop Air</div>
+              <div class="product-price">$999</div>
+              <button class="btn-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">🎧</div>
+            <div class="product-info">
+              <div class="product-title">Wireless Earbuds</div>
+              <div class="product-price">$149</div>
+              <button class="btn-add">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">⌚</div>
+            <div class="product-info">
+              <div class="product-title">Smart Watch</div>
+              <div class="product-price">$249</div>
+              <button class="btn-add">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .product-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(250px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 25px;<br />
+          }<br /><br />
+          .product-img {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;aspect-ratio: 1 / 1; /* Square product images
+          */<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 4: PORTFOLIO GALLERY WITH OVERLAY -->
+      <div class="section">
+        <div class="section-title">4. Portfolio Gallery (Hover Overlay)</div>
+        <div class="section-description">
+          Portfolio items with image zoom and text overlay on hover.
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-img">🎨</div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">Brand Identity</div>
+              <div class="portfolio-category">Graphic Design</div>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-img">💻</div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">Web Development</div>
+              <div class="portfolio-category">Coding</div>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-img">📱</div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">Mobile App</div>
+              <div class="portfolio-category">UI/UX Design</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .portfolio-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(300px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 25px;<br />
+          }<br /><br />
+          .portfolio-img {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;aspect-ratio: 4 / 3;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition: transform 0.4s ease;<br />
+          }<br /><br />
+          .portfolio-item:hover .portfolio-img {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: scale(1.1); /* Zoom effect */<br />
+          }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">📚 Aspect Ratio & Object Fit Reference</div>
+
+        <div class="code">
+          /* =================================== ASPECT RATIO (maintains
+          proportions) =================================== */ aspect-ratio: 16 /
+          9; /* Wide landscape */ aspect-ratio: 4 / 3; /* Standard photo */
+          aspect-ratio: 1 / 1; /* Perfect square */ aspect-ratio: 3 / 4; /*
+          Portrait */ aspect-ratio: 21 / 9; /* Cinematic ultrawide */ /*
+          =================================== OBJECT-FIT (how image fills
+          container) =================================== */ object-fit: cover;
+          /* Fills area, may crop */ object-fit: contain; /* Whole image
+          visible, may have gaps */ object-fit: fill; /* Stretches (avoid) */
+          object-fit: none; /* Original size, may overflow */ /*
+          =================================== PERFECT IMAGE CARD COMBINATION
+          =================================== */ .image-container {
+          aspect-ratio: 16 / 9; overflow: hidden; } .image-container img {
+          width: 100%; height: 100%; object-fit: cover; transition: transform
+          0.3s ease; } .image-container:hover img { transform: scale(1.05); /*
+          Zoom on hover */ }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What does aspect-ratio: 16/9 do? */ /* Answer: Forces
+          the container to be 16 units wide for every 9 units tall */ /*
+          Question 2: What does object-fit: cover do? */ /* Answer: Image fills
+          the container, cropping if necessary to maintain proportions */ /*
+          Question 3: Why use overflow: hidden on the image container? */ /*
+          Answer: To hide cropped parts when image zooms on hover */ /* Question
+          4: What's the difference between object-fit: cover and object-fit:
+          contain? */ /* Answer: Cover fills area (may crop), Contain shows
+          whole image (may have gaps) */
+        </div>
+      </div>
+
+      <footer>
+        <p>🖼️ Card Gallery with Grid - Day 38</p>
+        <p>💡 aspect-ratio + object-fit = Perfect images every time</p>
+      </footer>
+    </div>
+  </body>
+</html>
