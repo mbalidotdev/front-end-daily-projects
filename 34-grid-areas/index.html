@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Areas - Visual Page Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📐 Grid Template Areas</h1>
+        <div class="subtitle">
+          Visual layout mapping — draw your layout in CSS
+        </div>
+      </header>
+
+      <!-- DEMO 1: BASIC LAYOUT -->
+      <div class="section">
+        <div class="section-title">
+          1. Basic Layout (Header, Sidebar, Main, Footer)
+        </div>
+        <div class="section-description">
+          Using <code>grid-template-areas</code> to create a visual map of your
+          layout.
+        </div>
+
+        <div class="demo-layout layout-1">
+          <div class="header-area item-header">📌 HEADER</div>
+          <div class="sidebar-area item-sidebar">📁 SIDEBAR</div>
+          <div class="main-area item-main">📄 MAIN CONTENT</div>
+          <div class="footer-area item-footer">📞 FOOTER</div>
+        </div>
+
+        <div class="code">
+          .layout-1 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar main main"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 250px 1fr 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+          .item-header { grid-area: header; }<br />
+          .item-sidebar { grid-area: sidebar; }<br />
+          .item-main { grid-area: main; }<br />
+          .item-footer { grid-area: footer; }
+        </div>
+      </div>
+
+      <!-- DEMO 2: WITH RIGHT SIDEBAR -->
+      <div class="section">
+        <div class="section-title">
+          2. With Right Sidebar (Holy Grail Layout)
+        </div>
+        <div class="section-description">
+          Header, left sidebar, main content, right sidebar, footer.
+        </div>
+
+        <div class="demo-layout layout-2">
+          <div class="header-area" style="grid-area: header">📌 HEADER</div>
+          <div class="sidebar-area" style="grid-area: sidebar">
+            📁 LEFT SIDEBAR
+          </div>
+          <div class="main-area" style="grid-area: main">📄 MAIN CONTENT</div>
+          <div class="right-sidebar" style="grid-area: right">
+            📌 RIGHT SIDEBAR
+          </div>
+          <div class="footer-area" style="grid-area: footer">📞 FOOTER</div>
+        </div>
+
+        <div class="code">
+          .layout-2 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar main
+          right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 200px 1fr 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 3: COMPLEX LAYOUT -->
+      <div class="section">
+        <div class="section-title">3. Complex Layout (Multiple Rows)</div>
+        <div class="section-description">
+          A more advanced layout with featured sections.
+        </div>
+
+        <div class="demo-layout layout-3">
+          <div class="header-area" style="grid-area: header">📌 HEADER</div>
+          <div class="sidebar-area" style="grid-area: sidebar">📁 SIDEBAR</div>
+          <div class="main-area" style="grid-area: main">📄 MAIN CONTENT</div>
+          <div class="right-sidebar" style="grid-area: right">
+            📌 RIGHT SIDEBAR
+          </div>
+          <div
+            style="
+              grid-area: feature1;
+              background-color: #e94560;
+              padding: 20px;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            ✨ FEATURE 1
+          </div>
+          <div
+            style="
+              grid-area: feature2;
+              background-color: #2ecc71;
+              padding: 20px;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            ✨ FEATURE 2
+          </div>
+          <div class="footer-area" style="grid-area: footer">📞 FOOTER</div>
+        </div>
+
+        <div class="code">
+          .layout-3 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar main main
+          right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar feature1
+          feature2 right"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 200px 1fr 1fr 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 4: BLOG LAYOUT -->
+      <div class="section">
+        <div class="section-title">4. Blog Layout (Main + Sidebar)</div>
+        <div class="section-description">
+          Perfect for blog posts with a sidebar for author info, related posts,
+          etc.
+        </div>
+
+        <div class="demo-layout layout-4">
+          <div class="header-area" style="grid-area: header">📝 MY BLOG</div>
+          <div
+            class="main-area"
+            style="grid-area: main; text-align: left; padding: 30px"
+          >
+            <h3>Blog Post Title</h3>
+            <p style="margin-top: 10px">
+              This is the main blog content. Grid areas make it easy to arrange
+              header, main content, sidebar, and footer.
+            </p>
+          </div>
+          <div
+            class="sidebar-area"
+            style="grid-area: sidebar; text-align: left"
+          >
+            <h4>About Author</h4>
+            <p style="margin-top: 10px; font-size: 14px">
+              Front-end developer learning CSS Grid.
+            </p>
+            <hr style="margin: 15px 0; border-color: #ff4757" />
+            <h4>Related Posts</h4>
+            <ul style="margin-top: 10px; margin-left: 20px">
+              <li>CSS Grid Guide</li>
+              <li>Flexbox Tutorial</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="footer-area" style="grid-area: footer">
+            © 2025 My Blog
+          </div>
+        </div>
+
+        <div class="code">
+          .layout-4 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"main sidebar"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 300px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 5: DASHBOARD LAYOUT -->
+      <div class="section">
+        <div class="section-title">5. Dashboard Layout</div>
+        <div class="section-description">
+          Perfect for admin dashboards with stats, charts, and data tables.
+        </div>
+
+        <div class="demo-layout layout-5">
+          <div class="header-area" style="grid-area: header">📊 DASHBOARD</div>
+          <div class="stats" style="grid-area: stats">
+            <div class="stat-card">📈 Users<br />1,234</div>
+            <div class="stat-card">💰 Revenue<br />$12,345</div>
+            <div class="stat-card">📉 Sales<br />+23%</div>
+          </div>
+          <div class="chart1" style="grid-area: chart1">📊 CHART 1</div>
+          <div class="chart2" style="grid-area: chart2">📈 CHART 2</div>
+          <div class="chart3" style="grid-area: chart3">📉 CHART 3</div>
+          <div class="table-area" style="grid-area: table">📋 DATA TABLE</div>
+        </div>
+
+        <div class="code">
+          .layout-5 {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"stats stats stats"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chart1 chart2
+          chart3"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"table table
+          table";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 1fr 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+      </div>
+
+      <!-- RULES AND TIPS -->
+      <div class="section">
+        <div class="section-title">📚 Grid Areas Rules</div>
+
+        <div class="code">
+          /* =================================== GRID AREAS RULES
+          =================================== */ 1. Each area name must be
+          unique 2. Use the SAME name to span multiple cells 3. Use a period (.)
+          for an empty cell 4. Each row must have the SAME number of columns 5.
+          Define areas with a string for each row 6. Use grid-area property to
+          assign elements /* =================================== EMPTY CELLS
+          EXAMPLE =================================== */ grid-template-areas:
+          "header header header" "sidebar . main" /* . = empty cell */ "footer
+          footer footer"; /* =================================== RESPONSIVE GRID
+          AREAS =================================== */ @media (max-width: 768px)
+          { .layout { grid-template-areas: "header" "sidebar" "main" "footer";
+          grid-template-columns: 1fr; } }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: How do you define grid areas? */ /* Answer:
+          grid-template-areas with string values */ /* Question 2: How do you
+          make an empty cell? */ /* Answer: Use a period (.) */ /* Question 3:
+          What property assigns an element to an area? */ /* Answer: grid-area:
+          areaname; */ /* Question 4: What happens if rows have different
+          numbers of columns? */ /* Answer: The layout breaks. Each row must
+          have same number of cells. */ /* Question 5: Can grid areas be
+          responsive? */ /* Answer: Yes! Change grid-template-areas inside media
+          queries */
+        </div>
+      </div>
+
+      <footer>
+        <p>📐 Grid Areas - Visual Page Layout with CSS Grid</p>
+        <p>💡 Draw your layout in CSS using grid-template-areas</p>
+      </footer>
+    </div>
+  </body>
+</html>
