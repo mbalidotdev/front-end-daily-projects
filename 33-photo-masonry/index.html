@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Masonry - Auto-fit with minmax()</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📸 Photo Masonry Gallery</h1>
+        <div class="subtitle">
+          <code
+            >grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code
+          >
+        </div>
+      </header>
+
+      <!-- MAIN MASONRY GALLERY -->
+      <div class="section">
+        <div class="section-title">🎨 Responsive Photo Gallery</div>
+        <div class="section-description">
+          Resize your browser window! The number of columns changes
+          automatically — no media queries needed.
+        </div>
+
+        <div class="masonry">
+          <div class="gallery-item color-1">
+            <div class="gallery-img">🏔️</div>
+            <div class="gallery-caption">
+              <h3>Mountain Peak</h3>
+              <p>Swiss Alps</p>
+            </div>
+          </div>
+          <div class="gallery-item color-2">
+            <div class="gallery-img img-tall">🗼</div>
+            <div class="gallery-caption">
+              <h3>Eiffel Tower</h3>
+              <p>Paris, France</p>
+            </div>
+          </div>
+          <div class="gallery-item color-3">
+            <div class="gallery-img">🏖️</div>
+            <div class="gallery-caption">
+              <h3>Beach Paradise</h3>
+              <p>Maldives</p>
+            </div>
+          </div>
+          <div class="gallery-item color-4">
+            <div class="gallery-img img-small">🌲</div>
+            <div class="gallery-caption">
+              <h3>Forest Trail</h3>
+              <p>Black Forest</p>
+            </div>
+          </div>
+          <div class="gallery-item color-5">
+            <div class="gallery-img">🏯</div>
+            <div class="gallery-caption">
+              <h3>Ancient Temple</h3>
+              <p>Kyoto, Japan</p>
+            </div>
+          </div>
+          <div class="gallery-item color-6">
+            <div class="gallery-img img-tall">🗽</div>
+            <div class="gallery-caption">
+              <h3>Statue of Liberty</h3>
+              <p>New York, USA</p>
+            </div>
+          </div>
+          <div class="gallery-item color-7">
+            <div class="gallery-img">🌅</div>
+            <div class="gallery-caption">
+              <h3>Golden Hour</h3>
+              <p>Santorini, Greece</p>
+            </div>
+          </div>
+          <div class="gallery-item color-8">
+            <div class="gallery-img">🏰</div>
+            <div class="gallery-caption">
+              <h3>Neuschwanstein</h3>
+              <p>Bavaria, Germany</p>
+            </div>
+          </div>
+          <div class="gallery-item color-1">
+            <div class="gallery-img">🎡</div>
+            <div class="gallery-caption">
+              <h3>London Eye</h3>
+              <p>London, UK</p>
+            </div>
+          </div>
+          <div class="gallery-item color-2">
+            <div class="gallery-img">🏝️</div>
+            <div class="gallery-caption">
+              <h3>Tropical Island</h3>
+              <p>Fiji</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="code">
+          .masonry {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(250px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }
+        </div>
+
+        <div class="note">
+          💡 <strong>The Magic Formula:</strong><br />
+          • <strong>auto-fit</strong> = as many columns as fit, stretch to fill
+          space<br />
+          • <strong>minmax(250px, 1fr)</strong> = each column at least 250px,
+          can grow<br />
+          • <strong>No media queries needed!</strong> The browser handles
+          everything.
+        </div>
+      </div>
+
+      <!-- EXPLANATION SECTION -->
+      <div class="section">
+        <div class="section-title">🔧 How It Works</div>
+
+        <div class="code">
+          /* When screen is 500px wide: */ /* 500 ÷ 250 = 2 columns → each gets
+          250px */ /* When screen is 600px wide: */ /* 600 ÷ 250 = 2 columns →
+          each gets 300px (extra space distributed) */ /* When screen is 750px
+          wide: */ /* 750 ÷ 250 = 3 columns → each gets 250px */ /* When screen
+          is 1000px wide: */ /* 1000 ÷ 250 = 4 columns → each gets 250px */ /*
+          When screen is 1200px wide: */ /* 1200 ÷ 250 = 4 columns → each gets
+          300px */
+        </div>
+      </div>
+
+      <!-- AUTO-FIT vs AUTO-FILL -->
+      <div class="section">
+        <div class="section-title">📊 auto-fit vs auto-fill</div>
+        <div class="section-description">
+          <strong>auto-fit</strong> collapses empty columns (items stretch).<br />
+          <strong>auto-fill</strong> keeps empty columns (reserves space).
+        </div>
+
+        <div class="code">
+          /* auto-fit - columns stretch to fill space */<br />
+          .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          }<br /><br />
+
+          /* auto-fill - reserves space for empty columns */<br />
+          .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          }
+        </div>
+
+        <div class="note">
+          🏆 <strong>For photo galleries, use auto-fit</strong> — you want
+          images to fill the available space without gaps.
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="section">
+        <div class="section-title">📚 Quick Reference</div>
+
+        <div class="code">
+          /* =================================== THE MAGIC RESPONSIVE GRID
+          FORMULA =================================== */ .responsive-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(auto-fit,
+          minmax(250px, 1fr));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br />
+          }<br /><br />
+
+          /* =================================== VARIATIONS
+          =================================== */ /* For smaller cards (like
+          avatars) */<br />
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));<br /><br />
+
+          /* For larger cards (like product displays) */<br />
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));<br /><br />
+
+          /* With max-width constraint on items */<br />
+          .card { max-width: 400px; margin: 0 auto; }
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div class="section">
+        <div class="section-title">🧠 Quick Quiz</div>
+        <div class="code">
+          /* Question 1: What does auto-fit do? */ /* Answer: Collapses empty
+          columns, makes items stretch to fill space */ /* Question 2: What does
+          minmax(250px, 1fr) mean? */ /* Answer: Minimum 250px wide, maximum 1
+          fraction of available space */ /* Question 3: Do you need media
+          queries with auto-fit + minmax? */ /* Answer: No! The grid
+          automatically adjusts */ /* Question 4: What's the difference between
+          auto-fit and auto-fill? */ /* Answer: auto-fit collapses empty
+          columns, auto-fill reserves space for them */
+        </div>
+      </div>
+
+      <footer>
+        <p>📸 Photo Masonry - Day 33</p>
+        <p>💡 One line of CSS = fully responsive gallery</p>
+      </footer>
+    </div>
+  </body>
+</html>

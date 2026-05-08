@@ -131,3 +131,7 @@ _display: grid, grid-template-columns, gap_
 ### [32. Grid vs Flexbox](https://mbalidotdev.github.io/front-end-daily-projects/32-grid-vs-flexbox)
 
 _understand when to use each_
+
+### [33. Photo Masonry](https://mbalidotdev.github.io/front-end-daily-projects/33-photo-masonry)
+
+_repeat(auto-fit, minmax(200px, 1fr))_
