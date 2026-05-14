@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile-First Form - Design for Phone First</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- MOBILE-FIRST FORM -->
+      <div class="form-card">
+        <h1>📱 Contact Us</h1>
+        <div class="subtitle">
+          We'd love to hear from you — fill out the form below
+        </div>
+
+        <form>
+          <!-- Row container for desktop 2-column layout -->
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name <span class="required">*</span></label>
+              <input type="text" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Email Address <span class="required">*</span></label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+32 123 45 67 89" />
+            </div>
+
+            <div class="form-group">
+              <label>Preferred Contact Method</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="contact-method" value="email" />
+                  Email
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="contact-method" value="phone" />
+                  Phone
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Subject <span class="required">*</span></label>
+            <select required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="billing">Billing Question</option>
+              <option value="partnership">Partnership</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message <span class="required">*</span></label>
+            <textarea
+              rows="5"
+              placeholder="Tell us what you think..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <label class="checkbox-option">
+                <input type="checkbox" /> I agree to the Terms and Conditions
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" /> Subscribe to newsletter
+              </label>
+            </div>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- EXPLANATION SECTION -->
+      <div class="demo-info">
+        <h3>📱 Mobile-First Design Principles</h3>
+        <ul style="margin-left: 20px; color: #555; line-height: 1.8">
+          <li>
+            <strong>Start with mobile styles</strong> — default CSS is for
+            mobile (no media query)
+          </li>
+          <li>
+            <strong>Use min-width media queries</strong> — add styles for larger
+            screens
+          </li>
+          <li>
+            <strong>16px font size</strong> — prevents zoom on mobile when input
+            is focused
+          </li>
+          <li>
+            <strong>Larger touch targets</strong> — 44px minimum for buttons and
+            inputs
+          </li>
+          <li>
+            <strong>Test on real phone</strong> — or use Chrome DevTools device
+            mode
+          </li>
+        </ul>
+
+        <div class="code-block">
+          /* =================================== MOBILE-FIRST PATTERN
+          =================================== */ /* Default styles (apply to ALL
+          screens, especially mobile) */ .form-group { margin-bottom: 20px; }
+          input { padding: 14px 15px; /* Larger touch target */ font-size: 16px;
+          /* Prevents zoom on mobile */ width: 100%; } /* Tablet and up
+          (min-width: 768px) */ @media (min-width: 768px) { .form-row { display:
+          grid; grid-template-columns: 1fr 1fr; gap: 20px; } } /* Desktop and up
+          (min-width: 1024px) */ @media (min-width: 1024px) { .form-card {
+          padding: 50px; } }
+        </div>
+      </div>
+
+      <!-- MOBILE VS DESKTOP COMPARISON -->
+      <div class="demo-info" style="margin-top: 20px">
+        <h3>🔄 Mobile-First vs Desktop-First</h3>
+
+        <div class="code-block">
+          /* MOBILE-FIRST (Recommended) */ /* Start with mobile */ .element {
+          padding: 10px; } @media (min-width: 768px) { .element { padding: 20px;
+          } } /* DESKTOP-FIRST (Less recommended) */ /* Start with desktop */
+          .element { padding: 20px; } @media (max-width: 768px) { .element {
+          padding: 10px; } } /* Why Mobile-First is better: 1. Most web traffic
+          is now mobile 2. Forces you to prioritize content 3. Progressive
+          enhancement (add features, not remove) 4. Faster loading on mobile
+          (less CSS to download) */
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          📱 Day 41: Mobile-First Form | Resize your browser to see tablet and
+          desktop layouts
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
