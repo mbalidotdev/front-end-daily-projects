@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container Queries - Modern Component Responsiveness</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📦 Container Queries</h1>
+      <div class="subtitle">
+        Style components based on their parent container, not the viewport
+      </div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: What Are Container Queries?</h2>
+
+        <h3>The Problem with Media Queries</h3>
+        <p>
+          Media queries look at the <strong>viewport</strong> (browser window
+          size). This works for page layout, but fails when you have a component
+          that needs to behave differently depending on WHERE it is placed on
+          the page.
+        </p>
+
+        <h3>Example Problem</h3>
+        <p>
+          Imagine a product card that should be horizontal in the main content
+          but vertical in the sidebar. Media queries cannot detect that the card
+          is in a narrow sidebar — they only know the screen size is 1200px.
+        </p>
+
+        <h3>The Solution: Container Queries</h3>
+        <p>
+          Container queries look at the <strong>parent element's size</strong>,
+          not the viewport. This means a component can adapt to its container,
+          making it truly reusable.
+        </p>
+
+        <div class="code-block">
+          /* Step 1: Define a container */ .card-container { container-type:
+          inline-size; container-name: my-container; } /* Step 2: Write a
+          container query */ @container my-container (min-width: 500px) { .card
+          { display: flex; } }
+        </div>
+
+        <h3>Browser Support (2026)</h3>
+        <ul>
+          <li>Chrome: 109+ (2023) ✅</li>
+          <li>Safari: 16.4+ (2023) ✅</li>
+          <li>Firefox: 110+ (2023) ✅</li>
+        </ul>
+        <p>
+          All modern browsers support container queries. You can use them today!
+        </p>
+      </div>
+
+      <!-- DEMO: SAME CARD, DIFFERENT CONTAINERS -->
+      <div class="demo-section">
+        <h3>1. Same Card, Different Containers</h3>
+        <p>
+          The same card component is placed in two different containers. Resize
+          your browser to see how the card changes based on its container width!
+        </p>
+
+        <div class="layout-demo">
+          <!-- SIDEBAR (narrow) -->
+          <div class="sidebar">
+            <div class="card-container">
+              <div class="card">
+                <div class="card-img">🖼️</div>
+                <div class="card-content">
+                  <div class="card-title">Sidebar Card</div>
+                  <div class="card-description">
+                    This container is narrow, so the card stays vertical
+                    (column).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAIN CONTENT (wide) -->
+          <div class="main-content">
+            <div class="card-container">
+              <div class="card">
+                <div class="card-img">🖼️</div>
+                <div class="card-content">
+                  <div class="card-title">Main Content Card</div>
+                  <div class="card-description">
+                    This container is wide, so the card becomes horizontal (row)
+                    using container query!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          💡 <strong>Notice:</strong> The card in the sidebar is vertical. The
+          card in the main content is horizontal. Same HTML, same CSS, different
+          containers — different layouts. This is impossible with media queries!
+        </div>
+
+        <div class="code-block">
+          /* Step 1: Define the container */ .card-container { container-type:
+          inline-size; container-name: card-container; } /* Step 2: Default
+          style (mobile/vertical) */ .card { display: flex; flex-direction:
+          column; } /* Step 3: Container query for wide containers */ @container
+          card-container (min-width: 400px) { .card { display: flex;
+          flex-direction: row; } }
+        </div>
+      </div>
+
+      <!-- DEMO: THREE CONTAINERS, ONE COMPONENT -->
+      <div class="demo-section">
+        <h3>2. One Component, Three Containers</h3>
+        <p>
+          Same card component placed in three different sized containers. Each
+          card adapts to its container.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem">
+          <div style="flex: 1; min-width: 150px">
+            <div class="card-container" style="container-type: inline-size">
+              <div class="card">
+                <div class="card-img">🖼️</div>
+                <div class="card-content">
+                  <div class="card-title">Narrow</div>
+                  <div class="card-description">
+                    Under 400px → vertical layout
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex: 2; min-width: 250px">
+            <div class="card-container" style="container-type: inline-size">
+              <div class="card">
+                <div class="card-img">🖼️</div>
+                <div class="card-content">
+                  <div class="card-title">Medium</div>
+                  <div class="card-description">
+                    400px to 600px → horizontal layout, small image
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex: 3; min-width: 350px">
+            <div class="card-container" style="container-type: inline-size">
+              <div class="card">
+                <div class="card-img">🖼️</div>
+                <div class="card-content">
+                  <div class="card-title">Wide</div>
+                  <div class="card-description">
+                    600px+ → horizontal layout, larger image, bigger text
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block">
+          @container card-container (min-width: 400px) { .card { display: flex;
+          flex-direction: row; } .card-img { min-width: 150px; } } @container
+          card-container (min-width: 600px) { .card-img { min-width: 200px; }
+          .card-title { font-size: 1.25rem; } }
+        </div>
+      </div>
+
+      <!-- COMPARISON: MEDIA QUERY VS CONTAINER QUERY -->
+      <div class="demo-section">
+        <h3>3. Media Query vs Container Query</h3>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem">
+          <div style="flex: 1">
+            <h4 style="color: #e94560">❌ Media Query</h4>
+            <div class="code-block">
+              /* Looks at VIEWPORT (screen size) */ @media (min-width: 768px) {
+              .card { display: flex; } } /* Problem: Card in sidebar and card in
+              main content behave the same way */
+            </div>
+          </div>
+
+          <div style="flex: 1">
+            <h4 style="color: #4a90e2">✅ Container Query</h4>
+            <div class="code-block">
+              /* Looks at PARENT CONTAINER */ .card-container { container-type:
+              inline-size; } @container (min-width: 400px) { .card { display:
+              flex; } } /* Card adapts to its container! Sidebar card stays
+              vertical, Main card becomes horizontal */
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRACTICAL USE CASES -->
+      <div class="demo-section">
+        <h3>4. Practical Use Cases</h3>
+
+        <ul style="margin-left: 1.5rem; line-height: 1.8">
+          <li>
+            <strong>Product cards</strong> — vertical in sidebar, horizontal in
+            main content
+          </li>
+          <li>
+            <strong>Navigation menus</strong> — vertical in mobile drawer,
+            horizontal in header
+          </li>
+          <li>
+            <strong>Dashboard widgets</strong> — different layouts based on
+            widget size
+          </li>
+          <li>
+            <strong>Email components</strong> — adapt to different email clients
+          </li>
+          <li><strong>Design systems</strong> — truly reusable components</li>
+        </ul>
+
+        <div class="code-block">
+          /* Example: Responsive navigation that adapts to its container */
+          .nav-container { container-type: inline-size; } .nav-list { display:
+          flex; flex-direction: column; gap: 0.5rem; } @container (min-width:
+          500px) { .nav-list { flex-direction: row; gap: 1rem; } }
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="theory">
+        <h2>⚡ Quick Reference Card</h2>
+
+        <div class="code-block">
+          /* =================================== STEP 1: DEFINE A CONTAINER
+          =================================== */ .container { container-type:
+          inline-size; /* Required */ container-name: my-container; /* Optional,
+          for specificity */ } /* =================================== STEP 2:
+          WRITE CONTAINER QUERY =================================== */
+          @container (min-width: 400px) { /* Styles apply when container ≥ 400px
+          */ } /* With named container */ @container my-container (min-width:
+          500px) { } /* =================================== CONTAINER TYPES
+          =================================== */ container-type: inline-size; /*
+          Most common — width only */ container-type: size; /* Width AND height
+          */ container-type: normal; /* No container queries */ /*
+          =================================== MEDIA QUERY vs CONTAINER QUERY
+          =================================== */ /* Media Query — based on
+          viewport */ @media (min-width: 768px) { } /* Container Query — based
+          on parent */ @container (min-width: 400px) { } /* Use BOTH together!
+          */ /* Container queries for components, media queries for page layout
+          */
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="theory">
+        <h2>📊 Summary</h2>
+        <ul>
+          <li>
+            <strong>Container queries</strong> style components based on parent
+            size
+          </li>
+          <li>
+            <strong>Media queries</strong> style pages based on viewport size
+          </li>
+          <li>
+            <strong>Use both together</strong> — media queries for layout,
+            container queries for components
+          </li>
+          <li>
+            <strong>container-type: inline-size</strong> is what you need most
+            of the time
+          </li>
+          <li>
+            <strong>Supported in all modern browsers</strong> — safe to use
+            today
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>
+          📦 Day 47: Container Queries | Style components based on their
+          container, not the viewport
+        </p>
+        <p>
+          💡 Media queries = page layout | Container queries = component layout
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

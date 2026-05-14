@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Stylesheet - Print-Friendly Web Pages</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- SCREEN-ONLY HEADER (will be hidden in print) -->
+      <div class="screen-only-header">
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Articles</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <button class="print-button" onclick="window.print()">
+          🖨️ Print / Save as PDF
+        </button>
+      </div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: Print Stylesheets</h2>
+
+        <h3>What Is a Print Stylesheet?</h3>
+        <p>
+          A print stylesheet uses <code>@media print</code> to apply CSS only
+          when the user prints the page (or saves as PDF).
+        </p>
+
+        <h3>Why You Need One</h3>
+        <ul>
+          <li>Users want content, not navigation menus or ads</li>
+          <li>Dark backgrounds waste ink (or don't print at all)</li>
+          <li>Links should show their full URL</li>
+          <li>Control where page breaks occur</li>
+        </ul>
+
+        <div class="code-block">
+          /* Print styles - apply when printing */ @media print { /* Hide
+          navigation and ads */ nav, .advertisement, .sidebar { display: none; }
+          /* Ensure black text (save ink) */ body { color: black; background:
+          white; } /* Show URLs after links */ a[href]:after { content: " ("
+          attr(href) ")"; } }
+        </div>
+      </div>
+
+      <!-- THE ARTICLE (main content) -->
+      <div class="article">
+        <h1>The Art of CSS Print Stylesheets</h1>
+        <div class="article-meta">
+          Published on May 14, 2026 | By Mouad | 5 min read
+        </div>
+
+        <h2>Introduction</h2>
+        <p>
+          When users print a webpage, they typically want just the content — not
+          the navigation menu, not the ads, not the sidebar. With a print
+          stylesheet, you can give them exactly that.
+        </p>
+        <p>
+          In this article, we'll explore how to create print-friendly web pages
+          using <code>@media print</code>.
+        </p>
+
+        <h2>What Print Styles Can Do</h2>
+        <p>Here are the most useful print CSS techniques:</p>
+        <ul>
+          <li>
+            <strong>Hide elements:</strong> <code>display: none</code> on
+            navigation, ads, and footers
+          </li>
+          <li>
+            <strong>Show link URLs:</strong>
+            <code>a[href]:after { content: " (" attr(href) ")"; }</code>
+          </li>
+          <li>
+            <strong>Force black text:</strong> Save ink by removing colored
+            backgrounds
+          </li>
+          <li>
+            <strong>Control page breaks:</strong>
+            <code>page-break-before: always</code> or
+            <code>page-break-inside: avoid</code>
+          </li>
+          <li>
+            <strong>Set paper size:</strong> <code>size: A4</code> or
+            <code>size: letter</code>
+          </li>
+        </ul>
+
+        <!-- This is an advertisement (will be hidden in print) -->
+        <div class="advertisement">
+          <p>🎉 Special Offer! 50% off all courses — Use code: PRINT50</p>
+        </div>
+
+        <h2>Controlling Page Breaks</h2>
+        <p>
+          One of the most important aspects of print CSS is controlling where
+          page breaks occur.
+        </p>
+
+        <div class="code-block">
+          /* Avoid breaking inside headings */ h1, h2 { page-break-after: avoid;
+          } /* Avoid breaking inside paragraphs or images */ p, figure {
+          page-break-inside: avoid; } /* Force a page break before a section */
+          .section-break { page-break-before: always; }
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>
+          Print stylesheets are often overlooked but they provide a better
+          experience for users who need to print your content. A few lines of
+          CSS can make the difference between a frustrating printout and a
+          professional-looking document.
+        </p>
+        <p>
+          For more information, check out the
+          <a
+            href="<https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries>"
+            >MDN documentation on media queries</a
+          >.
+        </p>
+      </div>
+
+      <!-- SIDEBAR (will be hidden in print) -->
+      <div class="sidebar">
+        <h3>📌 Related Articles</h3>
+        <ul>
+          <li>CSS Grid: A Complete Guide</li>
+          <li>Flexbox vs Grid: When to Use Which</li>
+          <li>Responsive Design Best Practices</li>
+          <li>Container Queries Explained</li>
+        </ul>
+      </div>
+
+      <!-- FOOTER (will be hidden in print) -->
+      <div class="footer">
+        <p>
+          © 2026 My Website | Follow us on Twitter | Subscribe to newsletter
+        </p>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="theory">
+        <h2>⚡ Print Stylesheet Reference</h2>
+
+        <div class="code-block">
+          /* =================================== BASIC PRINT STYLESHEET TEMPLATE
+          =================================== */ @media print { /* 1. Reset
+          everything for print */ * { background: transparent !important; color:
+          black !important; box-shadow: none !important; text-shadow: none
+          !important; } /* 2. Hide non-essential elements */ nav, .sidebar,
+          .advertisement, .footer, .comments { display: none; } /* 3. Show link
+          URLs */ a[href]:after { content: " (" attr(href) ")"; font-size: 90%;
+          } /* 4. Don't show URLs for internal links */ a[href^="#"]:after {
+          content: ""; } /* 5. Page breaks */ h1, h2 { page-break-after: avoid;
+          } p, li, figure { page-break-inside: avoid; } /* 6. Set paper size
+          (optional) */ @page { size: A4; margin: 2cm; } } /*
+          =================================== COMMON PRINT PROPERTIES
+          =================================== */ display: none; /* Hide elements
+          */ page-break-before: always; /* Force page break before element */
+          page-break-after: avoid; /* Avoid page break after element */
+          page-break-inside: avoid; /* Avoid page break inside element */ size:
+          A4; /* Set paper size */
+        </div>
+      </div>
+
+      <!-- DEMO INSTRUCTIONS -->
+      <div class="theory">
+        <h2>📝 Try It Yourself</h2>
+        <div class="note">
+          <strong>🖨️ To test the print stylesheet:</strong>
+          <ol style="margin: 1rem 0 0 1.5rem; line-height: 1.6">
+            <li>
+              Click the <strong>"🖨️ Print / Save as PDF"</strong> button at the
+              top of this page
+            </li>
+            <li>In the print dialog, choose <strong>"Save as PDF"</strong></li>
+            <li>Look at the preview — notice:</li>
+            <ul style="margin-left: 2rem">
+              <li>Navigation menu is hidden</li>
+              <li>Advertisement is hidden</li>
+              <li>Sidebar is hidden</li>
+              <li>Footer is hidden</li>
+              <li>Link URLs appear in parentheses</li>
+              <li>Text is black on white (no dark background)</li>
+            </ul>
+          </ol>
+        </div>
+
+        <div class="note">
+          <strong>💡 Pro Tip:</strong> Always test your print styles with "Save
+          as PDF" — it's faster than printing to paper and shows you exactly
+          what users will see.
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="theory">
+        <h2>📊 Best Practices Summary</h2>
+        <ul>
+          <li>
+            <strong>Always include a print stylesheet</strong> — users expect to
+            print content
+          </li>
+          <li>
+            <strong>Hide navigation, ads, and footers</strong> — these waste ink
+            and space
+          </li>
+          <li>
+            <strong>Show link URLs</strong> — readers need to know where links
+            go
+          </li>
+          <li>
+            <strong>Use black text on white background</strong> — saves ink and
+            prints reliably
+          </li>
+          <li>
+            <strong>Control page breaks</strong> — avoid breaking headings or
+            images across pages
+          </li>
+          <li>
+            <strong>Test with "Save as PDF"</strong> — faster and easier than
+            printing to paper
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>
+          🖨️ Day 49: Print Stylesheet | @media print gives users a clean,
+          printable version of your content
+        </p>
+        <p>
+          💡 Try printing or saving as PDF to see the print styles in action
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

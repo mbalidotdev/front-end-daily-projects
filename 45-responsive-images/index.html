@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images - srcset, sizes, picture</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📸 Responsive Images</h1>
+      <div class="subtitle">Serve the right image size for every device</div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: Why Responsive Images Matter</h2>
+
+        <h3>The Problem</h3>
+        <p>
+          A typical desktop image might be 2000px wide (1-2MB). On a mobile
+          phone (320px wide), that image is
+          <strong>6 times larger than needed</strong>. The user downloads 2MB
+          they don't need, wasting data and slowing down the page.
+        </p>
+
+        <h3>Real Numbers</h3>
+        <ul>
+          <li>
+            <strong>Mobile user (320px):</strong> Needs a 400px image (~50KB)
+          </li>
+          <li>
+            <strong>Tablet user (768px):</strong> Needs a 800px image (~150KB)
+          </li>
+          <li>
+            <strong>Desktop user (1920px):</strong> Needs a 1920px image
+            (~500KB)
+          </li>
+        </ul>
+        <p>
+          Without responsive images:
+          <strong>Every user downloads 500KB+</strong>. Mobile users waste 10x
+          more data than needed.
+        </p>
+
+        <h3>Core Web Vitals Impact</h3>
+        <p>
+          Google's Core Web Vitals measure
+          <strong>Largest Contentful Paint (LCP)</strong> — how long it takes
+          for the main image to load. Serving oversized images directly hurts
+          your LCP score and SEO ranking.
+        </p>
+      </div>
+
+      <!-- DEMO 1: BASIC IMAGE (No Responsive) -->
+      <div class="demo-section">
+        <h3>❌ Problem: Same image for everyone</h3>
+        <p>
+          This image is the same size on mobile and desktop. Mobile users
+          download a large image they don't need.
+        </p>
+        <div class="image-container">
+          <img
+            src="<https://picsum.photos/id/1018/1000/600>"
+            alt="Mountain landscape"
+            width="1000"
+            height="600"
+          />
+        </div>
+        <div class="img-note">
+          📏 Image: 1000x600 pixels — loads same size on all devices
+        </div>
+      </div>
+
+      <!-- DEMO 2: SRCSET + SIZES -->
+      <div class="demo-section">
+        <h3>✅ Solution 1: srcset + sizes</h3>
+        <p>
+          The browser automatically chooses the best image based on screen
+          width. Resize your browser to see it switch!
+        </p>
+        <div class="image-container">
+          <img
+            src="<https://picsum.photos/id/104/400/300>"
+            srcset="
+              <https://picsum.photos/id/104/400/300>   400w,
+              <https://picsum.photos/id/104/800/600>   800w,
+              <https://picsum.photos/id/104/1200/900> 1200w
+            "
+            sizes="
+                        (max-width: 480px) 400px,
+                        (max-width: 768px) 800px,
+                        1200px
+                    "
+            alt="River landscape"
+            loading="lazy"
+          />
+        </div>
+        <div class="code-block">
+          &lt;img src="fallback.jpg" srcset=" image-400.jpg 400w, image-800.jpg
+          800w, image-1200.jpg 1200w " sizes=" (max-width: 480px) 400px,
+          (max-width: 768px) 800px, 1200px " &gt; /* How it works: - srcset
+          tells browser what images are available - sizes tells browser how wide
+          the image will be at each breakpoint - Browser chooses the best match
+          */
+        </div>
+      </div>
+
+      <!-- DEMO 3: PICTURE ELEMENT -->
+      <div class="demo-section">
+        <h3>✅ Solution 2: &lt;picture&gt; Element (Art Direction)</h3>
+        <p>
+          Different crops/compositions for different screen sizes. On mobile,
+          you might want a portrait crop; on desktop, landscape.
+        </p>
+        <div class="image-container">
+          <picture>
+            <source
+              media="(max-width: 480px)"
+              srcset="<https://picsum.photos/id/15/400/500>"
+            />
+            <source
+              media="(max-width: 768px)"
+              srcset="<https://picsum.photos/id/15/700/400>"
+            />
+            <img src="<https://picsum.photos/id/15/1000/500>" alt="Leaves" />
+          </picture>
+        </div>
+        <div class="code-block">
+          &lt;picture&gt; &lt;source media="(max-width: 480px)"
+          srcset="image-portrait.jpg"&gt; &lt;source media="(max-width: 768px)"
+          srcset="image-tablet.jpg"&gt; &lt;img src="image-desktop.jpg"
+          alt="description"&gt; &lt;/picture&gt; /* Use when you need DIFFERENT
+          crops for different screens */
+        </div>
+      </div>
+
+      <!-- DEMO 4: BACKGROUND IMAGES -->
+      <div class="demo-section">
+        <h3>✅ Solution 3: Responsive Background Images</h3>
+        <p>For CSS background images, use media queries to swap images.</p>
+        <div class="bg-demo">🌄 Responsive Background</div>
+        <div class="code-block">
+          /* Mobile (default) */ .bg-demo { background-image:
+          url('image-400.jpg'); } /* Tablet */ @media (min-width: 768px) {
+          .bg-demo { background-image: url('image-800.jpg'); } } /* Desktop */
+          @media (min-width: 1024px) { .bg-demo { background-image:
+          url('image-1200.jpg'); } }
+        </div>
+      </div>
+
+      <!-- DEMO 5: MODERN image-set() -->
+      <div class="demo-section">
+        <h3>✅ Modern: image-set() for Backgrounds</h3>
+        <p>Similar to srcset, but for CSS background images.</p>
+        <div class="code-block">
+          /* Modern syntax (supported in all modern browsers) */ .hero {
+          background-image: image-set( url('image-400.jpg') 1x,
+          url('image-800.jpg') 2x, url('image-1200.jpg') 3x ); }
+        </div>
+      </div>
+
+      <!-- SUMMARY TABLE -->
+      <div class="theory">
+        <h2>📊 When to Use Each Solution</h2>
+        <ul>
+          <li>
+            <strong>srcset + sizes:</strong> Same image, different sizes (most
+            common)
+          </li>
+          <li>
+            <strong>&lt;picture&gt; element:</strong> Different
+            crops/compositions (art direction)
+          </li>
+          <li>
+            <strong>Media queries + background-image:</strong> CSS backgrounds
+          </li>
+          <li><strong>image-set():</strong> Modern CSS backgrounds</li>
+        </ul>
+
+        <h3>Performance Best Practices</h3>
+        <ul>
+          <li>Add <code>loading="lazy"</code> to images below the fold</li>
+          <li>
+            Always include <code>width</code> and <code>height</code> attributes
+            (prevents layout shift)
+          </li>
+          <li>Serve images in modern formats: WebP, AVIF</li>
+          <li>Use a CDN that automatically optimizes images</li>
+        </ul>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="theory">
+        <h2>⚡ Quick Reference Card</h2>
+        <div class="code-block">
+          /* srcset syntax */ srcset="image-400.jpg 400w, image-800.jpg 800w,
+          image-1200.jpg 1200w" /* sizes syntax */ sizes="(max-width: 480px)
+          400px, (max-width: 768px) 800px, 1200px" /* picture element */
+          <picture>
+            <source media="(max-width: 480px)" srcset="mobile.jpg" />
+            <source media="(max-width: 768px)" srcset="tablet.jpg" />
+            <img src="desktop.jpg" alt="description" />
+          </picture>
+
+          /* image-set() */ background-image: image-set(url('img-1x.jpg') 1x,
+          url('img-2x.jpg') 2x);
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          📸 Day 45: Responsive Images | Resize your browser to see images
+          change
+        </p>
+        <p>💡 srcset + sizes = faster mobile, sharper desktop</p>
+      </footer>
+    </div>
+  </body>
+</html>

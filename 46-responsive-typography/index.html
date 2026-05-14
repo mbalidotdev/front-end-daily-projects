@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Typography - clamp(), rem, vw</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📐 Responsive Typography</h1>
+      <div class="subtitle">Fluid text that scales smoothly with clamp()</div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: Why Responsive Typography Matters</h2>
+
+        <h3>The Problem with Fixed Font Sizes</h3>
+        <p>
+          Using <code>px</code> for text means mobile users see the same size as
+          desktop users. On a large monitor, text looks tiny. On a small phone,
+          text might be okay but headings don't pop.
+        </p>
+
+        <h3>Traditional Solution: Media Queries</h3>
+        <div class="code-block">
+          @media (min-width: 768px) { body { font-size: 18px; } } @media
+          (min-width: 1024px) { body { font-size: 20px; } }
+        </div>
+        <p>
+          <strong>Problem:</strong> Font size jumps abruptly at breakpoints
+          instead of flowing smoothly.
+        </p>
+
+        <h3>Modern Solution: clamp()</h3>
+        <div class="code-block">
+          font-size: clamp(1rem, 1rem + 1vw, 1.5rem); /* min: 16px, preferred:
+          scales with viewport, max: 24px */
+        </div>
+        <p>
+          <strong>Benefit:</strong> Font size changes continuously as the screen
+          resizes. No jumps. Perfect smooth scaling.
+        </p>
+      </div>
+
+      <!-- DEMO 1: COMPARISON -->
+      <div class="demo-section">
+        <h3>1. Comparison: px vs rem vs clamp()</h3>
+        <p>Resize your browser to see how each behaves differently.</p>
+
+        <div class="comparison">
+          <div class="comparison-card">
+            <h4>❌ Fixed px</h4>
+            <div class="demo-text fixed-px">
+              This text is 16px always.<br />
+              Does NOT scale with your browser zoom or settings.<br />
+              <strong>Not accessible.</strong>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <h4>✅ rem (scalable)</h4>
+            <div class="demo-text fixed-rem">
+              This text is 1rem (16px default).<br />
+              Scales with browser font settings.<br />
+              <strong>Accessible.</strong>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <h4>🚀 clamp() (fluid)</h4>
+            <div class="demo-text fluid-clamp">
+              This text scales smoothly!<br />
+              Try resizing your browser window.<br />
+              <strong>Best of both worlds.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block">
+          /* rem — respects user settings */ body { font-size: 1rem; /* 16px
+          default, scales with browser */ } /* clamp() — fluid scaling */ h1 {
+          font-size: clamp(1.75rem, 2rem + 3vw, 3rem); /* min: 28px, scales with
+          screen, max: 48px */ }
+        </div>
+      </div>
+
+      <!-- DEMO 2: rem vs px Accessibility -->
+      <div class="demo-section">
+        <h3>2. Accessibility: rem vs px</h3>
+        <p>
+          <strong>Try this:</strong> Change your browser's default font size
+          (Chrome → Settings → Font Size → Large). Watch what happens below.
+        </p>
+
+        <div class="rem-demo">
+          <p style="font-size: 16px">
+            🔴 This uses <strong>px</strong> (16px) — Does NOT change when you
+            change browser settings.
+          </p>
+          <p style="font-size: 1rem">
+            🟢 This uses <strong>rem</strong> (1rem) — DOES change when you
+            change browser settings.
+          </p>
+          <p style="font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem)">
+            🟣 This uses <strong>clamp()</strong> with rem — Best for
+            accessibility AND responsiveness.
+          </p>
+        </div>
+
+        <div class="code-block">
+          /* ❌ Bad for accessibility */ .fixed-px { font-size: 16px; /* User
+          cannot scale this */ } /* ✅ Good for accessibility */ .scalable-rem {
+          font-size: 1rem; /* User can scale this in browser settings */ } /* ✅
+          Best: accessible + responsive */ .fluid-accessible { font-size:
+          clamp(1rem, 1rem + 1vw, 1.5rem); }
+        </div>
+      </div>
+
+      <!-- DEMO 3: FLUID HEADINGS -->
+      <div class="demo-section">
+        <h3>3. Fluid Headings with clamp()</h3>
+        <p>Watch these headings scale smoothly as you resize your browser.</p>
+
+        <div class="code-block">
+          /* Heading sizes that scale continuously */ h1 { font-size:
+          clamp(1.75rem, 2rem + 3vw, 3rem); } /* 28px → 48px */ h2 { font-size:
+          clamp(1.5rem, 1.5rem + 2vw, 2.25rem); } /* 24px → 36px */ h3 {
+          font-size: clamp(1.25rem, 1.25rem + 1vw, 1.75rem); } /* 20px → 28px */
+        </div>
+
+        <div style="margin-top: 1.5rem">
+          <div
+            style="
+              font-size: clamp(1.75rem, 2rem + 3vw, 3rem);
+              margin-bottom: 0.5rem;
+            "
+          >
+            H1: Largest heading
+          </div>
+          <div
+            style="
+              font-size: clamp(1.5rem, 1.5rem + 2vw, 2.25rem);
+              margin-bottom: 0.5rem;
+            "
+          >
+            H2: Section heading
+          </div>
+          <div
+            style="
+              font-size: clamp(1.25rem, 1.25rem + 1vw, 1.75rem);
+              margin-bottom: 0.5rem;
+            "
+          >
+            H3: Card heading
+          </div>
+        </div>
+      </div>
+
+      <!-- DEMO 4: FLUID SPACING -->
+      <div class="demo-section">
+        <h3>4. Fluid Spacing (Margin & Padding)</h3>
+        <p>
+          You can also use clamp() for spacing. Resize to see margins and
+          padding change.
+        </p>
+
+        <div class="fluid-spacing">
+          <strong>Fluid Spacing</strong><br />
+          This box has clamp() for margin and padding.
+        </div>
+
+        <div class="code-block">
+          .fluid-spacing { margin: clamp(1rem, 3vw, 3rem); padding:
+          clamp(0.5rem, 2vw, 2rem); }
+        </div>
+      </div>
+
+      <!-- DEMO 5: FLUID LINE HEIGHT -->
+      <div class="demo-section">
+        <h3>5. Fluid Line Height</h3>
+        <p>
+          Line height can also be fluid for better readability across devices.
+        </p>
+
+        <div class="code-block">
+          /* Line height that scales with screen */ body { line-height:
+          clamp(1.4, 1.4 + 0.3vw, 1.7); }
+        </div>
+
+        <div
+          style="
+            line-height: clamp(1.4, 1.4 + 0.3vw, 1.7);
+            background-color: #1a1a2e;
+            padding: 1rem;
+            border-radius: 0.75rem;
+          "
+        >
+          This paragraph has fluid line height. On mobile, line height is
+          tighter (1.4). On desktop, it's more spacious (1.7). This improves
+          readability across all devices.
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="theory">
+        <h2>⚡ Quick Reference Card</h2>
+
+        <div class="code-block">
+          /* =================================== clamp() SYNTAX
+          =================================== */ clamp(minimum, preferred,
+          maximum) /* =================================== FLUID TYPOGRAPHY
+          PATTERNS =================================== */ /* Body text */ body {
+          font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem); } /* H1 headings */ h1
+          { font-size: clamp(1.75rem, 2rem + 3vw, 3rem); } /* H2 headings */ h2
+          { font-size: clamp(1.5rem, 1.5rem + 2vw, 2.25rem); } /*
+          =================================== FLUID SPACING
+          =================================== */ .container { gap: clamp(1rem,
+          2vw, 2rem); } .card { padding: clamp(1rem, 2vw, 2rem); } /*
+          =================================== ACCESSIBILITY RULE
+          =================================== */ /* Always use rem for text,
+          never px */ font-size: 1rem; /* ✅ Good */ font-size: 16px; /* ❌ Bad
+          — user cannot scale */
+        </div>
+      </div>
+
+      <!-- SUMMARY TABLE -->
+      <div class="theory">
+        <h2>📊 Best Practices Summary</h2>
+        <ul>
+          <li>
+            <strong>Use rem for text</strong> — respects user accessibility
+            settings
+          </li>
+          <li>
+            <strong>Use clamp() for fluid scaling</strong> — smooth transitions,
+            no media queries
+          </li>
+          <li>
+            <strong>Use px for borders</strong> — borders should not scale
+          </li>
+          <li>
+            <strong>Use vw for fluid elements</strong> — percentages of viewport
+            width
+          </li>
+          <li>
+            <strong>Test with browser zoom</strong> — ensure text scales
+            properly
+          </li>
+        </ul>
+
+        <h3>Common clamp() Values</h3>
+        <ul>
+          <li>
+            <code>clamp(1rem, 1rem + 0.5vw, 1.25rem)</code> — body text (16px →
+            20px)
+          </li>
+          <li>
+            <code>clamp(1.5rem, 1.5rem + 1vw, 2rem)</code> — subheadings (24px →
+            32px)
+          </li>
+          <li>
+            <code>clamp(2rem, 2rem + 2vw, 3rem)</code> — main headings (32px →
+            48px)
+          </li>
+          <li>
+            <code>clamp(0.5rem, 1vw, 1rem)</code> — small spacing (8px → 16px)
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>
+          📐 Day 46: Responsive Typography | Resize your browser to see fluid
+          scaling
+        </p>
+        <p>💡 clamp() = smooth typography without media queries</p>
+      </footer>
+    </div>
+  </body>
+</html>

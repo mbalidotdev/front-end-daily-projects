@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Mobile Touch Gestures - Touch-Friendly Design</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>👆 Mobile Touch Gestures</h1>
+      <div class="subtitle">
+        Making your site touch-friendly for phones and tablets
+      </div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: Touch vs Mouse</h2>
+
+        <h3>The Core Problem</h3>
+        <p>
+          On a desktop, users have a <strong>mouse cursor</strong> that can
+          hover over elements. On a phone, users have
+          <strong>fingers</strong> that tap. Hover effects don't work as
+          expected on touch devices.
+        </p>
+
+        <h3>What Happens on Touch Devices</h3>
+        <ul>
+          <li>
+            <code>:hover</code> triggers when you tap, but
+            <strong>stays active</strong> after tapping
+          </li>
+          <li>User sees hover state but can't remove it</li>
+          <li>Dropdown menus that open on hover don't work on touch</li>
+          <li>Tooltips that appear on hover never appear</li>
+        </ul>
+
+        <h3>The Solutions</h3>
+        <ul>
+          <li>
+            <strong>Use `:active`</strong> — provides instant feedback when
+            finger touches screen
+          </li>
+          <li>
+            <strong>Use `@media (hover: hover)`</strong> — only apply hover
+            styles on devices that support hover (mouse)
+          </li>
+          <li>
+            <strong>Use `@media (pointer: coarse)`</strong> — detect touch
+            screens
+          </li>
+          <li>
+            <strong>Make tap targets at least 44×44px</strong> — fingers need
+            space
+          </li>
+        </ul>
+      </div>
+
+      <!-- DEMO 1: TAP TARGET SIZE -->
+      <div class="demo-section">
+        <h3>1. Tap Target Size (44×44px minimum)</h3>
+        <p>
+          Apple and Google recommend <strong>minimum 44×44px</strong> for touch
+          targets. Try tapping each button on your phone.
+        </p>
+
+        <div class="button-group">
+          <button class="btn btn-too-small">Too Small (hard to tap)</button>
+          <button class="btn btn-good-size">Good Size (easy to tap)</button>
+        </div>
+
+        <div class="code-block">
+          /* ❌ Too small — hard for fingers */ .btn-too-small { padding: 4px
+          8px; font-size: 0.75rem; } /* ✅ Good — 44px minimum */ .btn-good-size
+          { padding: 12px 20px; font-size: 1rem; min-width: 44px; min-height:
+          44px; }
+        </div>
+      </div>
+
+      <!-- DEMO 2: HOVER VS ACTIVE -->
+      <div class="demo-section">
+        <h3>2. Hover vs Active States</h3>
+        <p>On desktop, hover works. On touch, active provides tap feedback.</p>
+
+        <div class="button-group">
+          <button class="btn btn-hover">Hover (desktop) / Tap (touch)</button>
+        </div>
+
+        <div class="code-block">
+          /* Hover styles ONLY apply on devices with hover capability (mouse) */
+          @media (hover: hover) { .btn:hover { background-color: #27ae60;
+          transform: scale(1.05); } } /* Active state works on ALL devices (tap
+          feedback) */ .btn:active { background-color: #1e8449; transform:
+          scale(0.98); }
+        </div>
+
+        <div class="note">
+          💡 <strong>Test on your phone:</strong> Tap the button above. You
+          should see an instant color change (active state). On desktop, you'll
+          see the hover effect.
+        </div>
+      </div>
+
+      <!-- DEMO 3: INSTANT FEEDBACK -->
+      <div class="demo-section">
+        <h3>3. Instant Tap Feedback with :active</h3>
+        <p>
+          <code>:active</code> triggers the MOMENT your finger touches the
+          screen — perfect for touch feedback.
+        </p>
+
+        <div class="button-group">
+          <button class="btn btn-active">Tap me for instant feedback!</button>
+        </div>
+
+        <div class="code-block">
+          /* Active state — triggers instantly on touch */ .btn:active {
+          background-color: #e67e22; transform: scale(0.97); transition: all
+          0.05s ease; /* Very fast transition */ }
+        </div>
+      </div>
+
+      <!-- DEMO 4: TOUCH-FRIENDLY MENU -->
+      <div class="demo-section">
+        <h3>4. Touch-Friendly Navigation Menu</h3>
+        <p>Each menu item has 44px minimum height and tap feedback.</p>
+
+        <ul class="menu">
+          <li class="menu-item"><a href="#" class="menu-link">🏠 Home</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">📖 About</a></li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">📧 Contact</a>
+          </li>
+        </ul>
+
+        <div class="code-block">
+          .menu-link { display: block; padding: 12px 16px; min-height: 44px; /*
+          Minimum touch target */ } /* Hover only on mouse devices */ @media
+          (hover: hover) { .menu-link:hover { background-color: #4a90e2;
+          padding-left: 24px; } } /* Tap feedback on all devices */
+          .menu-link:active { background-color: #e94560; transform: scale(0.99);
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 5: DETECTING DEVICE TYPE -->
+      <div class="demo-section">
+        <h3>5. Detecting Device Capabilities</h3>
+        <p>
+          CSS can detect whether the device supports hover and what input method
+          is used.
+        </p>
+
+        <div class="device-info" id="deviceInfo">Checking your device...</div>
+
+        <div class="code-block">
+          /* Detect if device supports hover (mouse) */ @media (hover: hover) {
+          /* Styles for mouse/trackpad devices */ } /* Detect if primary input
+          is touch (finger) */ @media (pointer: coarse) { /* Styles for touch
+          screens */ } /* Detect if primary input is mouse (precise) */ @media
+          (pointer: fine) { /* Styles for mouse/stylus */ }
+        </div>
+      </div>
+
+      <!-- DEMO 6: BEFORE/AFTER COMPARISON -->
+      <div class="demo-section">
+        <h3>6. Before/After: Touch Optimization</h3>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem">
+          <div style="flex: 1">
+            <h4 style="color: #e94560">❌ Before (Not Touch-Friendly)</h4>
+            <div class="code-block">
+              /* Small tap target */ .small-button { padding: 4px 8px;
+              font-size: 12px; } /* Hover only (no touch feedback) */
+              .button:hover { background: darkblue; }
+            </div>
+          </div>
+
+          <div style="flex: 1">
+            <h4 style="color: #2ecc71">✅ After (Touch-Friendly)</h4>
+            <div class="code-block">
+              /* Larger tap target */ .large-button { padding: 12px 20px;
+              font-size: 16px; min-height: 44px; } /* Hover only for mouse */
+              @media (hover: hover) { .button:hover { background: darkblue; } }
+              /* Tap feedback for touch */ .button:active { background: navy;
+              transform: scale(0.98); }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK REFERENCE -->
+      <div class="theory">
+        <h2>⚡ Quick Reference Card</h2>
+
+        <div class="code-block">
+          /* =================================== 1. TAP TARGET SIZE (44px
+          minimum) =================================== */ .button { padding:
+          12px 20px; min-width: 44px; min-height: 44px; } /*
+          =================================== 2. DETECT HOVER CAPABILITY
+          =================================== */ @media (hover: hover) {
+          .element:hover { /* Hover styles — only on mouse devices */ } } /*
+          =================================== 3. DETECT TOUCH SCREEN
+          =================================== */ @media (pointer: coarse) { /*
+          Styles for touch screens */ .element { padding: 16px; /* Larger tap
+          targets */ } } /* =================================== 4. TAP FEEDBACK
+          (works on all devices) =================================== */
+          .element:active { background-color: darker-color; transform:
+          scale(0.98); transition: all 0.05s ease; }
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="theory">
+        <h2>📊 Best Practices Summary</h2>
+        <ul>
+          <li>
+            <strong>Minimum 44×44px tap targets</strong> — fingers are not
+            precise like cursors
+          </li>
+          <li>
+            <strong>Use `:active` for tap feedback</strong> — instant response
+            to touch
+          </li>
+          <li>
+            <strong>Use `@media (hover: hover)`</strong> — only show hover
+            effects on devices that support them
+          </li>
+          <li>
+            <strong>Test on real devices</strong> — emulators are not enough
+          </li>
+          <li>
+            <strong>Don't hide content behind hover</strong> — touch users won't
+            see it
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>
+          👆 Day 48: Mobile Touch Gestures | Tap targets, hover detection, touch
+          feedback
+        </p>
+        <p>
+          💡 44×44px minimum = happy fingers | :active = instant feedback |
+          @media (hover: hover) = mouse-only effects
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Detect device capabilities for demo
+      const deviceInfo = document.getElementById("deviceInfo");
+
+      const hasHover = window.matchMedia("(hover: hover)").matches;
+      const pointerType = window.matchMedia("(pointer: coarse)").matches
+        ? "touch"
+        : "mouse";
+
+      deviceInfo.innerHTML = `
+            <strong>Your device:</strong><br>
+            • Hover capability: ${hasHover ? "✅ Yes (mouse/trackpad)" : "❌ No (touch only)"}<br>
+            • Primary input: ${pointerType === "touch" ? "👆 Finger (touch)" : "🖱️ Mouse/trackpad"}<br>
+            ${!hasHover ? "<br>💡 Since your device is touch-only, hover styles are NOT applied. Active (tap) styles are used instead." : ""}
+        `;
+    </script>
+  </body>
+</html>

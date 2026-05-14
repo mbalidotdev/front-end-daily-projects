@@ -164,6 +164,44 @@ _mixed grid sizes: spanning multiple columns/rows_
 
 _grid + flex + media queries together_
 
+## RESPONSIVE DESIGN AND MOBILE FIRST
+
 ### [41. Mobile First Form](https://mbalidotdev.github.io/front-end-daily-projects/41-mobile-first-form)
 
 _mobile first form_
+
+### [42. Flex Wrap That Sucks](https://mbalidotdev.github.io/front-end-daily-projects/42-flex-wrap-that-sucks)
+
+_flex-direction: column on mobile_
+
+### [43. Three Layouts One HTML](https://mbalidotdev.github.io/front-end-daily-projects/43-three-layouts-one-html)
+
+_1 col → 2 col → 3 col at different breakpoints_
+
+### [44. CSS Only Hamburger Menu](https://mbalidotdev.github.io/front-end-daily-projects/44-css-only-hamburger-menu)
+
+_:checked pseudo-class, + selector_
+
+### [45. Responsive Images](https://mbalidotdev.github.io/front-end-daily-projects/45-responsive-images)
+
+_srcset, sizes, picture element_
+
+### [46. Responsive Typography](https://mbalidotdev.github.io/front-end-daily-projects/46-responsive-typography)
+
+_clamp(), vw units, rem vs px_
+
+### [47. Container Queries](https://mbalidotdev.github.io/front-end-daily-projects/47-container-queries)
+
+_modern alternative to media queries: element-based responsiveness_
+
+### [48. Mobile Touch Gestrures](https://mbalidotdev.github.io/front-end-daily-projects/48-mobile-touch-gestures)
+
+_:active, :hover on touch devices, @media (hover: hover)_
+
+### [49. Print Stylesheet](https://mbalidotdev.github.io/front-end-daily-projects/49-print-stylesheet)
+
+_@media print, hide navigation, adjust colors_
+
+### [50. Complete Responsive Portfolio](https://mbalidotdev.github.io/front-end-daily-projects/50-complete-responsive-portfolio)
+
+_portfolio_

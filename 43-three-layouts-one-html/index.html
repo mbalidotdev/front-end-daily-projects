@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Layouts One HTML - Mobile, Tablet, Desktop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📐 Three Layouts, One HTML</h1>
+      <div class="subtitle">
+        Mobile (1 col) → Tablet (2 col) → Desktop (3 col)
+      </div>
+
+      <!-- THE DEMO -->
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <span class="layout-badge">Mobile: 1 Column</span>
+          <h3>Stacked Vertically</h3>
+          <p>
+            On phones (below 768px), cards stack one after another. Easy to
+            scroll with your thumb.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📟</div>
+          <span class="layout-badge">Tablet: 2 Columns</span>
+          <h3>Side by Side</h3>
+          <p>
+            On tablets (768px to 1023px), cards arrange in 2 columns. Uses
+            screen space efficiently.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <span class="layout-badge">Desktop: 3 Columns</span>
+          <h3>Full Grid</h3>
+          <p>
+            On desktops (1024px and above), cards arrange in 3 columns. Maximum
+            information density.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <span class="layout-badge">Same HTML</span>
+          <h3>One Code, Three Layouts</h3>
+          <p>The HTML never changes. CSS media queries handle everything.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📏</div>
+          <span class="layout-badge">Breakpoints</span>
+          <h3>768px and 1024px</h3>
+          <p>Two media queries create three distinct layouts.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <span class="layout-badge">Mobile-First</span>
+          <h3>Start Small, Go Big</h3>
+          <p>Default is mobile. Add with min-width for larger screens.</p>
+        </div>
+      </div>
+
+      <!-- THEORY SECTION -->
+      <div class="theory">
+        <h2>📚 Theory: Three Layouts, One HTML</h2>
+
+        <h3>What Are Breakpoints?</h3>
+        <p>
+          A <strong>breakpoint</strong> is a specific screen width where your
+          design changes. For example, at 768px, a layout might switch from 1
+          column to 2 columns.
+        </p>
+
+        <div class="breakpoint-box">
+          <h4>Common Breakpoints in Industry</h4>
+          <ul>
+            <li>
+              <strong>320px - 480px:</strong> Small phones (iPhone SE, Galaxy
+              Fold)
+            </li>
+            <li>
+              <strong>481px - 768px:</strong> Large phones / small tablets
+              (iPhone Plus, iPad Mini)
+            </li>
+            <li><strong>769px - 1024px:</strong> Tablets (iPad, Surface Go)</li>
+            <li>
+              <strong>1025px - 1200px:</strong> Desktops (standard laptop
+              screens)
+            </li>
+            <li>
+              <strong>1201px+:</strong> Large desktops (external monitors, 4K
+              screens)
+            </li>
+          </ul>
+        </div>
+
+        <div class="breakpoint-box">
+          <h4>How Netflix Uses Breakpoints</h4>
+          <ul>
+            <li>
+              <strong>Mobile (under 600px):</strong> 1 column of thumbnails,
+              bottom navigation
+            </li>
+            <li>
+              <strong>Tablet (600px - 950px):</strong> 2-3 columns, top
+              navigation appears
+            </li>
+            <li>
+              <strong>Desktop (950px+):</strong> 4-5 columns, full hover
+              effects, side navigation
+            </li>
+          </ul>
+          <p>
+            Netflix doesn't guess how many columns to show. They explicitly set
+            breakpoints for each device size.
+          </p>
+        </div>
+
+        <h3>Mobile-First Media Queries</h3>
+        <p>Notice we use <code>min-width</code>, not <code>max-width</code>:</p>
+        <div class="code-block">
+          /* MOBILE FIRST PATTERN */ /* 1. Start with mobile styles (no media
+          query) */ .cards { display: flex; flex-direction: column; /* 1 column
+          on mobile */ } /* 2. Tablet styles (apply from 768px and up) */ @media
+          (min-width: 768px) { .cards { display: grid; grid-template-columns:
+          repeat(2, 1fr); /* 2 columns on tablet */ } } /* 3. Desktop styles
+          (apply from 1024px and up) */ @media (min-width: 1024px) { .cards {
+          grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */ } }
+        </div>
+
+        <h3>Why min-width?</h3>
+        <p>
+          <code>min-width</code> means "apply these styles when the screen is AT
+          LEAST this wide." This matches the mobile-first philosophy: start with
+          mobile, then add features as the screen gets larger.
+        </p>
+
+        <h3>What About max-width?</h3>
+        <p>
+          <code>max-width</code> means "apply these styles when the screen is AT
+          MOST this wide." This is "desktop-first" — you start with desktop,
+          then remove features for mobile. Most modern developers use
+          <code>min-width</code> (mobile-first).
+        </p>
+
+        <div class="breakpoint-box">
+          <h4>Can You Combine Both?</h4>
+          <p>
+            Yes. For example, if you want styles that ONLY apply to tablets (not
+            mobile, not desktop):
+          </p>
+          <div class="code-block">
+            @media (min-width: 768px) and (max-width: 1023px) { /* Tablet-only
+            styles */ /* These only apply between 768px and 1023px */ }
+          </div>
+        </div>
+
+        <h3>The Three Layouts in This Project</h3>
+        <ul>
+          <li>
+            <strong>Layout 1 (Mobile):</strong>
+            <code>flex-direction: column</code> — cards stack vertically
+          </li>
+          <li>
+            <strong>Layout 2 (Tablet):</strong>
+            <code>grid-template-columns: repeat(2, 1fr)</code> — 2 columns
+          </li>
+          <li>
+            <strong>Layout 3 (Desktop):</strong>
+            <code>grid-template-columns: repeat(3, 1fr)</code> — 3 columns
+          </li>
+        </ul>
+
+        <h3>Why Not Just Use auto-fit?</h3>
+        <p>
+          <code>repeat(auto-fit, minmax(300px, 1fr))</code> automatically
+          decides how many columns to show. That's great for many cases. But
+          sometimes you need explicit control:
+        </p>
+        <ul>
+          <li>
+            You want EXACTLY 2 columns on tablet, not sometimes 2, sometimes 3
+          </li>
+          <li>
+            You want a completely different layout structure (not just column
+            count)
+          </li>
+          <li>
+            You want to rearrange elements (move sidebar from bottom to side)
+          </li>
+        </ul>
+        <p>
+          Media queries give you exact control. Auto-fit gives the browser
+          control. Both are useful tools.
+        </p>
+      </div>
+
+      <!-- CODE SUMMARY -->
+      <div class="theory" style="margin-top: 20px">
+        <h2>📝 The Complete CSS Pattern</h2>
+        <div class="code-block">
+          /* =================================== STEP 1: MOBILE (default)
+          =================================== */ .your-class { display: flex;
+          flex-direction: column; gap: 20px; } /*
+          =================================== STEP 2: TABLET (768px and up)
+          =================================== */ @media (min-width: 768px) {
+          .your-class { display: grid; grid-template-columns: repeat(2, 1fr);
+          gap: 25px; } } /* =================================== STEP 3: DESKTOP
+          (1024px and up) =================================== */ @media
+          (min-width: 1024px) { .your-class { grid-template-columns: repeat(3,
+          1fr); } }
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          📐 Day 43: Three Layouts One HTML | Resize your browser from 320px →
+          768px → 1024px+
+        </p>
+        <p>💡 One HTML. Three layouts. Mobile-First CSS.</p>
+      </footer>
+    </div>
+  </body>
+</html>

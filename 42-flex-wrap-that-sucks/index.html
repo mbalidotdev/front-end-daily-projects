@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-Wrap That Stacks - Column on Mobile, Row on Desktop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📱 Flex-Wrap That Stacks</h1>
+      <div class="subtitle">Column on Mobile → Row on Desktop</div>
+
+      <!-- THE DEMO -->
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Mobile: Column</h3>
+          <p>
+            On phones (below 768px), these cards stack vertically. One after
+            another. Easy to scroll.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>Desktop: Row</h3>
+          <p>
+            On desktops (768px and above), these cards become a horizontal row.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Flex-Wrap</h3>
+          <p>
+            If there are more cards, they wrap to the next row automatically.
+          </p>
+        </div>
+      </div>
+
+      <!-- EXPLANATION -->
+      <div class="explanation">
+        <h3>📚 What You Learned</h3>
+        <ul>
+          <li>
+            <strong>Mobile (default):</strong>
+            <code>flex-direction: column</code> — cards stack vertically
+          </li>
+          <li>
+            <strong>Desktop (min-width: 768px):</strong>
+            <code>flex-direction: row</code> — cards become horizontal
+          </li>
+          <li>
+            <strong>flex-wrap: wrap</strong> — allows cards to move to next row
+            if needed
+          </li>
+          <li>
+            <strong>flex: 1 1 calc(33.333% - 20px)</strong> — each card takes
+            1/3 of the width
+          </li>
+        </ul>
+      </div>
+
+      <!-- THE CODE -->
+      <div class="code-block">
+        /* =================================== MOBILE FIRST (default)
+        =================================== */ .cards { display: flex;
+        flex-direction: column; /* Stack vertically on mobile */ gap: 20px; } /*
+        =================================== DESKTOP (min-width: 768px)
+        =================================== */ @media (min-width: 768px) {
+        .cards { flex-direction: row; /* Horizontal row on desktop */ flex-wrap:
+        wrap; /* Wrap to next line */ } .card { flex: 1 1 calc(33.333% - 20px);
+        /* 3 cards per row */ } }
+      </div>
+
+      <footer>
+        <p>
+          📱 Day 42: Flex-wrap That Stacks | Resize your browser to see the
+          change
+        </p>
+        <p>
+          💡 Mobile: column → Desktop: row | This is mobile-first responsive
+          design
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

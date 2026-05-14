@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 2rem + 2vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* ===================================
+           THEORY SECTION
+           =================================== */
+.theory {
+  background-color: #0a0a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.theory h2 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.theory h3 {
+  color: #e94560;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.theory p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.theory ul {
+  margin-left: 1.5rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.theory code {
+  background-color: #1a1a2e;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #82b1ff;
+}
+
+/* ===================================
+           DEMO BUTTONS
+           =================================== */
+.demo-section {
+  background-color: #0f3460;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.demo-section h3 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  align-items: center;
+}
+
+/* Base button styles */
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ===================================
+           DEMO 1: TOO SMALL (Bad for touch)
+           =================================== */
+.btn-too-small {
+  background-color: #e94560;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* ===================================
+           DEMO 2: GOOD SIZE (44px min)
+           =================================== */
+.btn-good-size {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ===================================
+           DEMO 3: HOVER (works on mouse only)
+           =================================== */
+.btn-hover {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 0.5rem;
+}
+
+/* This hover style ONLY applies on devices that support hover (mouse) */
+@media (hover: hover) {
+  .btn-hover:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+  }
+}
+
+/* Active state for touch (tap feedback) */
+.btn-hover:active {
+  background-color: #1e8449;
+  transform: scale(0.98);
+}
+
+/* ===================================
+           DEMO 4: :active for touch feedback
+           =================================== */
+.btn-active {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 0.5rem;
+  transition: all 0.05s ease;
+}
+
+/* Instant feedback on tap */
+.btn-active:active {
+  background-color: #e67e22;
+  transform: scale(0.97);
+}
+
+/* ===================================
+           DEMO 5: Menu items (touch-friendly)
+           =================================== */
+.menu {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.menu-item {
+  margin-bottom: 0.5rem;
+}
+
+.menu-link {
+  display: block;
+  padding: 12px 16px;
+  background-color: #1a1a2e;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  /* Minimum touch target: 44px tall */
+  min-height: 44px;
+}
+
+/* Hover only on mouse devices */
+@media (hover: hover) {
+  .menu-link:hover {
+    background-color: #4a90e2;
+    padding-left: 24px;
+  }
+}
+
+/* Tap feedback (works on all devices) */
+.menu-link:active {
+  background-color: #e94560;
+  transform: scale(0.99);
+}
+
+/* ===================================
+           DEMO 6: Detect touch devices
+           =================================== */
+.device-info {
+  background-color: #1a1a2e;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.code-block {
+  background-color: #0a0a1a;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.note {
+  background-color: #1a1a2e;
+  border-left: 4px solid #e94560;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+}

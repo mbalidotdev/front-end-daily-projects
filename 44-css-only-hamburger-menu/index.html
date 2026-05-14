@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Only Hamburger Menu - No JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- THEORY SECTION FIRST -->
+    <div class="theory">
+      <h2>📚 Theory: CSS-Only Hamburger Menu</h2>
+
+      <h3>What Is the "Checkbox Hack"?</h3>
+      <p>
+        You can create interactive components using <strong>only CSS</strong> by
+        combining a hidden checkbox with the <code>:checked</code> pseudo-class.
+        When the checkbox is checked, you show the menu. When unchecked, you
+        hide it.
+      </p>
+
+      <h3>How It Works</h3>
+      <ul>
+        <li>
+          Create a hidden checkbox:
+          <code>&lt;input type="checkbox" id="menu-toggle"&gt;</code>
+        </li>
+        <li>
+          Create a label that looks like a hamburger menu:
+          <code
+            >&lt;label for="menu-toggle"
+            class="hamburger"&gt;☰&lt;/label&gt;</code
+          >
+        </li>
+        <li>
+          Hide the menu by default: <code>.nav-menu { display: none; }</code>
+        </li>
+        <li>
+          When checkbox is checked, show the menu:
+          <code>#menu-toggle:checked ~ .nav-menu { display: flex; }</code>
+        </li>
+      </ul>
+
+      <h3>Real-World Examples</h3>
+      <ul>
+        <li>
+          <strong>Amazon mobile menu</strong> — uses a similar pattern (but with
+          JavaScript for animations)
+        </li>
+        <li>
+          <strong>YouTube sidebar</strong> — hamburger toggles the left sidebar
+        </li>
+        <li>
+          <strong>Custom checkboxes and toggles</strong> — same
+          <code>:checked</code> technique
+        </li>
+      </ul>
+
+      <h3>Why Learn This?</h3>
+      <ul>
+        <li>
+          Teaches you the <strong><code>:checked</code> pseudo-class</strong> —
+          useful for custom checkboxes, radio buttons, and toggles
+        </li>
+        <li>
+          Shows you what's possible with <strong>pure CSS</strong> (no
+          JavaScript)
+        </li>
+        <li>Works even if JavaScript fails to load</li>
+      </ul>
+
+      <h3>Limitations (Why Real Sites Use JavaScript)</h3>
+      <ul>
+        <li>
+          Can't animate smoothly between states (no transitions on
+          <code>display: none</code>)
+        </li>
+        <li>Accessibility issues (focus management, keyboard navigation)</li>
+        <li>Can't close by clicking outside the menu</li>
+      </ul>
+    </div>
+
+    <!-- DEMO CONTAINER -->
+    <div class="demo-container">
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <a href="#" class="logo">MySite</a>
+
+        <!-- Hidden checkbox -->
+        <input type="checkbox" id="menu-toggle" />
+
+        <!-- Hamburger label -->
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <!-- Navigation menu (hidden on mobile) -->
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>CSS-Only Hamburger Menu</h1>
+        <p>Click the ☰ icon above to open and close the mobile menu.</p>
+        <p>
+          <strong>No JavaScript was used.</strong> This menu works entirely with
+          CSS using the <code>:checked</code> pseudo-class.
+        </p>
+        <p>
+          On desktop (768px and above), the hamburger disappears and the
+          navigation becomes a horizontal row.
+        </p>
+      </div>
+    </div>
+
+    <!-- CODE EXPLANATION -->
+    <div class="code-block">
+      /* =================================== STEP 1: HIDE THE CHECKBOX
+      =================================== */ #menu-toggle { display: none; } /*
+      =================================== STEP 2: HIDE THE MENU BY DEFAULT
+      =================================== */ .nav-menu { display: none;
+      position: absolute; top: 100%; left: 0; right: 0; background-color:
+      #0f3460; flex-direction: column; padding: 20px; } /*
+      =================================== STEP 3: SHOW MENU WHEN CHECKBOX IS
+      CHECKED =================================== */ #menu-toggle:checked ~
+      .nav-menu { display: flex; } /* =================================== STEP
+      4: ON DESKTOP, ALWAYS SHOW MENU =================================== */
+      @media (min-width: 768px) { .hamburger { display: none; /* Hide hamburger
+      */ } .nav-menu { display: flex; /* Always show menu */ position: static;
+      flex-direction: row; } }
+    </div>
+
+    <!-- ADDITIONAL THEORY -->
+    <div class="theory">
+      <h2>🔧 The :checked Pseudo-Class</h2>
+
+      <h3>What Else Can You Do With :checked?</h3>
+      <ul>
+        <li>
+          <strong>Custom checkboxes</strong> — style checkboxes to match your
+          brand
+        </li>
+        <li>
+          <strong>Toggle switches</strong> — dark mode toggle without JavaScript
+        </li>
+        <li>
+          <strong>Accordions</strong> — collapsible sections (like Day 10 FAQ)
+        </li>
+        <li><strong>Tab components</strong> — switch between content panels</li>
+        <li><strong>Modal popups</strong> — open/close with checkbox</li>
+      </ul>
+
+      <h3>The Sibling Selector (~)</h3>
+      <p>
+        Notice the <code>~</code> (tilde) in
+        <code>#menu-toggle:checked ~ .nav-menu</code>.
+      </p>
+      <p>
+        The <strong>general sibling selector</strong> (<code>~</code>) selects
+        all siblings after an element. In this case, it selects the
+        <code>.nav-menu</code> that comes after the checkbox.
+      </p>
+
+      <div class="code-block">
+        /* General sibling selector - selects ALL siblings after */
+        #menu-toggle:checked ~ .nav-menu { } /* Adjacent sibling selector -
+        selects ONLY the immediate next sibling */ #menu-toggle:checked +
+        .nav-menu { }
+      </div>
+
+      <h3>Real-World Use: Custom Checkbox</h3>
+      <div class="code-block">
+        /* Hide default checkbox */ input[type="checkbox"] { display: none; } /*
+        Create custom checkbox */ .custom-checkbox { display: inline-block;
+        width: 20px; height: 20px; background-color: white; border: 2px solid
+        #ccc; border-radius: 4px; } /* When checked, change appearance */
+        input[type="checkbox"]:checked + .custom-checkbox { background-color:
+        #4a90e2; border-color: #4a90e2; }
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        🍔 Day 44: CSS-Only Hamburger Menu | Click the ☰ icon — no JavaScript!
+      </p>
+      <p>
+        💡 The checkbox + :checked trick creates interactive components with
+        pure CSS
+      </p>
+    </footer>
+  </body>
+</html>

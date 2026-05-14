@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  min-height: 100vh;
+}
+
+/* ===================================
+           THEORY SECTION (top of page)
+           =================================== */
+.theory {
+  background-color: #0a0a1a;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 16px;
+}
+
+.theory h2 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+.theory h3 {
+  color: #e94560;
+  margin: 20px 0 10px;
+}
+
+.theory p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.theory ul {
+  margin-left: 25px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.theory code {
+  background-color: #1a1a2e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #82b1ff;
+}
+
+/* ===================================
+           NAVBAR (mobile-first)
+           =================================== */
+.navbar {
+  background-color: #0f3460;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+/* ===================================
+           HAMBURGER BUTTON (label)
+           =================================== */
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===================================
+           HIDDEN CHECKBOX
+           =================================== */
+#menu-toggle {
+  display: none;
+}
+
+/* ===================================
+           MENU (hidden by default on mobile)
+           =================================== */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0f3460;
+  flex-direction: column;
+  list-style: none;
+  padding: 20px;
+  gap: 15px;
+  border-top: 1px solid #1a1a2e;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  background-color: #4a90e2;
+  border-radius: 8px;
+  padding-left: 20px;
+}
+
+/* ===================================
+           SHOW MENU WHEN CHECKBOX IS CHECKED
+           =================================== */
+#menu-toggle:checked ~ .nav-menu {
+  display: flex;
+}
+
+/* ===================================
+           CONTENT SECTION
+           =================================== */
+.content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+           DESKTOP LAYOUT (min-width: 768px)
+           =================================== */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    gap: 30px;
+    border-top: none;
+  }
+
+  .nav-menu li a {
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .nav-menu li a:hover {
+    background-color: transparent;
+    color: #4a90e2;
+    padding-left: 0;
+  }
+}
+
+/* ===================================
+           CODE DISPLAY
+           =================================== */
+.code-block {
+  background-color: #0a0a1a;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin: 20px;
+}
+
+.demo-container {
+  background-color: #0f3460;
+  border-radius: 16px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-size: 14px;
+}

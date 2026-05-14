@@ -1,0 +1,204 @@
+/* ===================================
+           BASE: rem is relative to root font size
+           Users can change this in browser settings
+           =================================== */
+html {
+  font-size: 100%; /* 1rem = 16px (default browser) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 20px;
+  line-height: 1.6;
+
+  /* ===================================
+               FLUID BODY TEXT (scales smoothly)
+               min: 16px | preferred: 2vw | max: 20px
+               =================================== */
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================================
+           FLUID HEADINGS (scale with screen)
+           =================================== */
+h1 {
+  /* min: 28px, preferred: 5vw, max: 48px */
+  font-size: clamp(1.75rem, 2rem + 3vw, 3rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff, #4a90e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-size: clamp(0.875rem, 0.875rem + 0.5vw, 1.125rem);
+}
+
+/* ===================================
+           THEORY SECTION
+           =================================== */
+.theory {
+  background-color: #0a0a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.theory h2 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 1.25rem + 1vw, 1.75rem);
+}
+
+.theory h3 {
+  color: #e94560;
+  margin: 1.5rem 0 0.75rem;
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+}
+
+.theory p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.theory ul {
+  margin-left: 1.5rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.theory code {
+  background-color: #1a1a2e;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  color: #82b1ff;
+}
+
+/* ===================================
+           DEMO SECTIONS
+           =================================== */
+.demo-section {
+  background-color: #0f3460;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.demo-section h3 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  font-size: clamp(1.125rem, 1.125rem + 0.5vw, 1.375rem);
+}
+
+/* ===================================
+           COMPARISON BOXES
+           =================================== */
+.comparison {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.comparison-card {
+  background-color: #1a1a2e;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.comparison-card h4 {
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+.fixed-px {
+  font-size: 16px; /* Fixed pixels — does not scale */
+}
+
+.fixed-rem {
+  font-size: 1rem; /* 16px, but scales with user settings */
+}
+
+.fluid-clamp {
+  font-size: clamp(0.875rem, 1rem + 1vw, 1.5rem);
+}
+
+.demo-text {
+  background-color: #0f3460;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ===================================
+           CODE BLOCK
+           =================================== */
+.code-block {
+  background-color: #0a0a1a;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+/* ===================================
+           REM VS PX DEMO
+           =================================== */
+.rem-demo {
+  background-color: #1a1a2e;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.rem-demo p {
+  margin: 0.5rem 0;
+}
+
+/* ===================================
+           FLUID SPACING DEMO
+           =================================== */
+.fluid-spacing {
+  margin-bottom: clamp(1rem, 3vw, 3rem);
+  padding: clamp(0.5rem, 2vw, 2rem);
+  background-color: #1a1a2e;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+}

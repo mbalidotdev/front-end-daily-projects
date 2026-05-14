@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===================================
+           SCREEN STYLES (what you see in browser)
+           =================================== */
+.screen-only-header {
+  background-color: #0f3460;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.print-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.print-button:hover {
+  background-color: #357abd;
+}
+
+.article {
+  background-color: #0f3460;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article h1 {
+  font-size: clamp(1.75rem, 2rem + 1vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  color: #4a90e2;
+}
+
+.article-meta {
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #1a1a2e;
+  padding-bottom: 0.5rem;
+}
+
+.article h2 {
+  margin: 1.5rem 0 0.5rem;
+  color: #e94560;
+}
+
+.article p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.article a {
+  color: #4a90e2;
+}
+
+.advertisement {
+  background: linear-gradient(135deg, #e94560, #c73b54);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.advertisement p {
+  color: white;
+  margin-bottom: 0;
+}
+
+.sidebar {
+  background-color: #0f3460;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  margin-left: 1.5rem;
+  color: #aaa;
+}
+
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
+.footer {
+  background-color: #0a0a1a;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  color: #666;
+}
+
+.code-block {
+  background-color: #0a0a1a;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #82b1ff;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* ===================================
+           PRINT STYLES (what happens when you print)
+           This is the most important part!
+           =================================== */
+@media print {
+  /* Reset everything for print */
+  body {
+    background: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide non-essential elements */
+  .screen-only-header,
+  .print-button,
+  .advertisement,
+  .sidebar,
+  .footer,
+  .nav-links {
+    display: none;
+  }
+
+  /* Article styling for print */
+  .article {
+    background: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .article h1 {
+    color: black;
+    font-size: 18pt;
+    margin-top: 0;
+  }
+
+  .article h2 {
+    color: black;
+    font-size: 14pt;
+  }
+
+  .article p {
+    color: black;
+    line-height: 1.4;
+  }
+
+  /* Show full URLs after links */
+  .article a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .article a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Don't show URLs for internal links or mailto */
+  .article a[href^="#"]:after,
+  .article a[href^="mailto"]:after,
+  .article a[href^="javascript"]:after {
+    content: "";
+  }
+
+  /* Page breaks */
+  h1,
+  h2 {
+    page-break-after: avoid;
+  }
+
+  p,
+  li,
+  figure {
+    page-break-inside: avoid;
+  }
+
+  /* Force page break before conclusion */
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+.theory {
+  background-color: #0a0a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.theory h2 {
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.theory h3 {
+  color: #e94560;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.theory p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.theory ul {
+  margin-left: 1.5rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.note {
+  background-color: #1a1a2e;
+  border-left: 4px solid #e94560;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}

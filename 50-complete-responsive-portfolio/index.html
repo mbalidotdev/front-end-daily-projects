@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>mbali.dev | Front-End Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER (Sticky + Hamburger Menu) -->
+    <header class="header">
+      <div class="nav-container">
+        <a href="#" class="logo">mbali.dev</a>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="hero">
+        <div class="container">
+          <h1>Hi, I'm <span class="highlight">Mbali</span></h1>
+          <p>
+            A front-end developer who builds responsive, accessible, and
+            performant websites.
+          </p>
+          <div class="button-group">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="skills">
+        <div class="container">
+          <h2>My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon">📄</div>
+              <h3>HTML5</h3>
+              <p>Semantic, accessible markup</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🎨</div>
+              <h3>CSS3</h3>
+              <p>Flexbox, Grid, Animations</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">⚡</div>
+              <h3>JavaScript</h3>
+              <p>ES6+, DOM, APIs</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">⚛️</div>
+              <h3>React</h3>
+              <p>Hooks, Components, State</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2>Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-img">💰</div>
+              <div class="project-info">
+                <h3>Salary Simulator</h3>
+                <p>Belgian tax calculator for expats</p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JS</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-img">📊</div>
+              <div class="project-info">
+                <h3>Expense Tracker</h3>
+                <p>Track your daily spending</p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Chart.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-img">🌤️</div>
+              <div class="project-info">
+                <h3>Weather App</h3>
+                <p>Real-time weather data</p>
+                <div class="project-tags">
+                  <span class="tag">API</span>
+                  <span class="tag">JS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2>Get In Touch</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="social-links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+          <a href="#">Email</a>
+        </div>
+        <p>&copy; 2026 mbali.dev. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu-toggle").checked = false;
+        });
+      });
+    </script>
+  </body>
+</html>
