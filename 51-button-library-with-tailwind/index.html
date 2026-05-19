@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Library - Tailwind CSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      /* Custom class to show button states better */
+      .demo-section {
+        scroll-margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">🎨 Button Library</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          A complete reference of button styles built with Tailwind CSS
+          utilities. Each button is styled entirely with classes — no custom
+          CSS!
+        </p>
+        <div
+          class="mt-4 inline-block bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-sm"
+        >
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700
+          transition"
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 1. SOLID BUTTONS -->
+      <!-- =================================== -->
+      <div
+        id="solid"
+        class="demo-section bg-white rounded-xl shadow-md p-6 mb-8"
+      >
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">🔘 Solid Buttons</h2>
+        <p class="text-gray-600 mb-6">
+          Standard buttons with solid background colors.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Primary
+          </button>
+          <button
+            class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+          >
+            Secondary
+          </button>
+          <button
+            class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            Success
+          </button>
+          <button
+            class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+          >
+            Danger
+          </button>
+          <button
+            class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition"
+          >
+            Warning
+          </button>
+          <button
+            class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
+          >
+            Purple
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg overflow-x-auto">
+          <p class="font-mono text-sm text-gray-800">
+            &lt;button class="<span class="text-blue-600"
+              >bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700
+              transition</span
+            >"&gt;Primary&lt;/button&gt;
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            <strong>What each class does:</strong>
+            <code class="bg-gray-200 px-1">bg-blue-500</code> = background blue,
+            <code class="bg-gray-200 px-1">text-white</code> = white text,
+            <code class="bg-gray-200 px-1">px-4</code> = horizontal padding,
+            <code class="bg-gray-200 px-1">py-2</code> = vertical padding,
+            <code class="bg-gray-200 px-1">rounded-lg</code> = rounded corners,
+            <code class="bg-gray-200 px-1">hover:bg-blue-700</code> = darker on
+            hover, <code class="bg-gray-200 px-1">transition</code> = smooth
+            color change
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 2. OUTLINE BUTTONS -->
+      <!-- =================================== -->
+      <div id="outline" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          🔘 Outline Buttons
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Buttons with borders and transparent backgrounds.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="border border-blue-500 text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition"
+          >
+            Outline Primary
+          </button>
+          <button
+            class="border border-gray-500 text-gray-500 px-4 py-2 rounded-lg hover:bg-gray-500 hover:text-white transition"
+          >
+            Outline Secondary
+          </button>
+          <button
+            class="border border-green-500 text-green-500 px-4 py-2 rounded-lg hover:bg-green-500 hover:text-white transition"
+          >
+            Outline Success
+          </button>
+          <button
+            class="border border-red-500 text-red-500 px-4 py-2 rounded-lg hover:bg-red-500 hover:text-white transition"
+          >
+            Outline Danger
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            &lt;button class="<span class="text-blue-600"
+              >border border-blue-500 text-blue-500 px-4 py-2 rounded-lg
+              hover:bg-blue-500 hover:text-white transition</span
+            >"&gt;Outline Primary&lt;/button&gt;
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            <code class="bg-gray-200 px-1">border border-blue-500</code> = blue
+            border,
+            <code class="bg-gray-200 px-1"
+              >hover:bg-blue-500 hover:text-white</code
+            >
+            = fill on hover
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 3. BUTTON SIZES -->
+      <!-- =================================== -->
+      <div id="sizes" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">📏 Button Sizes</h2>
+        <p class="text-gray-600 mb-6">
+          Different padding combinations create different sizes.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-2 py-1 text-sm rounded hover:bg-blue-700 transition"
+          >
+            Extra Small
+          </button>
+          <button
+            class="bg-blue-500 text-white px-3 py-1.5 text-sm rounded hover:bg-blue-700 transition"
+          >
+            Small
+          </button>
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Medium (default)
+          </button>
+          <button
+            class="bg-blue-500 text-white px-6 py-3 text-lg rounded-lg hover:bg-blue-700 transition"
+          >
+            Large
+          </button>
+          <button
+            class="bg-blue-500 text-white px-8 py-4 text-xl rounded-xl hover:bg-blue-700 transition"
+          >
+            Extra Large
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            Small: <span class="text-blue-600">px-2 py-1 text-sm</span><br />
+            Medium: <span class="text-blue-600">px-4 py-2</span><br />
+            Large:
+            <span class="text-blue-600">px-6 py-3 text-lg rounded-lg</span
+            ><br />
+            XL: <span class="text-blue-600">px-8 py-4 text-xl rounded-xl</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 4. BUTTON SHAPES -->
+      <!-- =================================== -->
+      <div id="shapes" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">🔘 Button Shapes</h2>
+        <p class="text-gray-600 mb-6">
+          Different border-radius values create different shapes.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          >
+            Small Radius
+          </button>
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+          >
+            Medium Radius
+          </button>
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Large Radius
+          </button>
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+          >
+            Extra Large
+          </button>
+          <button
+            class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+          >
+            Pill / Full
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            <span class="text-blue-600">rounded</span> = 4px |
+            <span class="text-blue-600">rounded-md</span> = 6px |
+            <span class="text-blue-600">rounded-lg</span> = 8px |
+            <span class="text-blue-600">rounded-xl</span> = 12px |
+            <span class="text-blue-600">rounded-full</span> = pill shape
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 5. BUTTONS WITH ICONS -->
+      <!-- =================================== -->
+      <div id="icons" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          🎯 Buttons with Icons
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Using flexbox to align icons with text.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
+          >
+            <span>👍</span> Like
+          </button>
+          <button
+            class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2"
+          >
+            <span>📥</span> Download
+          </button>
+          <button
+            class="border border-gray-500 text-gray-500 px-4 py-2 rounded-lg hover:bg-gray-500 hover:text-white transition flex items-center gap-2"
+          >
+            <span>⭐</span> Star
+          </button>
+          <button
+            class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition flex items-center gap-2"
+          >
+            <span>🗑️</span> Delete
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            &lt;button class="<span class="text-blue-600"
+              >flex items-center gap-2</span
+            >"&gt;<br />
+            &nbsp;&nbsp;&lt;span&gt;👍&lt;/span&gt; Like<br />
+            &lt;/button&gt;
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            <code class="bg-gray-200 px-1">flex</code> +
+            <code class="bg-gray-200 px-1">items-center</code> +
+            <code class="bg-gray-200 px-1">gap-2</code> aligns icon and text
+            horizontally with space between.
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 6. FOCUS STATE (Accessibility) -->
+      <!-- =================================== -->
+      <div id="focus" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          ⌨️ Focus State (Keyboard Navigation)
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Press <kbd class="px-2 py-1 bg-gray-200 rounded">Tab</kbd> to navigate
+          to these buttons and see the focus ring.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 focus:outline-none transition"
+          >
+            With Focus Ring
+          </button>
+          <button
+            class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 focus:ring-2 focus:ring-gray-400 focus:outline-none transition"
+          >
+            Focus Ring
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            class="...
+            <span class="text-blue-600"
+              >focus:ring-2 focus:ring-blue-300 focus:outline-none</span
+            >"
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            <code class="bg-gray-200 px-1">focus:ring-2</code> = 2px ring around
+            button when focused,
+            <code class="bg-gray-200 px-1">focus:outline-none</code> = removes
+            default outline (replaced with ring)
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 7. DISABLED STATE -->
+      <!-- =================================== -->
+      <div id="disabled" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">🚫 Disabled State</h2>
+        <p class="text-gray-600 mb-6">Buttons that are not clickable.</p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg opacity-50 cursor-not-allowed"
+            disabled
+          >
+            Disabled Primary
+          </button>
+          <button
+            class="border border-gray-500 text-gray-500 px-4 py-2 rounded-lg opacity-50 cursor-not-allowed"
+            disabled
+          >
+            Disabled Outline
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            class="...
+            <span class="text-blue-600">opacity-50 cursor-not-allowed</span>"
+            disabled
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            Add <code class="bg-gray-200 px-1">disabled</code> attribute to the
+            button, plus <code class="bg-gray-200 px-1">opacity-50</code> and
+            <code class="bg-gray-200 px-1">cursor-not-allowed</code> for visual
+            feedback.
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 8. FULL WIDTH BUTTON -->
+      <!-- =================================== -->
+      <div id="fullwidth" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          📱 Full Width Button
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Button that takes the full width of its container. Common on mobile
+          forms.
+        </p>
+
+        <div class="max-w-md mx-auto">
+          <button
+            class="bg-blue-500 text-white w-full px-4 py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            Submit Form
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            class="... <span class="text-blue-600">w-full</span>"
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            <code class="bg-gray-200 px-1">w-full</code> makes the button span
+            100% of its parent container's width.
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- 9. ANIMATED BUTTONS -->
+      <!-- =================================== -->
+      <div id="animated" class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          ✨ Animated Buttons
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Buttons with subtle animations on hover.
+        </p>
+
+        <div class="flex flex-wrap gap-8 items-center justify-center">
+          <button
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 hover:scale-105 transition-transform duration-200"
+          >
+            Scale Up
+          </button>
+          <button
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 hover:-translate-y-1 transition-transform duration-200"
+          >
+            Lift Up
+          </button>
+          <button
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
+          >
+            Shadow Grow
+          </button>
+          <button
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 hover:tracking-wider transition-all duration-200"
+          >
+            Letter Spacing
+          </button>
+        </div>
+
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            Scale:
+            <span class="text-blue-600"
+              >hover:scale-105 transition-transform duration-200</span
+            ><br />
+            Lift:
+            <span class="text-blue-600"
+              >hover:-translate-y-1 transition-transform duration-200</span
+            ><br />
+            Shadow:
+            <span class="text-blue-600"
+              >hover:shadow-lg transition-all duration-200</span
+            ><br />
+            Text:
+            <span class="text-blue-600"
+              >hover:tracking-wider transition-all duration-200</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- QUICK REFERENCE TABLE -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          📚 Button Class Reference
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="text-left p-3">Purpose</th>
+                <th class="text-left p-3">Tailwind Classes</th>
+                <th class="text-left p-3">CSS Equivalent</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-3 font-medium">Background</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">bg-blue-500</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>background-color: #3b82f6;</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Text Color</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">text-white</code>
+                </td>
+                <td class="p-3 text-gray-500"><code>color: white;</code></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Padding</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">px-4 py-2</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>padding: 0.5rem 1rem;</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Border Radius</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">rounded-lg</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>border-radius: 0.5rem;</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Hover</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">hover:bg-blue-700</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>:hover { background-color: #1d4ed8; }</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Transition</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">transition</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code
+                    >transition-property: all; transition-timing-function:
+                    cubic-bezier(0.4, 0, 0.2, 1); transition-duration:
+                    150ms;</code
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Focus Ring</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1"
+                    >focus:ring-2 focus:ring-blue-300</code
+                  >
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>:focus { box-shadow: 0 0 0 2px #93c5fd; }</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Full Width</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">w-full</code>
+                </td>
+                <td class="p-3 text-gray-500"><code>width: 100%;</code></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Disabled</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1"
+                    >opacity-50 cursor-not-allowed</code
+                  >
+                </td>
+                <td class="p-3 text-gray-500">
+                  <code>opacity: 0.5; cursor: not-allowed;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

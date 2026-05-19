@@ -205,3 +205,9 @@ _@media print, hide navigation, adjust colors_
 ### [50. Complete Responsive Portfolio](https://mbalidotdev.github.io/front-end-daily-projects/50-complete-responsive-portfolio)
 
 _portfolio_
+
+## TAILWIND CSS
+
+### [51. Button Library With Tailwind CSS](https://mbalidotdev.github.io/front-end-daily-projects/51-button-library-with-tailwind)
+
+_utilities: bg-, text-, hover:, rounded-, border-_
