@@ -211,3 +211,43 @@ _portfolio_
 ### [51. Button Library With Tailwind CSS](https://mbalidotdev.github.io/front-end-daily-projects/51-button-library-with-tailwind)
 
 _utilities: bg-, text-, hover:, rounded-, border-_
+
+### [52. Profile Card](https://mbalidotdev.github.io/front-end-daily-projects/52-profile-card)
+
+_flex, p-, m-, shadow-, rounded-_
+
+### [53. Navigation Bar](https://mbalidotdev.github.io/front-end-daily-projects/53-navigation-bar)
+
+_flex utilities: justify-between, space-x-, items-center_
+
+### [54. Card Grid With Tailwind](https://mbalidotdev.github.io/front-end-daily-projects/54-card-grid-with-tailwind)
+
+_grid utilities: grid, grid-cols-1, md:grid-cols-3, gap-_
+
+### [55. Responsive Grid with Tailwind](https://mbalidotdev.github.io/front-end-daily-projects/55-repsonsive-grid-with-tailwind)
+
+_responsive prefixes: sm:, md:, lg:, xl:_
+
+### [56. Form with Tailwind](https://mbalidotdev.github.io/front-end-daily-projects/56-form-with-tailwind)
+
+_form styling: border, focus:ring-, focus:border-_
+
+### [57. Pricing Table with Tailwind](https://mbalidotdev.github.io/front-end-daily-projects/57-pricing-table-with-tailwind)
+
+_cards, hover effects, responsive pricing_
+
+### [58. Dark Mode Toggle](https://mbalidotdev.github.io/front-end-daily-projects/58-dark-mode-toggle)
+
+_dark:, class="dark" JavaScript toggle_
+
+### [59. Custom Colors in Tailwind](https://mbalidotdev.github.io/front-end-daily-projects/59-custom-colors-in-tailwind)
+
+_configuration: tailwind.config.js, extend, custom theme_
+
+### [60. Tailwind Animations](https://mbalidotdev.github.io/front-end-daily-projects/60-tailwind-animations)
+
+_animation utilities: animate-pulse, animate-spin, transition-, duration-_
+
+### [61. Tailwind Typography Plugin](https://mbalidotdev.github.io/front-end-daily-projects/61-tailwind-typography-plugin)
+
+_blog content: prose class for beautiful typography_

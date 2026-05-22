@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid - Tailwind CSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          📱 Responsive Grid
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          One grid. Six breakpoints. Resize your browser to see columns change!
+        </p>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 1: Basic Responsive Grid -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          1. Column Count Changes at Each Breakpoint
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Mobile: 1 → sm: 2 → md: 3 → lg: 4 → xl: 5 → 2xl: 6
+        </p>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4"
+        >
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            1
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            2
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            3
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            4
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            5
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            6
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            7
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            8
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            9
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            10
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            11
+          </div>
+          <div
+            class="bg-blue-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            12
+          </div>
+        </div>
+
+        <div class="mt-4 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            class="grid
+            <span class="text-blue-600"
+              >grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+              xl:grid-cols-5 2xl:grid-cols-6</span
+            >
+            gap-4"
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 2: Card Gallery Responsive -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          2. Responsive Card Gallery
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Cards: 1 column on mobile → 2 on tablet → 3 on desktop → 4 on large
+          screens
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+          >
+            <img
+              src="https://picsum.photos/id/1015/400/250"
+              alt="Mountain"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Mountain View</h3>
+              <p class="text-gray-500 text-sm">Beautiful landscape</p>
+              <span
+                class="inline-block mt-2 text-blue-500 text-sm font-semibold"
+                >$199/night</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+          >
+            <img
+              src="https://picsum.photos/id/104/400/250"
+              alt="Beach"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Beach Paradise</h3>
+              <p class="text-gray-500 text-sm">Crystal clear water</p>
+              <span
+                class="inline-block mt-2 text-blue-500 text-sm font-semibold"
+                >$299/night</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+          >
+            <img
+              src="https://picsum.photos/id/15/400/250"
+              alt="Forest"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Forest Cabin</h3>
+              <p class="text-gray-500 text-sm">Peaceful getaway</p>
+              <span
+                class="inline-block mt-2 text-blue-500 text-sm font-semibold"
+                >$149/night</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+          >
+            <img
+              src="https://picsum.photos/id/1018/400/250"
+              alt="City"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">City Lights</h3>
+              <p class="text-gray-500 text-sm">Urban adventure</p>
+              <span
+                class="inline-block mt-2 text-blue-500 text-sm font-semibold"
+                >$249/night</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 3: Different Column Span at Different Breakpoints -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          3. Featured Item Spans Differently at Each Breakpoint
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Featured card spans: all columns on mobile, 2 columns on tablet, 3
+          columns on desktop
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg text-center font-bold md:col-span-2 lg:col-span-3"
+          >
+            ⭐ FEATURED: This card spans differently at each breakpoint
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 1
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 2
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 3
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 4
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 5
+          </div>
+          <div
+            class="bg-green-500 text-white p-6 rounded-lg text-center font-bold"
+          >
+            Item 6
+          </div>
+        </div>
+
+        <div class="mt-4 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            class="<span class="text-blue-600">md:col-span-2 lg:col-span-3</span
+            >"
+          </p>
+          <p class="text-gray-500 text-xs mt-1">
+            On tablet (md): spans 2 columns. On desktop (lg): spans all 3
+            columns.
+          </p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 4: Product Grid with Responsive Columns -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">4. Product Grid</h2>
+        <p class="text-gray-500 text-sm mb-4">
+          1 column on mobile → 2 on sm → 3 on md → 4 on lg → 5 on xl
+        </p>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+        >
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">📱</div>
+            <p class="font-bold text-gray-800">Phone</p>
+            <p class="text-gray-500 text-sm">$699</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">💻</div>
+            <p class="font-bold text-gray-800">Laptop</p>
+            <p class="text-gray-500 text-sm">$999</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">🎧</div>
+            <p class="font-bold text-gray-800">Headphones</p>
+            <p class="text-gray-500 text-sm">$149</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">⌚</div>
+            <p class="font-bold text-gray-800">Watch</p>
+            <p class="text-gray-500 text-sm">$249</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">📷</div>
+            <p class="font-bold text-gray-800">Camera</p>
+            <p class="text-gray-500 text-sm">$499</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">🎮</div>
+            <p class="font-bold text-gray-800">Console</p>
+            <p class="text-gray-500 text-sm">$399</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">📖</div>
+            <p class="font-bold text-gray-800">Tablet</p>
+            <p class="text-gray-500 text-sm">$329</p>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-4 text-center border border-gray-200"
+          >
+            <div class="text-4xl mb-2">🔊</div>
+            <p class="font-bold text-gray-800">Speaker</p>
+            <p class="text-gray-500 text-sm">$89</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- QUICK REFERENCE -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          📚 Responsive Prefix Reference
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="text-left p-3">Prefix</th>
+                <th class="text-left p-3">Min Width</th>
+                <th class="text-left p-3">Target Device</th>
+                <th class="text-left p-3">Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-3 font-mono">(none)</td>
+                <td class="p-3">0px</td>
+                <td class="p-3">Mobile (default)</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">grid-cols-1</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">sm:</td>
+                <td class="p-3">640px</td>
+                <td class="p-3">Large phone</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">sm:grid-cols-2</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">md:</td>
+                <td class="p-3">768px</td>
+                <td class="p-3">Tablet</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">md:grid-cols-3</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">lg:</td>
+                <td class="p-3">1024px</td>
+                <td class="p-3">Desktop</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">lg:grid-cols-4</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">xl:</td>
+                <td class="p-3">1280px</td>
+                <td class="p-3">Large desktop</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">xl:grid-cols-5</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">2xl:</td>
+                <td class="p-3">1536px</td>
+                <td class="p-3">Extra large</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">2xl:grid-cols-6</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-800">
+            /* The same pattern works for ANY Tailwind class: */<br />
+            <span class="text-blue-600"
+              >sm:text-center md:text-left lg:text-right</span
+            ><br />
+            <span class="text-blue-600">sm:p-2 md:p-4 lg:p-6</span><br />
+            <span class="text-blue-600">sm:flex md:grid lg:block</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Your Task -->
+      <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <h2 class="text-lg font-bold text-yellow-800 mb-2">✅ Your Task</h2>
+        <p class="text-yellow-700 text-sm mb-3">Try these modifications:</p>
+        <ul class="text-yellow-700 text-sm space-y-1 list-disc list-inside">
+          <li>
+            Change
+            <code class="bg-yellow-100 px-1"
+              >grid-cols-1 sm:grid-cols-2 md:grid-cols-3</code
+            >
+            to different numbers
+          </li>
+          <li>
+            Add <code class="bg-yellow-100 px-1">xl:grid-cols-4</code> and
+            <code class="bg-yellow-100 px-1">2xl:grid-cols-5</code>
+          </li>
+          <li>
+            Try changing font size responsively:
+            <code class="bg-yellow-100 px-1"
+              >text-sm md:text-base lg:text-lg</code
+            >
+          </li>
+          <li>
+            Resize your browser window from 320px to 1920px and watch the
+            columns change
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

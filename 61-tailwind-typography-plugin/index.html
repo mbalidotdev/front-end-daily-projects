@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography Plugin - Tailwind CSS</title>
+    <link href="dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">
+          📝 Tailwind Typography
+        </h1>
+        <p class="text-gray-600">
+          Beautiful blog posts with just one class:
+          <code class="bg-gray-200 px-1 py-0.5 rounded">prose</code>
+        </p>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 1: Without prose (no styling) -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          ❌ Without prose class
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">Plain unstyled HTML content</p>
+
+        <div>
+          <h1>Blog Post Title</h1>
+          <p>
+            This is a paragraph with <a href="#">a link</a> and
+            <strong>bold text</strong> and <em>italic text</em>.
+          </p>
+          <h2>Subheading</h2>
+          <p>
+            Another paragraph with some content. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit.
+          </p>
+          <ul>
+            <li>Unstyled list item 1</li>
+            <li>Unstyled list item 2</li>
+            <li>Unstyled list item 3</li>
+          </ul>
+          <blockquote>This is a blockquote with no styling.</blockquote>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 2: With prose (beautiful styling) -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          ✅ With prose class
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Beautiful, readable typography — just add
+          <code class="bg-gray-200 px-1 py-0.5 rounded">prose</code>
+        </p>
+
+        <article class="prose prose-blue max-w-none">
+          <h1>Blog Post Title</h1>
+          <p>
+            This is a paragraph with <a href="#">a link</a> and
+            <strong>bold text</strong> and <em>italic text</em>.
+          </p>
+          <h2>Subheading</h2>
+          <p>
+            Another paragraph with some content. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+          </p>
+          <ul>
+            <li>Beautifully styled list item 1</li>
+            <li>Beautifully styled list item 2</li>
+            <li>Beautifully styled list item 3</li>
+          </ul>
+          <blockquote>
+            This is a beautifully styled blockquote. Typography plugin handles
+            all the spacing and styling automatically.
+          </blockquote>
+          <p>Here's some <code>inline code</code> and below is a code block:</p>
+          <pre><code>function greet() {
+    console.log("Hello, world!");
+}</code></pre>
+        </article>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 3: Prose with different sizes -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">📏 Prose Sizes</h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Change the size of your prose content with responsive classes
+        </p>
+
+        <div class="space-y-6">
+          <div>
+            <p class="text-sm font-semibold mb-2">prose-sm (small)</p>
+            <article class="prose prose-sm bg-gray-50 p-4 rounded">
+              <h3>Small prose example</h3>
+              <p>
+                This content is sized for smaller screens or compact layouts.
+              </p>
+            </article>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold mb-2">prose (default)</p>
+            <article class="prose bg-gray-50 p-4 rounded">
+              <h3>Default prose example</h3>
+              <p>
+                This is the default prose size, perfect for most blog posts.
+              </p>
+            </article>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold mb-2">prose-lg (large)</p>
+            <article class="prose prose-lg bg-gray-50 p-4 rounded">
+              <h3>Large prose example</h3>
+              <p>This content is larger, great for readability on desktop.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 4: Prose with dark mode -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          🌙 Prose with Dark Mode
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Add
+          <code class="bg-gray-200 px-1 py-0.5 rounded">prose-invert</code> for
+          dark backgrounds
+        </p>
+
+        <div class="bg-gray-800 rounded-lg p-6">
+          <article class="prose prose-invert max-w-none">
+            <h1>Dark Mode Article</h1>
+            <p>
+              This content is styled for dark backgrounds using
+              <code>prose-invert</code>. Perfect for dark mode themes!
+            </p>
+            <ul>
+              <li>Automatically inverts colors</li>
+              <li>Maintains readability</li>
+              <li>Works with any dark background</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 5: Prose color variants -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          🎨 Prose Color Variants
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          Change link colors with prose-{color} variants
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold mb-2">prose-blue</h3>
+            <article class="prose prose-blue bg-gray-50 p-4 rounded">
+              <p>This has <a href="#">blue links</a> matching the theme.</p>
+            </article>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">prose-purple</h3>
+            <article class="prose prose-purple bg-gray-50 p-4 rounded">
+              <p>This has <a href="#">purple links</a> matching the theme.</p>
+            </article>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">prose-green</h3>
+            <article class="prose prose-green bg-gray-50 p-4 rounded">
+              <p>This has <a href="#">green links</a> matching the theme.</p>
+            </article>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">prose-red</h3>
+            <article class="prose prose-red bg-gray-50 p-4 rounded">
+              <p>This has <a href="#">red links</a> matching the theme.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference -->
+      <div class="mt-8 bg-gray-800 rounded-xl p-6 text-white">
+        <h2 class="text-xl font-bold mb-3">📚 Prose Classes Reference</h2>
+        <div class="font-mono text-sm text-green-400 space-y-1">
+          <p>prose — Base typography styling</p>
+          <p>prose-sm / prose-base / prose-lg / prose-xl — Size variants</p>
+          <p>prose-invert — For dark backgrounds</p>
+          <p>
+            prose-blue / prose-purple / prose-green / prose-red — Link color
+            variants
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

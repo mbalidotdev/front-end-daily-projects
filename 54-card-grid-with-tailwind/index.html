@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Grid - Tailwind CSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+          📇 Card Grid Gallery
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Responsive card grid built with Tailwind CSS — 1 column on mobile, 2
+          columns on tablet, 3 columns on desktop.
+        </p>
+      </div>
+
+      <!-- Responsive Card Grid: 1 → 2 → 3 columns -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="https://picsum.photos/id/1015/400/300"
+            alt="Mountain"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">
+              Mountain Retreat
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Beautiful mountain views and fresh air. Perfect for weekend
+              getaways.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-500 font-bold">$199/night</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="https://picsum.photos/id/104/400/300"
+            alt="Beach"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Beach Paradise</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              White sandy beaches and crystal clear water. Includes breakfast.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-500 font-bold">$299/night</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="https://picsum.photos/id/15/400/300"
+            alt="Forest"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Forest Cabin</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Cozy cabin hidden in the peaceful woods. Pet friendly.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-500 font-bold">$149/night</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="https://picsum.photos/id/1018/400/300"
+            alt="City"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">City Explorer</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Urban adventure in the heart of the city. Close to metro.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-500 font-bold">$249/night</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 (featured) -->
+        <div
+          class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1"
+        >
+          <div class="p-6 text-center text-white">
+            <div class="text-4xl mb-3">⭐</div>
+            <h3 class="text-xl font-bold mb-2">Featured Deal</h3>
+            <p class="text-white/90 text-sm mb-4">
+              Get 20% off your first booking when you sign up for our
+              newsletter!
+            </p>
+            <button
+              class="bg-white text-purple-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        >
+          <img
+            src="https://picsum.photos/id/42/400/300"
+            alt="Lake"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Lake House</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Serene lakefront property with private dock and fire pit.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-500 font-bold">$179/night</span>
+              <button
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card Grid (Alternative Style) -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+          🛍️ Product Cards
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <div
+              class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center text-5xl"
+            >
+              📱
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Smartphone Pro</h3>
+              <p class="text-gray-500 text-sm mt-1">
+                Latest model with amazing camera
+              </p>
+              <div class="flex justify-between items-center mt-3">
+                <span class="text-blue-600 font-bold">$699</span>
+                <button
+                  class="text-blue-500 text-sm font-semibold hover:text-blue-700"
+                >
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <div
+              class="h-40 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center text-5xl"
+            >
+              💻
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Laptop Air</h3>
+              <p class="text-gray-500 text-sm mt-1">Lightweight and powerful</p>
+              <div class="flex justify-between items-center mt-3">
+                <span class="text-blue-600 font-bold">$999</span>
+                <button
+                  class="text-blue-500 text-sm font-semibold hover:text-blue-700"
+                >
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <div
+              class="h-40 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center text-5xl"
+            >
+              🎧
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Wireless Earbuds</h3>
+              <p class="text-gray-500 text-sm mt-1">
+                Noise cancellation, 24hr battery
+              </p>
+              <div class="flex justify-between items-center mt-3">
+                <span class="text-blue-600 font-bold">$149</span>
+                <button
+                  class="text-blue-500 text-sm font-semibold hover:text-blue-700"
+                >
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+          >
+            <div
+              class="h-40 bg-gradient-to-r from-red-400 to-red-600 flex items-center justify-center text-5xl"
+            >
+              ⌚
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800">Smart Watch</h3>
+              <p class="text-gray-500 text-sm mt-1">
+                Track your fitness and notifications
+              </p>
+              <div class="flex justify-between items-center mt-3">
+                <span class="text-blue-600 font-bold">$249</span>
+                <button
+                  class="text-blue-500 text-sm font-semibold hover:text-blue-700"
+                >
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Class Reference -->
+      <div class="mt-12 bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          📚 Tailwind Grid Classes Used
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Grid Container</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">grid</code> - Enables CSS Grid
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">grid-cols-1</code> - 1 column
+                (mobile)
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">md:grid-cols-2</code> - 2 columns
+                (tablet)
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">lg:grid-cols-3</code> - 3 columns
+                (desktop)
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">gap-6</code> - Space between
+                cards
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Card Styling</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">bg-white</code> - White
+                background
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">rounded-xl</code> - Rounded
+                corners
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">shadow-md</code> - Medium shadow
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">hover:shadow-xl</code> - Larger
+                shadow on hover
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Images</p>
+            <ul class="space-y-1 text-gray-600">
+              <li><code class="bg-gray-100 px-1">w-full</code> - Full width</li>
+              <li>
+                <code class="bg-gray-100 px-1">h-48</code> - Fixed height
+                (12rem)
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">object-cover</code> - Cover
+                without distortion
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Spanning Columns</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">md:col-span-2</code> - Spans 2
+                columns on tablet
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">lg:col-span-1</code> - Spans 1
+                column on desktop
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Your Task -->
+      <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <h2 class="text-lg font-bold text-yellow-800 mb-2">✅ Your Task</h2>
+        <p class="text-yellow-700 text-sm mb-3">Try these modifications:</p>
+        <ul class="text-yellow-700 text-sm space-y-1 list-disc list-inside">
+          <li>
+            Change
+            <code class="bg-yellow-100 px-1"
+              >grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code
+            >
+            to different numbers
+          </li>
+          <li>Add more cards to the grid</li>
+          <li>
+            Change the gap using different
+            <code class="bg-yellow-100 px-1">gap-*</code> values
+          </li>
+          <li>
+            Try
+            <code class="bg-yellow-100 px-1"
+              >grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4</code
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

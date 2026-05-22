@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Animations</title>
+    <link href="dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">
+          ✨ Tailwind Animations
+        </h1>
+        <p class="text-gray-600">
+          Built-in animation utilities — no custom CSS needed!
+        </p>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 1: Basic Animations -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          1. Basic Animations
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-lg mx-auto animate-pulse"
+            ></div>
+            <p class="mt-2 text-sm text-gray-600">animate-pulse</p>
+          </div>
+
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-full mx-auto animate-spin"
+            ></div>
+            <p class="mt-2 text-sm text-gray-600">animate-spin</p>
+          </div>
+
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-lg mx-auto animate-bounce"
+            ></div>
+            <p class="mt-2 text-sm text-gray-600">animate-bounce</p>
+          </div>
+
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-lg mx-auto animate-ping"
+            ></div>
+            <p class="mt-2 text-sm text-gray-600">animate-ping</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 2: Buttons with Animations -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          2. Buttons with Animations
+        </h2>
+
+        <div class="flex flex-wrap gap-4">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-200"
+          >
+            Scale on Hover
+          </button>
+
+          <button
+            class="bg-green-500 text-white px-4 py-2 rounded-lg hover:-translate-y-1 transition-transform duration-200"
+          >
+            Lift on Hover
+          </button>
+
+          <button
+            class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-shadow duration-200"
+          >
+            Shadow on Hover
+          </button>
+
+          <button
+            class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-300"
+          >
+            Color Change
+          </button>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 3: Cards with Hover Animations -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          3. Cards with Hover Effects
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-gray-50 rounded-lg p-5 text-center hover:scale-105 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-2">📱</div>
+            <h3 class="font-bold">Scale Card</h3>
+            <p class="text-sm text-gray-600">Grows slightly on hover</p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-lg p-5 text-center hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="text-4xl mb-2">💻</div>
+            <h3 class="font-bold">Lift Card</h3>
+            <p class="text-sm text-gray-600">Lifts up on hover</p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-lg p-5 text-center hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="text-4xl mb-2">🎨</div>
+            <h3 class="font-bold">Shadow Card</h3>
+            <p class="text-sm text-gray-600">Shadow grows on hover</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 4: Loading States -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">4. Loading States</h2>
+
+        <div class="flex flex-col items-center gap-4">
+          <div class="flex items-center gap-2">
+            <div
+              class="w-3 h-3 bg-blue-500 rounded-full animate-bounce"
+              style="animation-delay: 0ms"
+            ></div>
+            <div
+              class="w-3 h-3 bg-blue-500 rounded-full animate-bounce"
+              style="animation-delay: 150ms"
+            ></div>
+            <div
+              class="w-3 h-3 bg-blue-500 rounded-full animate-bounce"
+              style="animation-delay: 300ms"
+            ></div>
+          </div>
+          <p class="text-gray-600 text-sm">Loading... (bouncing dots)</p>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 5: Transition Properties -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          5. Transition Properties
+        </h2>
+
+        <div class="space-y-4">
+          <div
+            class="bg-blue-500 text-white p-3 rounded-lg w-32 transition-all duration-300 hover:w-48"
+          >
+            Width changes
+          </div>
+
+          <div
+            class="bg-green-500 text-white p-3 rounded-lg w-48 transition-all duration-300 hover:rounded-full"
+          >
+            Border radius
+          </div>
+
+          <div
+            class="bg-purple-500 text-white p-3 rounded-lg transition-opacity duration-300 hover:opacity-50"
+          >
+            Opacity changes
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================== -->
+      <!-- CLASS REFERENCE -->
+      <!-- =================================== -->
+      <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          📚 Tailwind Animation Classes
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Built-in Animations</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">animate-pulse</code> - Fades in
+                and out
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">animate-spin</code> - Rotates
+                continuously
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">animate-bounce</code> - Bounces
+                up and down
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">animate-ping</code> - Ping effect
+                (like notification)
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Transition Utilities</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">transition</code> - Enables
+                transitions
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">duration-200</code> - 200ms
+                duration
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">ease-in-out</code> - Easing
+                function
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">delay-100</code> - Delay before
+                animation
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">Transform Utilities</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">scale-105</code> - Scales up 5%
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">-translate-y-1</code> - Moves up
+                4px
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">rotate-3</code> - Rotates 3
+                degrees
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-blue-600 mb-2">
+              Transition Properties
+            </p>
+            <ul class="space-y-1 text-gray-600">
+              <li>
+                <code class="bg-gray-100 px-1">transition-all</code> - All
+                properties transition
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">transition-colors</code> - Only
+                colors transition
+              </li>
+              <li>
+                <code class="bg-gray-100 px-1">transition-transform</code> -
+                Only transforms transition
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

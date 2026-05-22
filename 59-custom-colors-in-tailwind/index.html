@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Colors - Practice</title>
+    <link href="dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-brand-600 mb-2">🎨 Custom Colors</h1>
+        <p class="text-gray-600">
+          Brand colors added to Tailwind configuration
+        </p>
+      </div>
+
+      <!-- Color Palette -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          Brand Color Palette
+        </h2>
+        <div class="space-y-2">
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-50 rounded border"></div>
+            <span>brand-50</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-100 rounded border"></div>
+            <span>brand-100</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-200 rounded border"></div>
+            <span>brand-200</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-300 rounded border"></div>
+            <span>brand-300</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-400 rounded border"></div>
+            <span>brand-400</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-500 rounded border"></div>
+            <span class="font-bold">brand-500 (Main)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-600 rounded border"></div>
+            <span>brand-600</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-700 rounded border"></div>
+            <span>brand-700</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-800 rounded border"></div>
+            <span>brand-800</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-10 bg-brand-900 rounded border"></div>
+            <span>brand-900</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          Buttons with Custom Colors
+        </h2>
+        <div class="flex flex-wrap gap-4">
+          <button
+            class="bg-brand-500 text-white px-4 py-2 rounded-lg hover:bg-brand-600 transition"
+          >
+            Brand Button
+          </button>
+          <button
+            class="bg-secondary-500 text-white px-4 py-2 rounded-lg hover:bg-secondary-600 transition"
+          >
+            Secondary Button
+          </button>
+          <button
+            class="bg-accent text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition"
+          >
+            Accent Button
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          Cards with Brand Colors
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-brand-50 rounded-lg p-5 text-brand-800">
+            <h3 class="font-bold mb-2">Brand Card</h3>
+            <p class="text-sm">Uses brand-50 background and brand-800 text.</p>
+          </div>
+          <div class="bg-secondary-50 rounded-lg p-5 text-secondary-800">
+            <h3 class="font-bold mb-2">Secondary Card</h3>
+            <p class="text-sm">Uses secondary-50 background.</p>
+          </div>
+          <div class="bg-accent rounded-lg p-5 text-white">
+            <h3 class="font-bold mb-2">Accent Card</h3>
+            <p class="text-sm">Uses accent background.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar - Tailwind CSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- =================================== -->
+    <!-- NAVBAR 1: Basic Sticky Navbar -->
+    <!-- =================================== -->
+    <div class="sticky top-0 z-50">
+      <nav class="bg-gray-800 text-white shadow-lg">
+        <div
+          class="container mx-auto px-4 py-3 flex justify-between items-center"
+        >
+          <!-- Logo -->
+          <a
+            href="#"
+            class="text-xl font-bold text-white hover:text-blue-400 transition"
+          >
+            🚀 MySite
+          </a>
+
+          <!-- Desktop Menu (hidden on mobile, shown on desktop) -->
+          <ul class="hidden md:flex space-x-6">
+            <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+            <li>
+              <a href="#" class="hover:text-blue-400 transition">About</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-400 transition">Services</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-400 transition">Portfolio</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-400 transition">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            ☰
+          </button>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-700">
+          <ul class="flex flex-col space-y-2 p-4">
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-400 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-400 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-400 transition"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-400 transition"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-400 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- =================================== -->
+    <!-- NAVBAR 2: Navbar with Logo Left, Links Right -->
+    <!-- =================================== -->
+    <div class="bg-white shadow-md mt-8">
+      <div
+        class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl">🎨</span>
+          <span class="text-xl font-bold text-gray-800">BrandName</span>
+        </div>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="text-gray-600 hover:text-blue-500 transition"
+            >Features</a
+          >
+          <a href="#" class="text-gray-600 hover:text-blue-500 transition"
+            >Pricing</a
+          >
+          <a href="#" class="text-gray-600 hover:text-blue-500 transition"
+            >About</a
+          >
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================== -->
+    <!-- NAVBAR 3: Centered Navigation -->
+    <!-- =================================== -->
+    <div class="bg-gradient-to-r from-purple-600 to-indigo-600 mt-8">
+      <div class="container mx-auto px-4 py-4">
+        <ul class="flex justify-center space-x-8">
+          <li>
+            <a href="#" class="text-white hover:text-gray-200 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200 transition"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- =================================== -->
+    <!-- NAVBAR 4: Navbar with Search Bar -->
+    <!-- =================================== -->
+    <div class="bg-gray-900 mt-8">
+      <div
+        class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4"
+      >
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl">🔍</span>
+          <span class="text-white font-bold">SearchSite</span>
+        </div>
+        <div class="flex-1 max-w-md">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-white transition"
+            >Login</a
+          >
+          <a href="#" class="text-gray-300 hover:text-white transition"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================== -->
+    <!-- NAVBAR 5: Minimal Navbar (Transparent) -->
+    <!-- =================================== -->
+    <div class="absolute top-0 left-0 w-full z-10 mt-8 relative">
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+          <span class="text-2xl font-bold text-white drop-shadow-lg"
+            >Minimal</span
+          >
+          <ul class="flex space-x-8">
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-gray-200 transition drop-shadow"
+                >Work</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-gray-200 transition drop-shadow"
+                >Studio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white hover:text-gray-200 transition drop-shadow"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacer to see transparent navbar -->
+    <div class="h-32"></div>
+
+    <!-- =================================== -->
+    <!-- NAVBAR 6: Bottom Navigation (Mobile Style) -->
+    <!-- =================================== -->
+    <div
+      class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-lg md:hidden"
+    >
+      <div class="flex justify-around py-2">
+        <a href="#" class="flex flex-col items-center py-1 text-blue-500">
+          <span class="text-xl">🏠</span>
+          <span class="text-xs">Home</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center py-1 text-gray-500 hover:text-blue-500 transition"
+        >
+          <span class="text-xl">🔍</span>
+          <span class="text-xs">Search</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center py-1 text-gray-500 hover:text-blue-500 transition"
+        >
+          <span class="text-xl">❤️</span>
+          <span class="text-xs">Favorites</span>
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center py-1 text-gray-500 hover:text-blue-500 transition"
+        >
+          <span class="text-xl">👤</span>
+          <span class="text-xs">Profile</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container mx-auto px-4 py-12">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">
+          Navigation Bars with Tailwind
+        </h1>
+        <p class="text-gray-600 mb-4">
+          This page shows 6 different navigation bar styles built entirely with
+          Tailwind CSS. Scroll down to see them all!
+        </p>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <p class="font-mono text-sm text-gray-700">
+            <span class="text-blue-600"
+              >class="flex justify-between items-center px-4 py-3 bg-gray-800
+              text-white"</span
+            >
+          </p>
+          <p class="text-gray-500 text-sm mt-2">
+            Each class does ONE thing:
+            <code class="bg-gray-200 px-1">flex</code> = display flex,
+            <code class="bg-gray-200 px-1">justify-between</code> = space
+            between, <code class="bg-gray-200 px-1">items-center</code> =
+            vertical center, <code class="bg-gray-200 px-1">px-4 py-3</code> =
+            padding, <code class="bg-gray-200 px-1">bg-gray-800</code> = dark
+            background, <code class="bg-gray-200 px-1">text-white</code> = white
+            text
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacer for bottom navigation -->
+    <div class="h-20 md:h-0"></div>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+    </script>
+  </body>
+</html>

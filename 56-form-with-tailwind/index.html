@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form with Tailwind - Focus States</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">📝 Modern Form</h1>
+        <p class="text-gray-600">
+          Styled with Tailwind CSS — focus rings, validation states, and
+          responsive layout
+        </p>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 1: Basic Contact Form -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">1. Contact Form</h2>
+
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              placeholder="you@example.com"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Subject</label
+            >
+            <select
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            >
+              <option>General Inquiry</option>
+              <option>Technical Support</option>
+              <option>Billing Question</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Message</label
+            >
+            <textarea
+              rows="4"
+              placeholder="Tell us what you think..."
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 2: Registration Form (2 Columns) -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          2. Registration Form (2 Columns on Desktop)
+        </h2>
+
+        <form class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >First Name</label
+              >
+              <input
+                type="text"
+                placeholder="John"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                placeholder="Doe"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              placeholder="you@example.com"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Password</label
+              >
+              <input
+                type="password"
+                placeholder="••••••••"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                placeholder="••••••••"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Date of Birth</label
+            >
+            <input
+              type="date"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-green-700 transition"
+          >
+            Create Account
+          </button>
+        </form>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 3: Checkbox and Radio Group -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          3. Checkbox & Radio Groups
+        </h2>
+
+        <form class="space-y-6">
+          <!-- Radio Group -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Contact Method</label
+            >
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="contact"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">Email</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="contact"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">Phone</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="contact"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">WhatsApp</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Checkbox Group -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Interests</label
+            >
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">Technology</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">Design</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                />
+                <span class="ml-2 text-gray-700">Development</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Single Checkbox -->
+          <div>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-gray-700">Subscribe to newsletter</span>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition"
+          >
+            Save Preferences
+          </button>
+        </form>
+      </div>
+
+      <!-- =================================== -->
+      <!-- DEMO 4: Form with Validation States -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          4. Validation States (Error & Success)
+        </h2>
+
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Valid Input</label
+            >
+            <input
+              type="text"
+              value="John Doe"
+              class="w-full p-3 border border-green-500 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+            />
+            <p class="text-xs text-green-600 mt-1">✓ Looks good!</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Error Input</label
+            >
+            <input
+              type="email"
+              placeholder="Enter valid email"
+              value="invalid-email"
+              class="w-full p-3 border border-red-500 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition"
+            />
+            <p class="text-xs text-red-600 mt-1">
+              ⚠ Please enter a valid email address
+            </p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Required Field</label
+            >
+            <input
+              type="text"
+              placeholder="This field is required"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Disabled Field</label
+            >
+            <input
+              type="text"
+              value="This field is disabled"
+              disabled
+              class="w-full p-3 bg-gray-100 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gray-800 text-white py-3 px-4 rounded-lg font-semibold hover:bg-gray-900 transition"
+          >
+            Submit Form
+          </button>
+        </form>
+      </div>
+
+      <!-- =================================== -->
+      <!-- CLASS REFERENCE -->
+      <!-- =================================== -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">
+          📚 Tailwind Form Classes Reference
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="text-left p-3">Purpose</th>
+                <th class="text-left p-3">Tailwind Classes</th>
+                <th class="text-left p-3">What they do</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-3 font-medium">Input padding</td>
+                <td class="p-3"><code class="bg-gray-100 px-1">p-3</code></td>
+                <td class="p-3 text-gray-500">Padding: 0.75rem (12px)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Border</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">border border-gray-300</code>
+                </td>
+                <td class="p-3 text-gray-500">1px solid light gray border</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Border radius</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">rounded-lg</code>
+                </td>
+                <td class="p-3 text-gray-500">Border radius: 0.5rem (8px)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Focus ring</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1"
+                    >focus:ring-2 focus:ring-blue-500</code
+                  >
+                </td>
+                <td class="p-3 text-gray-500">2px blue ring on focus</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Focus border</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">focus:border-blue-500</code>
+                </td>
+                <td class="p-3 text-gray-500">Blue border on focus</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Remove outline</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">outline-none</code>
+                </td>
+                <td class="p-3 text-gray-500">
+                  Removes default browser outline
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Transition</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">transition</code>
+                </td>
+                <td class="p-3 text-gray-500">Smooth transitions</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Checkbox/Radio</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1">w-4 h-4 text-blue-600</code>
+                </td>
+                <td class="p-3 text-gray-500">Size and color</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-medium">Disabled</td>
+                <td class="p-3">
+                  <code class="bg-gray-100 px-1"
+                    >bg-gray-100 cursor-not-allowed</code
+                  >
+                </td>
+                <td class="p-3 text-gray-500">
+                  Gray background, no click cursor
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Your Task -->
+      <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <h2 class="text-lg font-bold text-yellow-800 mb-2">✅ Your Task</h2>
+        <p class="text-yellow-700 text-sm mb-3">Try these modifications:</p>
+        <ul class="text-yellow-700 text-sm space-y-1 list-disc list-inside">
+          <li>
+            Change the focus ring color from
+            <code class="bg-yellow-100 px-1">blue-500</code> to
+            <code class="bg-yellow-100 px-1">green-500</code> or
+            <code class="bg-yellow-100 px-1">purple-500</code>
+          </li>
+          <li>Add more fields to the registration form</li>
+          <li>
+            Change the gap between form fields from
+            <code class="bg-yellow-100 px-1">space-y-4</code> to
+            <code class="bg-yellow-100 px-1">space-y-6</code>
+          </li>
+          <li>Make the form responsive on tablet</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
